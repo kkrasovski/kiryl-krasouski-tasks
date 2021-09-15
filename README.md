@@ -8,7 +8,7 @@
 
 ### About Me :man:
 
-In 2012 I graduated from Russian-Belarusian University. My  specialization is Welding technology and Equipment. When i was a student i found much interest in internet technologies. In 2020 I graduated from the IT-step courses in the front-end specialization. Now I'm continuously studyingon the **EPAM training**. 
+In 2012 I graduated from Russian-Belarusian University. My  specialization is Welding technology and Equipment. When i was a student i found much interest in internet technologies. In 2020 I graduated from the IT-step courses in the front-end specialization. Now I'm continuously studying on the **EPAM training**. 
 
 > When I was 5 years old, my mother always told me that happiness was the key to life. When I went to school, they asked me what I wanted to be when I grew up. I wrote down ‘happy’. They told me I didn’t understand the assignment, and I told them they didn’t understand life. **John lennon**
 
