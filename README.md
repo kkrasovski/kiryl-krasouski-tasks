@@ -2,7 +2,7 @@
 **_beginner front end developer_**
 
 ### Contacts :envelope_with_arrow:
-* email :envelope_with_arrow: : ziksow@gmail.com
+* email :love_letter: : ziksow@gmail.com
 * skype: [zikmogilev](https://join.skype.com/invite/tfuOAIIesjhE)
 * viber: [+375298339330](tel:+375298339330)
 
