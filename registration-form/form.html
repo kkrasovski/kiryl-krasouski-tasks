@@ -22,15 +22,15 @@
                 below and you will be automatically registered. Event registration must be completed at least six (6)
                 days prior to the event.</p>
         </header>
-        <section  class="registation__general-question">
+        <section class="registation__general-question">
             <fieldset>
                 <div class="registation-form__input-line">
                     <div class="registation-form__input single-input">
                         <label for="" class="single-input__label">Name</label>
-                        <input type="text" class="single-input__text">
+                        <input type="text" class="single-input__text" placeholder="First">
                     </div>
                     <div class="registation-form__input single-input">
-                        <input type="text" class="single-input__text">
+                        <input type="text" class="single-input__text" placeholder="Last">
                     </div>
                 </div>
                 <div class="registation-form__input-line">
@@ -40,31 +40,41 @@
                     </div>
                     <div class="registation-form__input single-input">
                         <label for="" class="single-input__label">Phone</label>
-                        <input type="text" class="single-input__text">
+                        <input type="text" class="single-input__text"   placeholder="### ### ####">
                     </div>
                 </div>
                 <div class="registation-form__input-line">
                     <div class="registation-form__input single-input">
                         <label for="" class="single-input__label">How many friends will you bring along?</label>
-                        <input type="text" class="single-input__text">
+                        <select name="" id="" class="single-input__text">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
                     </div>
                     <div class="registation-form__input single-input">
                         <label for="" class="single-input__label">When will you arrive?</label>
-                        <input type="text" class="single-input__text">
+                        <input type="time" class="single-input__text">
                     </div>
                 </div>
             </fieldset>
             <fieldset class="registation-form__quiz">
                 <h2 class="registation-form__sub-title">How did you hear about the event?</h2>
-                <div class="registation-form__question reg-radio-input"> <input type="radio"> <label for="">Friends or collegue</label> </div>
-                <div class="registation-form__question reg-radio-input"> <input type="radio"> <label for="">Advertisment</label> </div>
-                <div class="registation-form__question reg-radio-input"><input type="radio"> <label for="">TV</label> </div>
-                <div class="registation-form__question reg-radio-input"><input type="radio"> <label for="">Search Engine</label> </div>
+                <div class="registation-form__question reg-radio-input"> <input type="radio"> <label for="">Friends or
+                        collegue</label> </div>
+                <div class="registation-form__question reg-radio-input"> <input type="radio"> <label
+                        for="">Advertisment</label> </div>
+                <div class="registation-form__question reg-radio-input"><input type="radio"> <label for="">TV</label>
+                </div>
+                <div class="registation-form__question reg-radio-input"><input type="radio"> <label for="">Search
+                        Engine</label> </div>
 
             </fieldset>
         </section>
         <section class="registation-form__map map">
-            <p class="map__description">Below, you can find a map of the event venue. Please contact us for any further details or use the
+            <p class="map__description">Below, you can find a map of the event venue. Please contact us for any further
+                details or use the
                 coordinates on your GPS. See you there!</p>
             <div class="map__control">
                 <iframe
@@ -77,10 +87,10 @@
             </div>
         </section>
         <section class="registation-form__submit">
-           
-              
-                <button class="registation-form__register-button button">Register</button>
-           
+
+
+            <button class="registation-form__register-button button">Register</button>
+
         </section>
     </article>
 </body>
