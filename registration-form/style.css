@@ -4,9 +4,10 @@ html {
     color: #4c4c4c;   
 }
 
+
 .registation-form {
     box-sizing: border-box;    
-    max-width:1170px;
+    max-width:1024px;
     margin: 0 auto;
     padding: 15px;
     line-height: 1.2;
@@ -41,11 +42,13 @@ html {
 
 .registation-form__input {
     width:40%;
+    box-sizing: border-box;
     padding: 0 20px 0 0;
 }
 
 .registation-form__input_full-width {
     width:100%;
+    padding: 0;
 }
 
 .single-input {
@@ -107,5 +110,23 @@ html {
     text-transform: uppercase;    
     background: #4c4c4c;
     color: #ffffff;    
+}
+
+@media (max-width: 375px) {
+    .registation-form {      
+        max-width:100%;       
+    }
+    .registation-form__title {
+        color: green;
+    }
+}
+
+@media (min-width: 1024px) {
+    .registation-form {      
+        max-width:1024px;       
+    }
+    .registation-form__title {
+        color: red;
+    }
 }
 
