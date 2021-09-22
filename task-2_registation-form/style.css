@@ -136,10 +136,12 @@ html {
 }
 
 @media (max-width: 375px) {
+
     .registation-form {      
         width:100%; 
         max-width: 345px;      
     }
+
     .registation__general-question {
         padding-right: 0;      
     }
@@ -147,24 +149,31 @@ html {
     .registation-form__title {
         text-align: center;
     }
+
     .registation-form__input-line {        
         flex-direction: column;
     }
+
     .registation-form__input:first-child, .registation-form__input:nth-child(2) {
         width: 100%;   
         padding-bottom: 5px;    
     }
+
     .registation-form__desc, .map__description {       
         text-align: justify;
     }
+
 }
 
 @media (max-width: 1024px) and (min-width: 375px) {
+
     .registation-form {      
         max-width:960px;       
     }
+
     .registation-form__title {
         color: red;
     }
+    
 }
 
