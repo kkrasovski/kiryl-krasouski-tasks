@@ -4,7 +4,6 @@ html {
     color: #4c4c4c;   
 }
 
-
 .registation-form {
     box-sizing: border-box;    
     max-width:560px;
@@ -34,10 +33,6 @@ html {
 .registation__general-question {
     padding-right: 26px;
     padding-top: 10px;
-}
-
-.registation-form__first-quiz {   
-    /* padding-top: 5px; */
 }
 
 .registation-form__second-quiz {
@@ -75,6 +70,25 @@ html {
     padding: 0;
 }
 
+.registation-form__question {
+    margin: 10px 0 14px;
+}
+
+.registation-form__map {
+
+}
+
+.registation-form__register-button {
+    margin: 0 auto;
+}
+
+.registation-form__submit {
+    display: flex;
+    margin-top: 13px;    
+}
+
+
+
 .single-input {
     display: flex;
     flex-direction: column;
@@ -102,31 +116,10 @@ html {
     color: #FF0000;
 }
 
-.registation-form__question {
-    margin: 10px 0 14px;
-}
-
-.registation-form__map {
-
-}
 .map__control {    
     max-height:185px;
     overflow: hidden;
     margin-bottom: 20px;
-}
-
-.registation-form__register-button {
-    margin: 0 auto;
-}
-
-.registation-form__submit {
-    display: flex;
-    margin-top: 13px;    
-}
-
-.submit {
-    display: flex;
-    flex-direction: column;
 }
 
 .map__description {
@@ -145,8 +138,7 @@ html {
 }
 
 .button:hover {    
-    background: #727272;
-    
+    background: #727272;    
 }
 
 @media (max-width: 375px) {
@@ -173,12 +165,12 @@ html {
     }
 }
 
-/* @media (min-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 375px) {
     .registation-form {      
         max-width:960px;       
     }
     .registation-form__title {
         color: red;
     }
-} */
+}
 
