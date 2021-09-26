@@ -4,19 +4,23 @@ html {
     color: #4c4c4c;   
 }
 
-.registation-form {
+.wrapper__form {
     box-sizing: border-box;    
     max-width: 560px;
     width: 95%;
     margin: 0 auto;
-    padding: 10px 24px;
-    font-size: 1.1rem;
-    letter-spacing: 0.1px;
-    line-height: 1.2;
+    padding: 10px 24px;    
     -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
+
+.registation-form {
+    font-size: 1.1rem;
+    letter-spacing: 0.1px;
+    line-height: 1.2;
+}
+
 
 .registation-form__title {
     padding: 15px 0;
@@ -78,6 +82,7 @@ html {
 
 .registation-form__register-button {
     margin: 0 auto;
+    padding: 15px 32px;
 }
 
 .registation-form__submit {
@@ -123,8 +128,7 @@ html {
     letter-spacing: -0.5px;
 }
 
-.button {
-    padding: 15px 32px;    
+.button {      
     border: 0;
     border-radius: 3px;        
     text-transform: uppercase;    
@@ -140,7 +144,7 @@ html {
 
 @media (max-width: 375px) {
 
-    .registation-form {      
+    .wrapper__form {      
         width: 100%; 
         max-width: 345px;      
     }
@@ -174,7 +178,7 @@ html {
 
 @media (max-width: 1024px) and (min-width: 375px) {
 
-    .registation-form {      
+    .wrapper__form {      
         max-width: 960px;       
     }
 
