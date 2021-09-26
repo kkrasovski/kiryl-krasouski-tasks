@@ -30,7 +30,7 @@ html {
     letter-spacing: -0.75px;
 }
 
-.registation__general-question {
+.registation__general {
     padding-right: 26px;
     padding-top: 10px;
 }
@@ -142,7 +142,7 @@ html {
         max-width: 345px;      
     }
 
-    .registation__general-question {
+    .registation__general {
         padding-right: 0;      
     }
 
