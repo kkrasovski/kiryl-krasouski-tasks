@@ -80,7 +80,8 @@ html {
 }
 
 .registration-form__register-button {
-    margin: 0 auto;
+    display: block;
+    margin: 14px auto 0;
     padding: 15px 32px;
 }
 
