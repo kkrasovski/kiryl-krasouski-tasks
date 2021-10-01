@@ -65,6 +65,7 @@ h3 {
   font-size: 2rem;
 }
 
+
 .header__container,
 .header__main,
 .main__container,
@@ -79,7 +80,8 @@ h3 {
 .layout__main-head,
 .footer__container {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1170px;
+  padding: 0 15px;
   margin: 0 auto;
   box-sizing: border-box;
   line-height: 1.5;
@@ -94,6 +96,8 @@ h3 {
   background: url(img/footer/footer-bg.jpg);
 }
 .layout__top-line {
+  position: fixed;
+  width:100%;
   border-bottom: 1px solid #ffffff;
 }
 .layout__main-head {
@@ -113,6 +117,7 @@ h3 {
 .layout__partners {  
   padding: 98px 0 90px;
   font-size: 1.25rem;
+  overflow: hidden;
 }
 
 .layout__clients {
@@ -173,7 +178,7 @@ h3 {
 }
 
 .flex-nav__nav {
-  width: 44%;
+  min-width: 44%;
   margin-top: 5px;
 }
 
@@ -266,7 +271,7 @@ h3 {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  padding: 20px 0 1px;
+  padding-top: 20px;
 }
 
 .plans__item {
@@ -507,8 +512,7 @@ h3 {
   position: absolute;
   left: 50%;
   height: 100%;
-  padding-right: 0;
-  background: salmon;
+  padding-right: 0;  
 }
 
 .clients___title {
@@ -518,7 +522,8 @@ h3 {
 .clients__fluid-bg {
   width: 100%;
   height: 100%;
-  background: url(img/clients/01.jpg);
+  /* background: url(img/clients/01.jpg); */
+  overflow: hidden;
 }
 
 .clients__fluid-bg,
@@ -625,4 +630,31 @@ h3 {
 
 .footer__logo-img {
   width:100%;
+}
+
+@media (max-width: 1024px) {
+
+  .single-plan__name {    
+    flex-wrap: wrap;
+}
+  .single-plan__price {    
+    width: 100%;
+}
+.clients__container {
+  flex-direction: column;
+}
+.clients__half-col {
+  width: 100%;
+  min-width: 100%;
+}
+.clients__half-col_fly {
+  position: static;
+  left: 0;
+  height: 100%;  
+}
+
+.plans__container {  
+  align-items: flex-start;
+
+}
 }
