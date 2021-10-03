@@ -58,8 +58,13 @@ h3 {
   border: 0;
   padding: 17px 15px 18px;
   background: rgb(245 245 245 / 10%);
-  color: #ffffff;
+  color: #ffffff;  
+  outline: none;
   cursor: pointer;
+}
+
+.input:focus {
+  color: #616161;
 }
 
 .separator {
@@ -659,7 +664,7 @@ display: block;
 .contacts__input {
   width: 100%;
   box-sizing: border-box;
-  margin: 11px 0 10px;
+  margin: 11px 0 10px; 
 }
 
 .contacts__textarea {
@@ -726,6 +731,10 @@ display: block;
   font-weight: bold;
   color: #1cb9ca;
   text-decoration: none;
+}
+
+.footer__copyright-link:hover {
+  color: #a1aaaf;
 }
 
 .footer__top {
