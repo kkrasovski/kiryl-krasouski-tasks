@@ -107,7 +107,7 @@ overflow: hidden;
 
 .layout__main-header {
   display: flex;
-  width: 3840px
+  width: calc(100vw * 2);
 }
 
 .layout__fluid-header {
@@ -285,7 +285,12 @@ margin-left: 0;
 
 .flex-nav__logo-img {
   max-width: 100%;
+  background: url(img/logo.png);
+  background-size: contain;
+  height: 18px;
 }
+
+
 
 .flex-nav__nav {
   min-width: 44%;
@@ -856,6 +861,16 @@ display: block;
 
 @media (max-width: 768px) {
 
+  .flex-nav__logo-img { 
+    background: url(img/logo-dark.png);
+    height: 19px;
+  }
+
+  .flex-nav__logo {
+    width: 104px;
+   
+}
+
   .single-plan__name {    
     flex-wrap: wrap;
 }
@@ -902,7 +917,9 @@ display: block;
 }
 
 
-
+.flex-nav {
+  background: #ffffff;
+}
 
 
 .product__meta {
@@ -958,8 +975,8 @@ display: none;
   align-items: center;
   position: fixed;
   top: 35px;
-  right: 20px;
-  width: 26px;
+  right: 40px;
+  width: 20px;
   height: 26px;
   cursor: pointer;
   z-index: 1;
@@ -970,17 +987,19 @@ display: none;
   .navigation__btn > span::before,
   .navigation__btn > span::after {
     display: block;
-    position: absolute;
-    width: 100%;
+    position: absolute; 
+    width:20px;   
     height: 2px;
     background-color: #616161;
   }
   .navigation__btn > span::before {
       content: '';
+      width: 10px;
       top: -8px;
     }
     .navigation__btn > span::after {
       content: '';
+      width: 30px;
       top: 8px;
     }
     .navigation__link_last {
@@ -1013,6 +1032,10 @@ display: none;
 }
 .layout__main-head {
   padding-top: 48%;
+}
+
+.header__description {
+  width: 100%;
 }
 
 .advantages__single {
