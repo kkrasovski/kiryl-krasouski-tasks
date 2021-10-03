@@ -1032,13 +1032,38 @@ box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
   .advantages__single {
     width: 50%;
   }
-
+}
   @media (max-width: 640px) {
     .advantages__single {
       width: 100%;
     }
     .companies__single {     
       width: 100%;      
+  }
+  .footer__container_bottom {
+    flex-direction: row;
+  }
+  .footer__copyright {
+    text-align: right;
+  }
+  .footer__copyright-line {
+    display: block;
+  }
+  .header__controls {
+      bottom: 15px;
+    
+  }.footer__container_bottom {
+    flex-direction: row;
+  }
+  .footer__copyright {
+    text-align: right;
+  }
+  .footer__copyright-line {
+    display: block;
+  }
+  .header__controls {
+      bottom: 15px;
+    
   }
     }
 
@@ -1120,18 +1145,5 @@ box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
 }
 .footer__contacts {
   padding: 0;
-}
-.footer__container_bottom {
-  flex-direction: row;
-}
-.footer__copyright {
-  text-align: right;
-}
-.footer__copyright-line {
-  display: block;
-}
-.header__controls {
-    bottom: 15px;
-  
 }
 }
