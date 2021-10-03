@@ -957,11 +957,16 @@ display: block;
   visibility: hidden;
   text-align: center;  
   z-index: 2;
+
 }
 
 .flex-nav__nav {
   min-width: 100%;
   margin-top: 5px;
+}
+
+.flex-nav__nav-container:last-child {
+ padding: 0;
 }
 
 .navigation__toggle {
@@ -972,7 +977,9 @@ display: none;
   visibility: visible;
   left: 0;
   position:static;
-
+  -webkit-box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+-moz-box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
 }
 
 .navigation__btn {
@@ -987,7 +994,7 @@ display: none;
   z-index: 1;
 }
 
-  /* добавляем "гамбургер" */
+
   .navigation__btn > span,
   .navigation__btn > span::before,
   .navigation__btn > span::after {
@@ -1022,8 +1029,18 @@ display: none;
   .plans__item {
     width: 100%;
   }
+  .advantages__single {
+    width: 50%;
+  }
 
-}
+  @media (max-width: 640px) {
+    .advantages__single {
+      width: 100%;
+    }
+    .companies__single {     
+      width: 100%;      
+  }
+    }
 
 @media (max-width: 375px) {
 
