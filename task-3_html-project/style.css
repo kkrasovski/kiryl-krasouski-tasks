@@ -630,7 +630,7 @@ display: block;
 
 .companies__single-img {
   width:190px;
-  max-width: 100%;
+
 }
 
 .companies__single-img:hover {
@@ -860,6 +860,11 @@ display: block;
 
 
 @media (max-width: 768px) {
+
+  .navigation__link {
+  
+    color: #000000;
+}
 
   .flex-nav__logo-img { 
     background: url(img/logo-dark.png);
