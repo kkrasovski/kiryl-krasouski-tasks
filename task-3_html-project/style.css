@@ -42,6 +42,11 @@ h3 {
   text-decoration: none;
 }
 
+.button:hover {
+  border: 0;
+  background: #1cb9ca;
+}
+
 .button_accented {
   background: #49b4b4;
 }
@@ -80,8 +85,8 @@ h3 {
 .layout__main-head,
 .footer__container {
   width: 100%;
-  max-width: 1170px;
-  padding: 0 15px;
+  max-width: 1190px;
+  padding: 0 25px;
   margin: 0 auto;
   box-sizing: border-box;
   line-height: 1.5;
@@ -101,7 +106,7 @@ h3 {
   border-bottom: 1px solid #ffffff;
 }
 .layout__main-head {
-  padding-top: 150px;
+  padding-top: 247px;
 }
 
 .layout__latest,
@@ -160,6 +165,10 @@ h3 {
 .header__slide {
   margin: 0 7px 0 0;
   padding: 0;
+}
+
+.flex-nav {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .flex-nav__container {
@@ -364,6 +373,31 @@ h3 {
   padding: 40px 70px 40px 50px;
   border: 1px solid rgba(238, 238, 238, 0.3);
   box-sizing: border-box;
+  cursor: pointer;  
+ 
+ 
+}
+
+
+
+
+
+.advantages__single:hover .advantage__icon {
+
+
+    animation: introtop;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    
+}
+
+@keyframes introtop {
+  100% {  opacity: 0; margin:0; width: 1px; height: 1px; overflow: hidden;}
+  70%{ opacity: 0.2; }
+  50%{ opacity: 0.5; }
+  30%{ opacity: 0.7; }
+  0%{ opacity: 1; }
 }
 
 .advantage {
@@ -372,11 +406,16 @@ h3 {
   justify-content: flex-start;
   background: #ffffff;
   font-size: 1.25rem;
+  
+ 
+
 }
 
 .advantage__icon {
   margin: 10px 0;
+display: block;
 }
+
 .advantage__title {
   margin: 13px 0 14px;
 }
@@ -434,13 +473,30 @@ h3 {
   letter-spacing: -1px;
   text-decoration: none;
   text-transform: uppercase;
+  color: #777c80;
+}
+
+.product__extended:hover {
   color: #a1aaaf;
+}
+
+.product__title {
+  font-size: 1.85rem;
+  font-weight: bold;
+  color: #505767;
+  text-decoration: none;
+}
+
+
+.product__title:hover {  
+  color: #616264;
+  
 }
 
 .product__extended::after {
   position: absolute;
   right: -15px;
-  top: calc(50% - 1px);
+  top: calc(50% + 5px);
   width: 10px;
   height: 2px;
   background: #1cb9ca;
@@ -464,6 +520,11 @@ h3 {
 
 .companies__single-img {
   width:190px;
+}
+
+.companies__single-img:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .showcase {
@@ -597,14 +658,22 @@ h3 {
   display: block;
   margin-bottom: 28px;
     line-height: 1.35;
-  color: #ffffff;
+    letter-spacing: 1px;
+  color: #8d8d8d;
   text-decoration: none;
+}
+
+.footer__nav-link:hover {
+  
+  color: #ffffff;
+
 }
 
 .footer__navigation,
 .footer__social {
   width: 33%;
-  padding-right: 10px;
+  padding-right: 8px;
+  padding-top: 2px;
 }
 
 .footer__copyright-link {
@@ -632,6 +701,9 @@ h3 {
   width:100%;
 }
 
+
+
+
 @media (max-width: 1024px) {
 
   .single-plan__name {    
@@ -657,4 +729,116 @@ h3 {
   align-items: flex-start;
 
 }
+
+.header__title {
+  font-size: 5.3rem;
+}
+.header__description {
+  width: 65%;
+}
+
+.layout__header {
+  background: url(img/header/header-bg.jpg);
+  height: 100vh;
+} 
+.layout__main-head {
+  padding-top: 48%;
+}
+.header__controls { 
+  padding: 52% 0 32px;
+}
+.advantages__single {  
+  padding: 40px 60px 40px 40px;
+}
+
+
+
+
+
+.product__meta {
+  flex-direction: column;
+}
+.product__category {  
+  margin-left: 0px;  
+  padding: 0; 
+}
+.companies__single {
+  padding: 0 25px;
+  width: 33.33%;
+  box-sizing: border-box;
+}
+.plans__item {
+  padding: 45px 40px 82px 45px; 
+}
+
+.flex-nav__container {
+  flex-direction: column;
+}
+
+.flex-nav__logo { 
+  align-self: flex-start;
+}
+
+.flex-nav__nav-container {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  text-align: center;  
+  z-index: 2;
+}
+
+.flex-nav__nav {
+  min-width: 100%;
+  margin-top: 5px;
+}
+
+.navigation__toggle {
+display: none;
+}
+
+.navigation__toggle:checked ~ .flex-nav__nav-container {
+  visibility: visible;
+  left: 0;
+  position:static;
+
+}
+
+.navigation__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 35px;
+  right: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+  /* добавляем "гамбургер" */
+  .navigation__btn > span,
+  .navigation__btn > span::before,
+  .navigation__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+  }
+  .navigation__btn > span::before {
+      content: '';
+      top: -8px;
+    }
+    .navigation__btn > span::after {
+      content: '';
+      top: 8px;
+    }
+    .navigation__link_last {
+      padding: 15px 17px; 
+  }  
+}
+
+@media (max-width: 375px) {
+
+
 }
