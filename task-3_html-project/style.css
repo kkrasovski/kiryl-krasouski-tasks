@@ -1,24 +1,13 @@
-html {
-  font-size: 12px;
-  line-height: 1.5;
-  font-family: "Hind", sans-serif;
-  color: #a1aaaf;
-}
-
-h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2.5rem;
-  color: #50545f;
-}
-
-h3 {
-  font-size: 1.85rem;
-  font-weight: bold;
-  color: #505767;
-}
+@import "styles/common.css"; 
+@import "styles/header.css"; 
+@import "styles/advantages.css"; 
+@import "styles/latest.css"; 
+@import "styles/partners.css"; 
+@import "styles/reviews.css"; 
+@import "styles/plans.css"; 
+@import "styles/clients.css"; 
+@import "styles/showcase.css"; 
+@import "styles/footer.css"; 
 
 .title {
   font-weight: bold;
@@ -101,16 +90,16 @@ h3 {
 position: relative;
 overflow: hidden;
 } 
-.layout__main-head {
+.header__container {
   padding: 0 15px;
 }
 
-.layout__main-header {
+.header__main-content {
   display: flex;
   width: calc(100vw * 2);
 }
 
-.layout__fluid-header {
+.header__fluid {
   width:100vw;
   height: 100vh;
   transition: all 0.5s ease;
@@ -150,13 +139,13 @@ overflow: hidden;
   position: relative;
   background: url(img/footer/footer-bg.jpg);
 }
-.layout__top-line {
+.header__top-line {
   position: fixed;
   width:100%;
   border-bottom: 1px solid #ffffff;
   z-index: 1;
 }
-.layout__main-head {
+.header__container {
   padding-top: 247px;
 }
 
