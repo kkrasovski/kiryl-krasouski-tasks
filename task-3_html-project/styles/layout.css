@@ -1,0 +1,36 @@
+.layout__header {
+  position: relative;
+  overflow: hidden;
+}
+
+.layout__footer {
+  position: relative;
+}
+
+.layout__latest,
+.layout__advantages,
+.layout__reviews,
+.layout__plans,
+.layout__showcase,
+.layout__footer {
+  padding: 100px 0;
+  font-size: 1.25rem;
+}
+
+.layout__footer {
+  padding: 100px 0 40px 0;
+}
+
+.layout__partners {
+  padding: 98px 0 90px;
+  font-size: 1.25rem;
+  overflow: hidden;
+}
+
+.layout__clients {
+  position: relative;
+}
+
+.layout__clients_left {
+  padding: 80px 0 83px;
+}

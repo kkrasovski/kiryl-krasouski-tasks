@@ -1,0 +1,34 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .navigation__toggle {
+    display: none;
+  } 
+  
+  .navigation__link {
+    position: relative;
+    display: block;
+    padding: 15px 17px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  
+  .navigation__link_active::before,
+  .navigation__link:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(50% - 1px);
+    width: 10px;
+    height: 2px;
+    background: #1cb9ca;
+  }
+  
+  .navigation__link_last {
+    padding: 15px 0 15px 17px;
+  }
