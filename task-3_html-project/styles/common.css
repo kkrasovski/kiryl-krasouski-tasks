@@ -3,6 +3,7 @@ html {
   line-height: 1.5;
   font-family: "Hind", sans-serif;
   color: #a1aaaf;
+  scroll-behavior: smooth;
 }
 
 h1 {
