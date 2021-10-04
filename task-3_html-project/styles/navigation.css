@@ -17,9 +17,9 @@
     text-transform: uppercase;
     color: #ffffff;
   }
-  
-  .navigation__link_active::before,
-  .navigation__link:hover::before {
+
+  .navigation__link_active::before, 
+  .navigation__link:hover::before { 
     content: "";
     position: absolute;
     left: 0;
@@ -27,8 +27,4 @@
     width: 10px;
     height: 2px;
     background: #1cb9ca;
-  }
-  
-  .navigation__link_last {
-    padding: 15px 0 15px 17px;
   }
