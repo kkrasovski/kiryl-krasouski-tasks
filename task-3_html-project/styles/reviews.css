@@ -34,3 +34,7 @@
   font-style: italic;
   color: #1cb9ca;
 }
+
+.reviews__title {
+  padding-bottom: 15px;
+}
