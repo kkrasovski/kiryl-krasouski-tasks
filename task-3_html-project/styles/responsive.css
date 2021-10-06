@@ -6,8 +6,40 @@
 }
 
 @media (max-width: 768px) {
-  .navigation__link {
-    color: #000000;
+  .layout__latest,
+  .layout__advantages,
+  .layout__footer {
+    padding: 70px 0;
+    font-size: 1.25rem;
+  }
+
+  .layout__main-head {
+    padding-top: 48%;
+  }
+
+  .header__container {
+    padding: 48% 15px 0 22px;
+  }
+
+  .header__title {
+    font-size: 5.3rem;
+  }
+
+  .header__description {
+    width: 65%;
+  }
+
+  .header__fluid {
+    min-height: 1025px;
+  }
+
+  .header__controls {
+    padding: 52% 0 32px;
+    bottom: 5px;
+  }
+
+  .sticky-menu {
+    background: #ffffff;
   }
 
   .sticky-menu__logo-img {
@@ -21,137 +53,6 @@
     width: 104px;
   }
 
-  .single-plan__name {
-    flex-wrap: wrap;
-  }
-
-  .single-plan__price {
-    width: 100%;
-  }
-
-  .clients__container {
-    flex-direction: column;
-  }
-
-  .clients__half-col {
-    width: 100%;
-    min-width: 100%;
-  }
-
-  .clients__half-col_fly {
-    position: static;
-    left: 0;
-    height: 100%;
-  }
-
-  .plans__container {
-    align-items: flex-start;
-  }
-
-  .header__container {
-    padding: 48% 15px 0 22px;
-  }
-  .header__title {
-    font-size: 5.3rem;
-  }
-
-  .header__description {
-    width: 65%;
-  }
-
-  /* .layout__header {
-    height: 100vh;
-  } */
-  .header__fluid {
-    min-height: 1025px;
-  }
-
-  .layout__main-head {
-    padding-top: 48%;
-  }
-
-  .header__controls {
-    padding: 52% 0 32px;
-    bottom: 5px;
-  }
-
-  .advantages__single {
-    padding: 35px 60px 0px 40px;
-  }
-
-  .advantages__container {
-    padding-top: 35px;
-  }
-  .sticky-menu {
-    background: #ffffff;
-  }
-
-  .latest__products {
-    margin: 45px 0;   
-}
-
-  .product__meta {
-    flex-direction: column;
-  }
-
-  .product__category {
-    margin-left: 0px;
-    padding: 0;
-  }
-
-  .layout__latest,
-  .layout__advantages,  
-  .layout__footer {
-    padding: 70px 0;
-    font-size: 1.25rem;
-  }
-
-  .review__line {
-    margin: 10px 0 15px;
-}
-
-  .latest__single-product {
-    width: 30.6%;
-    padding-bottom: 35px;
-  }
-
-  .product__category {
-    font-size: 1.25rem;
-    margin-left: 14px;
-    letter-spacing: -0.1px;
-    padding: 0 10px;
-    text-transform: uppercase;
-  }
-
-  .clients__fluid-pic {
-    width: 100%;
-    display: block;
-}
-
-  .product__desc {
-    padding-top: 7px;
-  }
-  .companies__single {
-    padding: 0 25px;
-    width: 33.33%;
-    box-sizing: border-box;
-  }
-
-  .clients__container {
-    padding: 0;
-  }
-
-  .clients__fluid-bg {
-    padding-top: 15px;
-  }
-
-  .plans__item {
-    padding: 40px 40px 82px 45px;
-  }
-
-  .layout__clients_left {
-    padding: 100px 25px 83px;
-}
   .sticky-menu__container {
     flex-direction: column;
   }
@@ -177,11 +78,15 @@
     padding: 0;
   }
 
+  .navigation__link {
+    color: #000000;
+  }
+
   .navigation__toggle {
     display: none;
   }
 
-  .navigation__toggle:checked ~ .sticky-menu__nav-container {
+  .navigation__toggle:checked~.sticky-menu__nav-container {
     visibility: visible;
     left: 0;
     position: static;
@@ -202,9 +107,9 @@
     z-index: 1;
   }
 
-  .navigation__btn > span,
-  .navigation__btn > span::before,
-  .navigation__btn > span::after {
+  .navigation__btn>span,
+  .navigation__btn>span::before,
+  .navigation__btn>span::after {
     display: block;
     position: absolute;
     width: 16px;
@@ -212,16 +117,112 @@
     background-color: #0f0f0f;
   }
 
-  .navigation__btn > span::before {
+  .navigation__btn>span::before {
     content: "";
     width: 8px;
     top: -8px;
   }
 
-  .navigation__btn > span::after {
+  .navigation__btn>span::after {
     content: "";
     width: 24px;
     top: 8px;
+  }
+
+  .advantages__single {
+    padding: 35px 60px 0px 40px;
+  }
+
+  .advantages__container {
+    padding-top: 35px;
+  }
+
+  .latest__products {
+    margin: 45px 0;
+  }
+
+  .latest__single-product {
+    width: 30.6%;
+    padding-bottom: 35px;
+  }
+
+  .product__category {
+    font-size: 1.25rem;
+    margin-left: 14px;
+    letter-spacing: -0.1px;
+    padding: 0 10px;
+    text-transform: uppercase;
+  }
+
+  .product__meta {
+    flex-direction: column;
+  }
+
+  .product__desc {
+    padding-top: 7px;
+  }
+
+  .product__category {
+    margin-left: 0px;
+    padding: 0;
+  }
+
+  .plans__container {
+    align-items: flex-start;
+  }
+
+  .plans__item {
+    padding: 40px 40px 82px 45px;
+  }
+
+  .single-plan__name {
+    flex-wrap: wrap;
+  }
+
+  .single-plan__price {
+    width: 100%;
+  }
+
+  .layout__clients_left {
+    padding: 100px 25px 83px;
+  }
+
+  .clients__container {
+    flex-direction: column;
+  }
+
+  .clients__container {
+    padding: 0;
+  }
+
+  .clients__fluid-bg {
+    padding-top: 15px;
+  }
+
+  .clients__half-col {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .clients__half-col_fly {
+    position: static;
+    left: 0;
+    height: 100%;
+  }
+
+  .clients__fluid-pic {
+    width: 100%;
+    display: block;
+  }
+
+  .review__line {
+    margin: 10px 0 15px;
+  }
+
+  .companies__single {
+    padding: 0 25px;
+    width: 33.33%;
+    box-sizing: border-box;
   }
 
   .footer__top {
@@ -229,7 +230,7 @@
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 720px) {  
   .plans__container {
     flex-direction: column;
   }
@@ -292,7 +293,7 @@
   .advantages__container,
   .latest__container,
   .partners__container,
-  .reviews__container,    
+  .reviews__container,
   .showcase__container,
   .sticky-menu__container,
   .layout__main-head,
@@ -305,56 +306,48 @@
     line-height: 1.5;
   }
 
-  .layout__advantages, .layout__footer {
+  .layout__advantages,
+  .layout__footer {
     padding: 100px 0;
     font-size: 1.25rem;
-}
+  }
+
+  .layout__clients_left {
+    padding: 98px 25px 83px 15px;
+  }
+
 
   .layout__latest {
     padding: 100px 0 60px;
-}
+  }
 
   .layout__showcase {
     padding: 100px 0 52px;
-}
-
-.advantages__single {
-  padding: 42px 40px 42px 50px;
-}
-
-  .header__container {
-    padding: 39% 0 0 15px;
-}
+  }
 
   .layout__main-head {
     padding-top: 48%;
   }
 
-  .footer__social {    
-    padding-top: 27px;
-}
-
-  .contacts__textarea {
-    max-height: 105px;
-    margin-bottom: 61px;
+  .layout__partners {
+    padding: 98px 0 90px;
   }
 
-  .footer__main {
-    padding-bottom: 145px;
-}
-
-
+  .header__container {
+    padding: 39% 0 0 15px;
+  }
 
   .header__fluid {
     min-height: 100px;
     max-height: 666px;
-}
+  }
 
   .header__description {
     width: 100%;
   }
 
   .advantages__single {
+    padding: 42px 40px 42px 50px;
     width: 100%;
   }
 
@@ -381,30 +374,35 @@
     margin-left: 14px;
   }
 
-  .layout__partners {
-    padding: 98px 0 90px;    
-}
-
-  .companies__single {
-    width: 100%;
-    text-align: center;
-  }
-
   .plans__container {
     padding-top: 40px;
   }
 
   .plans__item {
     padding: 40px 40px 82px 35px;
-}
+  }
 
   .plans__item_best {
     padding: 90px 40px 130px 35px;
-}
+  }
+
+  .single-plan__price {
+    width: auto;
+  }
 
   .single-plan__function {
-    margin: 30px 0 64px;    
-}
+    margin: 30px 0 64px;
+  }
+
+  .single-plan__container_best {
+    margin: 0;
+  }
+
+  .companies__single {
+    width: 100%;
+    text-align: center;
+  }
+
   .companies__single:not(:first-child) {
     display: none;
   }
@@ -415,21 +413,9 @@
     box-sizing: border-box;
   }
 
-  .single-plan__container_best {
-    margin: 0;
-  }
-
-  .single-plan__price {
-    width: auto;
-  }
-
   .clients__half-col {
     padding-right: 0;
   }
-
-  .layout__clients_left {
-    padding: 98px 25px 83px 15px;
-}
 
   .latest__desc,
   .showcase__desc {
@@ -438,7 +424,7 @@
 
   .showcase__desc {
     padding-bottom: 55px;
-}
+  }
 
   .showcase__item {
     width: 100%;
@@ -447,6 +433,10 @@
   .showcase__item {
     flex-basis: 100%;
     border-bottom: 4px solid #fafafa;
+  }
+
+  .footer__main {
+    padding-bottom: 145px;
   }
 
   .footer__container {
@@ -461,6 +451,10 @@
     flex-direction: column;
   }
 
+  .footer__social {
+    padding-top: 27px;
+  }
+
   .footer__nav,
   .footer__contacts {
     width: 100%;
@@ -468,5 +462,10 @@
 
   .footer__contacts {
     padding: 0;
+  }
+
+  .contacts__textarea {
+    max-height: 105px;
+    margin-bottom: 61px;
   }
 }
