@@ -42,13 +42,13 @@
   line-height: 1.5;
 }
 
-.single-plan__f-item::before {
-  content: "";
+.single-plan__f-item::before {  
   position: absolute;
   left: -22px;
   top: 8px;
   width: 10px;
   height: 2px;
+  content: "";
   background: #1cb9ca;
 }
 

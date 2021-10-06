@@ -19,12 +19,12 @@
   }
 
   .navigation__link_active::before, 
-  .navigation__link:hover::before { 
-    content: "";
+  .navigation__link:hover::before {     
     position: absolute;
     left: 0;
     top: calc(50% - 1px);
     width: 10px;
     height: 2px;
     background: #1cb9ca;
+    content: "";
   }

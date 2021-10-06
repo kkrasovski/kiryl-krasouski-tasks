@@ -24,15 +24,15 @@
   letter-spacing: 0.1px;
 }
 
-.review__body::before {
-  content: '"';
+.review__body::before {  
   position: absolute;
-  left: -30px;
   width: 10px;
   height: 10px;
+  left: -30px;   
   font-size: 4rem;
   font-style: italic;
   color: #1cb9ca;
+  content: '"';
 }
 
 .reviews__title {

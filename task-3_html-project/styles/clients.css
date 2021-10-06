@@ -6,8 +6,8 @@
 .clients__half-col {
   min-width: 50%;
   width: 50%;
-  box-sizing: border-box;
   padding-right: 45px;
+  box-sizing: border-box;  
 }
 
 .clients__half-col_fly {

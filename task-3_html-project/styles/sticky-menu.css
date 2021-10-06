@@ -15,9 +15,9 @@
 
 .sticky-menu__logo-img {
   max-width: 100%;
-  background: url(../img/logo.png);
-  background-size: contain;
   height: 18px;
+  background: url(../img/logo.png);
+  background-size: contain;  
 }
 
 .sticky-menu__nav {

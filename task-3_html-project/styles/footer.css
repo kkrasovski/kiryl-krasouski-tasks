@@ -89,8 +89,8 @@
 
 .contacts__input {
   width: 100%;
-  box-sizing: border-box;
   margin: 11px 0 10px;
+  box-sizing: border-box;  
 }
 
 .contacts__textarea {
