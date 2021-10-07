@@ -31,9 +31,9 @@
 }
 
 .footer__nav-link {
-  display: block;
+  display: inline-block;
   margin-bottom: 28px;
-  line-height: 1.35;
+  line-height: 1.2;
   letter-spacing: 1px;
   color: #8d8d8d;
   text-decoration: none;

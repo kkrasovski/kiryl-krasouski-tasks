@@ -3,7 +3,7 @@
 }
 
 .header__container {
-  padding: 247px 15px 0 15px;
+  padding: 155px 15px 0 15px;
 }
 
 .header__main-content {
@@ -15,7 +15,7 @@
   width: 100vw;
   height: 100vh;
   min-height: 600px;
-  max-height: 805px;
+  max-height: 711px;
   transition: all 0.5s ease;
 }
 
