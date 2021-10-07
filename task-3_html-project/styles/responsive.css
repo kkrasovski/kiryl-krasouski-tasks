@@ -57,6 +57,10 @@
     flex-direction: column;
   }
 
+  .header__top-line_sub {
+    display: none;
+  }
+
   .sticky-menu__logo {
     align-self: flex-start;
   }

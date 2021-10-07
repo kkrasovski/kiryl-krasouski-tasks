@@ -18,6 +18,10 @@
     color: #ffffff;
   }
 
+  .navigation__link_dark {
+    color: #333333;
+}
+
   .navigation__link_active::before, 
   .navigation__link:hover::before {     
     position: absolute;
