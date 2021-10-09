@@ -50,6 +50,17 @@ h2 {
   background: #49b4b4;
 }
 
+.button_submit {
+  background: #49b4b4;
+  border: 0;
+  cursor: pointer;
+}
+
+.button_submit:active {
+  background: #2b6969;  
+  cursor: pointer;
+}
+
 .button_thin {
   border: 1px solid #ffffff;
   background: transparent;
