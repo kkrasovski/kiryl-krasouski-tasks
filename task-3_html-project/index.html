@@ -23,7 +23,7 @@
           <div class="sticky-menu__nav navigation">
             <input class="navigation__toggle" id="navigation__toggle" name="nav-toggle" type="checkbox">
             <label class="navigation__btn" for="navigation__toggle">
-              <span class="navigation__btn-burger"></span>
+              <span class="navigation__btn-burger" aria-label="open mobile navigation menu"></span>
             </label>
             <ul class="sticky-menu__nav-container navigation">
               <li class="navigation__item"><a class="navigation__link navigation__link_active navigation__link_dark" href="#">Home</a></li>
@@ -45,16 +45,16 @@
           <div class="sticky-menu__nav navigation">
             <input class="navigation__toggle" id="navigation__toggle" name="nav-toggle" type="checkbox">
             <label class="navigation__btn" for="navigation__toggle">
-              <span class="navigation__btn-burger"></span>
+              <span class="navigation__btn-burger" aria-label="open mobile navigation menu"></span>
             </label>
             <ul class="sticky-menu__nav-container navigation">
-              <li class="navigation__item"><a class="navigation__link navigation__link_active" href="#" tabindex="1">Home</a></li>
-              <li class="navigation__item"><a class="navigation__link" href="#pricing" tabindex="2">Pricing</a></li>
-              <li class="navigation__item"><a class="navigation__link" href="#about" tabindex="3">About</a></li>
-              <li class="navigation__item"><a class="navigation__link" href="#latest" tabindex="4">Products</a></li>
-              <li class="navigation__item"><a class="navigation__link" href="#faq" tabindex="5">Faq</a></li>
+              <li class="navigation__item"><a class="navigation__link navigation__link_active" href="#" tabindex="1" >Home</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="#pricing" tabindex="2" aria-label="go to pricing">Pricing</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="#about" tabindex="3" aria-label="go to about us">About</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="#latest" tabindex="4" aria-label="go to latest products">Products</a></li>
+              <li class="navigation__item"><a class="navigation__link" href="#faq" tabindex="5" aria-label="go to faq">Faq</a></li>
               <li class="navigation__item"><a
-                  class="navigation__link navigation__link_last" href="#contacts" tabindex="6">Contact</a></li>
+                  class="navigation__link navigation__link_last" href="#contacts" tabindex="6" aria-label="go to contacts">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -70,7 +70,7 @@
                 Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua
                 enim minim estudiat veniam siad venumus dolore
               </p>
-              <a class="header__button button button_thin" href="#" tabindex="7">Explore</a>
+              <a class="header__button button button_thin" href="#" tabindex="7" aria-label="explore">Explore</a>
             </div>
           </div>
         </div>
@@ -89,8 +89,8 @@
       </div>
       <div class="header__controls">
         <div class="header__controls__wrapper">
-          <label class="header__control-bar" for="slide1"></label>
-          <label class="header__control-bar" for="slide2"></label>
+          <label class="header__control-bar" for="slide1" tabindex="8"  aria-label="previous slider"></label>
+          <label class="header__control-bar" for="slide2" tabindex="9"  aria-label="next slider"></label>
         </div>
       </div>
     </header>
@@ -183,7 +183,7 @@
               <img class="product__img" src="img/latest/01.jpg" alt="latest product 1">
             </div>
             <div class="product__meta">
-              <a href class="product__title">Triangle Roof</a>
+              <h3 class="product__title">Triangle Roof</h3>
               <span class="product__category">Menagment</span>
             </div>
             <div class="product__desc">
@@ -191,7 +191,7 @@
                 Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut
                 consequat siad esqudiat dolor
               </p>
-              <a class="product__extended" href="#" tabindex="8">Read more</a>
+              <a class="product__extended" href="#" tabindex="10" aria-label="read more about Roof">Read more</a>
             </div>
           </div>
           <div class="latest__single-product product">
@@ -207,7 +207,7 @@
                 Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut
                 consequat siad esqudiat dolor
               </p>
-              <a class="product__extended" href="#" tabindex="9">Read more</a>
+              <a class="product__extended" href="#" tabindex="11" aria-label="read more about Curved Corners">Read more</a>
             </div>
           </div>
           <div class="latest__single-product product">
@@ -223,7 +223,7 @@
                 Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut
                 consequat siad esqudiat dolor
               </p>
-              <a class="product__extended" href="#" tabindex="10">Read more</a>
+              <a class="product__extended" href="#" tabindex="12" aria-label="Read more about Birds on Green">Read more</a>
             </div>
           </div>
         </div>
@@ -232,19 +232,19 @@
     <section class="layout__partners partners">
       <div class="partners__container companies">
         <div class="companies__single">
-          <img class="companies__single-img" src="img/partners/01.png" alt="discord"/>
+          <img class="companies__single-img" src="img/partners/01.png" alt="discord" aria-label="our partner is Discord"/>
         </div>
         <div class="companies__single">
-          <img class="companies__single-img" src="img/partners/02.png" alt="discord"/>
+          <img class="companies__single-img" src="img/partners/02.png" alt="netflix" aria-label="our partner is NetFlix"/>
         </div>
         <div class="companies__single">
-          <img class="companies__single-img" src="img/partners/03.png" alt="discord"/>
+          <img class="companies__single-img" src="img/partners/03.png" alt="broadcom" aria-label="our partner is Broadcom"/>
         </div>
         <div class="companies__single">
-          <img class="companies__single-img" src="img/partners/04.png" alt="discord"/>
+          <img class="companies__single-img" src="img/partners/04.png" alt="hoop" aria-label="our partner is Hoop"/>
         </div>
         <div class="companies__single">
-          <img class="companies__single-img" src="img/partners/05.png" alt="discord"/>
+          <img class="companies__single-img" src="img/partners/05.png" alt="airbnb" aria-label="our partner is AirBnb"/>
         </div>
       </div>
     </section>
@@ -288,7 +288,7 @@
                 <li class="single-plan__f-item">50 Users panels</li>
               </ul>
             </div>
-            <a class="single-plan__button button" href="#" tabindex="11">Choose</a>
+            <a class="single-plan__button button" href="#" tabindex="13">Choose</a>
           </div>
 
         </div>
@@ -312,7 +312,7 @@
                 <li class="single-plan__f-item">100 Users panels</li>
               </ul>
             </div>
-            <a class="single-plan__button button" href="#" tabindex="12">Choose</a>
+            <a class="single-plan__button button" href="#" tabindex="14">Choose</a>
           </div>
         </div>
         <div class="single-plan plans__item">
@@ -335,7 +335,7 @@
                 <li class="single-plan__f-item">Unlimited Users Panels</li>
               </ul>
             </div>
-            <a class="single-plan__button button" href="#" tabindex="13">Choose</a>
+            <a class="single-plan__button button" href="#" tabindex="15">Choose</a>
           </div>
         </div>
       </div>
@@ -369,16 +369,16 @@
           enim minim veniam exercitation
         </p>
         <div class="showcase__wrapper">
-          <div class="showcase__item showcase__item_double  case">
+          <a class="showcase__item showcase__item_double case" href="#" tabindex="16">
             <div class="case__bg">
               <img class="case__bg-item" src="img/showcase/01.jpg" alt="Lorem ipsum dolor sit amet">
             </div>
             <div class="case__info">
               <h3 class="case__info-title">Art Of Coding</h3>
               <p class="case__info-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
-            </div>
-          </div>
-          <div class="showcase__item showcase__item_single case">
+            </div>         
+          </a>
+          <a class="showcase__item showcase__item_single case" href="#" tabindex="17">
             <div class="case__bg">
               <img class="case__bg-item" src="img/showcase/02.jpg" alt="Lorem ipsum dolor sit amet">
             </div>
@@ -386,8 +386,8 @@
               <h3 class="case__info-title">Clean Design</h3>
               <p class="case__info-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
             </div>
-          </div>
-          <div class="showcase__item showcase__item_single case">
+          </a>
+          <a class="showcase__item showcase__item_single case" href="#" tabindex="18">
             <div class="case__bg">
               <img class="case__bg-item" src="img/showcase/03.jpg" alt="Lorem ipsum dolor sit amet">
             </div>
@@ -395,8 +395,8 @@
               <h3 class="case__info-title">Clean Design</h3>
               <p class="case__info-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
             </div>
-          </div>
-          <div class="showcase__item showcase__item_single case">
+          </a>
+          <a class="showcase__item showcase__item_single case" href="#" tabindex="19">
             <div class="case__bg">
               <img class="case__bg-item" src="img/showcase/04.jpg" alt="Lorem ipsum dolor sit amet">
             </div>
@@ -404,8 +404,8 @@
               <h3 class="case__info-title">Clean Design</h3>
               <p class="case__info-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
             </div>
-          </div>
-          <div class="showcase__item showcase__item_single case">
+          </a>
+          <a class="showcase__item showcase__item_single case" href="#" tabindex="20">
             <div class="case__bg">
               <img class="case__bg-item" src="img/showcase/05.jpg" alt="Lorem ipsum dolor sit amet">
             </div>
@@ -413,7 +413,7 @@
               <h3 class="case__info-title">Clean Design</h3>
               <p class="case__info-desc">Lorem ipsum dolor sit amet consectetur adipiscing</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -423,34 +423,34 @@
           <div class="footer__nav">
             <div class="footer__navigation">
               <ul class="footer__nav-list">
-                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="14">Home</a></li>
-                <li class="footer__nav-item"><a href="#about" class="footer__nav-link" tabindex="15">About</a></li>
-                <li class="footer__nav-item"><a href="#latest" class="footer__nav-link" tabindex="16">Products</a></li>
-                <li class="footer__nav-item"><a href="#pricing" class="footer__nav-link" tabindex="17">Pricing</a></li>
-                <li class="footer__nav-item"><a href="#faq" class="footer__nav-link" tabindex="18">Clients</a></li>
-                <li class="footer__nav-item"><a href="#latest" class="footer__nav-link" tabindex="19">Careers</a></li>
-                <li class="footer__nav-item"><a href="#contacts" class="footer__nav-link" tabindex="20">Contact</a></li>
-                <li class="footer__nav-item"><a href="#reviews" class="footer__nav-link" tabindex="21">Terms</a></li>
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="21">Home</a></li>
+                <li class="footer__nav-item"><a href="#about" class="footer__nav-link" tabindex="22">About</a></li>
+                <li class="footer__nav-item"><a href="#latest" class="footer__nav-link" tabindex="23">Products</a></li>
+                <li class="footer__nav-item"><a href="#pricing" class="footer__nav-link" tabindex="24">Pricing</a></li>
+                <li class="footer__nav-item"><a href="#faq" class="footer__nav-link" tabindex="25">Clients</a></li>
+                <li class="footer__nav-item"><a href="#latest" class="footer__nav-link" tabindex="26">Careers</a></li>
+                <li class="footer__nav-item"><a href="#contacts" class="footer__nav-link" tabindex="27">Contact</a></li>
+                <li class="footer__nav-item"><a href="#reviews" class="footer__nav-link" tabindex="28">Terms</a></li>
               </ul>
             </div>
             <div class="footer__social">
               <ul class="footer__nav-list">
-                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="22">Twitter</a></li>
-                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="23">Facebook</a></li>
-                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="24">Instafram</a></li>
-                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="25">YouTube</a></li>
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="29">Twitter</a></li>
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="30">Facebook</a></li>
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="31">Instafram</a></li>
+                <li class="footer__nav-item"><a href="#" class="footer__nav-link" tabindex="32">YouTube</a></li>
               </ul>
             </div>
           </div>
           <div class="footer__contacts contacts">
             <h2 class="contacts__title">Send Us A Note</h2>
             <div class="contacts__form">
-              <form action="#">
-                <input class="input contacts__input" type="text" name="name" placeholder="Name" tabindex="26">
-                <input class="input input contacts__input" type="text" name="email" placeholder="Email" tabindex="27">
-                <input class="input input contacts__input" type="text" name="phone" placeholder="Phone" tabindex="28">
-                <textarea class="input contacts__textarea" name="message" cols="30" rows="10" placeholder="Message" tabindex="29"></textarea>                
-                <input class="button button_submit" type="button" name="submit" value="Submit" tabindex="30">
+              <form action="#" tabindex="33">
+                <input class="input contacts__input" type="text" name="name" placeholder="Name" tabindex="34" aria-label="input name">
+                <input class="input input contacts__input" type="text" name="email" placeholder="Email" tabindex="35" aria-label="input mail">
+                <input class="input input contacts__input" type="text" name="phone" placeholder="Phone" tabindex="36" aria-label="input phone">
+                <textarea class="input contacts__textarea" name="message" cols="30" rows="10" placeholder="Message" tabindex="37" aria-label="input message"></textarea>                
+                <input class="button button_submit" type="button" name="submit" value="Submit" tabindex="38" aria-label="submit form">
               </form>              
             </div>
           </div>
@@ -463,18 +463,18 @@
           </div>
           <div class="footer__copyright">
             <span class="footer__copyright-theme">
-              <a class="footer__copyright-link" href="#">Asentus</a> Theme
+              <a class="footer__copyright-link" href="#" tabindex="39">Asentus</a> Theme
             </span>
             <span class="footer__copyright-line">
               Powered by:
             </span>
             <span>
-              <a class="footer__copyright-link footer__copyright-line" href="#">KeenThenes.com</a>
+              <a class="footer__copyright-link footer__copyright-line" href="#" tabindex="40">KeenThenes.com</a>
             </span>
           </div>
         </div>
       </div>
-      <a class="footer__top" href="#" tabindex="31">TOP</a>   
+      <a class="footer__top" href="#" tabindex="41" aria-label="go to the top of page">TOP</a>   
     </footer>
   </div>
 </body>
