@@ -11,7 +11,7 @@
   .navigation__link {
     position: relative;
     display: block;
-    padding: 17px 0px 15px 17px;
+    padding: 17px 15px 15px 17px;
     font-size: 1.2rem;
     text-decoration: none;
     text-transform: uppercase;
