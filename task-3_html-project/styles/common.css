@@ -71,12 +71,13 @@ h2 {
   padding: 17px 15px 18px;
   background: rgb(245 245 245 / 10%);
   color: #ffffff;
-  outline: none;
+  outline: 1px solid #404146; 
   cursor: pointer;
 }
 
 .input:focus {
   color: #616161;
+  outline: 1px solid #666666; 
 }
 
 .header__container,
