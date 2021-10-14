@@ -2,7 +2,7 @@ let input = "aaaabbcdefffffffg";
 // let input = "boopdedoop";
 // let input = "helloookat";
 
-function Duplicates(input) {
+function duplicates(input) {
 
   if (typeof input === "string") {
     let outputArr = [];
