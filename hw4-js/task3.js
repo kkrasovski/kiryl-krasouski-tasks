@@ -20,7 +20,7 @@ function Duplicates(input) {
         bracketOpen = true;
       }
   
-      if (inputArr[i] != inputArr[i + 1] && bracketOpen === true) {
+      if (inputArr[i] !== inputArr[i + 1] && bracketOpen === true) {
         outputArr.push(inputArr[i]);
         outputArr.push("]");
         bracketOpen = false;
