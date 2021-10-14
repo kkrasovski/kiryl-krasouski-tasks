@@ -1,6 +1,6 @@
 let input = "hello worldd";
 
-function stringLength() {
+function stringLength(input) {
   if (typeof input === "string") {    
     let output = input.split(" ").map((item) => `${item} ${item.length}`);
     return output;
