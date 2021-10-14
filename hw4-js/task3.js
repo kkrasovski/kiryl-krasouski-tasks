@@ -37,7 +37,3 @@ function Duplicates(input) {
   }  
 }
 console.log(Duplicates(input));
-
-
-
-
