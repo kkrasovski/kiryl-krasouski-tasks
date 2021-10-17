@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>CodeWars 5</title>
+  </head>
+  <body>
+    <!-- 5) codewars task#2 https://www.codewars.com/kata/523f5d21c841566fde000009 -->
+    <script>
+      function arrayDiff(a, b) {
+        let result = [];
+        a.forEach((item) => {
+          if (!b.includes(item)) {
+            result.push(item);
+          }
+        });
+        return result;
+      }
+      arrayDiff([1, 2, 3], [1, 2]); // [3]
+    </script>
+  </body>
+</html>
