@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>1</title>
+  </head>
+  <body>
+    <script>
+      const multiplyTwo = (n) => n * 2;
+      const minusFour = (n) => n - 4;
+
+      function pipe(...argArray) {
+        return function (x) {
+          let result = x;
+          for (let i = 0; i < argArray.length; i++) {
+            let func = argArray[i];
+            result = func(result);
+          }
+          return result;
+        };
+      }
+
+      const res = pipe(multiplyTwo, minusFour)(10);
+      console.log(res)
+    </script>
+  </body>
+</html>
