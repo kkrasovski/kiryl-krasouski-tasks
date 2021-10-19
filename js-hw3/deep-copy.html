@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Copy</title>
+</head>
+
+<body>
+  <script>
+    let obj = {
+      a: 1,
+      b: {
+        c: 2,
+        d: {
+          e: 3,
+        }
+      },
+      f: 3,
+    }
+
+    function copy(obj) {
+      let result = {};
+
+      for (let i in obj) {
+        if (obj[i] instanceof Object) {
+          result[i] = copy(obj[i]);
+          continue;
+        }
+        result[i] = obj[i];
+      }
+      return result
+    }
+
+    console.log(copy(obj))
+  </script>
+</body>
+
+</html>
