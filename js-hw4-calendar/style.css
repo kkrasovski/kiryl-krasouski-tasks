@@ -1,6 +1,6 @@
 html {
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .container__calendar {
   position: relative;
@@ -12,9 +12,13 @@ html {
   box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);
 }
 
+.container__calendar_inactive {
+  opacity: 0.1;
+}
+
 .calendar__season {
   padding: 15px;
-  background: #B05F6D;
+  background: #b05f6d;
 }
 
 .season {
@@ -22,7 +26,8 @@ html {
   align-items: center;
 }
 
-.season__control, .season__select {
+.season__control,
+.season__select {
   padding: 15px;
 }
 
@@ -43,8 +48,8 @@ html {
 .season__handler {
   height: 66px;
   width: 100%;
-  border: none;  
-  padding: 15px;  
+  border: none;
+  padding: 15px;
   font-size: 1.5rem;
   text-align: center;
   color: #ffffff;
@@ -57,7 +62,7 @@ html {
 }
 
 .season__handler_helper {
-  background: #B05F6D;
+  background: #b05f6d;
   -webkit-appearance: auto;
   -moz-appearance: auto;
   appearance: auto;
@@ -65,11 +70,11 @@ html {
 }
 
 .season__arrow_mirrored {
-  transform: scaleX(-1);  
+  transform: scaleX(-1);
 }
 
 .calendar__days {
-  display: flex;  
+  display: flex;
 }
 
 .calendar__day-of-week {
@@ -83,27 +88,27 @@ html {
 }
 
 .calendar__day-of-week:hover {
-background: #B05F6D;
-color:#FFC153;
+  background: #b05f6d;
+  color: #ffc153;
 }
 
 .calendar__grid {
   display: flex;
-  flex-wrap: wrap;   
+  flex-wrap: wrap;
   background: #f3f3f3;
 }
 
 .calendar__day {
   padding: 15px;
-  width: calc(100%/7);
- box-sizing: border-box;
- text-align: center;
+  width: calc(100% / 7);
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .calendar__day:hover {
   font-weight: 700;
   background: #ffffff;
-  color: #47B39D;  
+  color: #47b39d;
   cursor: pointer;
 }
 
@@ -117,8 +122,8 @@ color:#FFC153;
   border-radius: 15px;
   background: #ffffff;
   -webkit-box-shadow: 0px 0px 44px 9px rgb(34 60 80 / 11%);
-    -moz-box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);
-    box-shadow: 0px 0px 44px 9px rgb(34 60 80 / 11%);
+  -moz-box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);
+  box-shadow: 0px 0px 44px 9px rgb(34 60 80 / 11%);
 }
 
 .container__settings-btn:hover {
@@ -126,15 +131,22 @@ color:#FFC153;
 }
 
 .container__pop-up {
-  position: relative;
+  position: absolute;
+  left: calc(50% - 250px);
+  top: 35%;
   width: 500px;
   margin: 0 auto;
   padding: 35px;
   box-sizing: border-box;
   border: 1px solid #f3f3f3;
+  background: #ffffff;;
   -webkit-box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);
   -moz-box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);
-  box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);  
+  box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);
+}
+
+.container__pop-up_close {
+  display: none;
 }
 
 .pop-up__title {
@@ -146,15 +158,15 @@ color:#FFC153;
   text-align: center;
 }
 
-.pop-up__select {  
+.pop-up__select {
   width: 100%;
   margin-bottom: 25px;
-  border: none;  
-  padding: 10px;  
+  border: none;
+  padding: 10px;
   font-size: 1.2rem;
   text-align: center;
   color: #ffffff;
-  background: #B05F6D;
+  background: #b05f6d;
   cursor: pointer;
 }
 
@@ -167,9 +179,9 @@ color:#FFC153;
   display: block;
   margin: 15px auto 0;
   width: 100%;
- padding: 1rem 0;
- border-radius: 5px;
- border: 0;
+  padding: 1rem 0;
+  border-radius: 5px;
+  border: 0;
 }
 
 .pop-up__close-btn {
@@ -181,9 +193,9 @@ color:#FFC153;
 
 .btn {
   font-weight: 700;
-  background: #47B39D;
+  background: #47b39d;
   text-transform: uppercase;
-  cursor: pointer;  
+  cursor: pointer;
 }
 
 .btn:hover {
