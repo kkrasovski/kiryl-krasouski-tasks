@@ -1,122 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/styles/reset.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Calendar</title>
-  </head>
-  <body>
-    <div class="container">
-      <article class="container__calendar calendar">
-        <section class="calendar__section"></section>
-        <section class="calendar__season season">
-          <div class="season__control">
-            <img
-              class="season__arrow season__arrow_mirrored"
-              src="assets/icons/arrow.svg"
-            />
-          </div>
-          <div class="season__select">
-            <select class="season__handler" name="month" id="month">
-              <option value="January">January</option>
-              <option value="February">February</option>
-              <option value="March">March</option>
-              <option value="April">April</option>
-              <option value="May">May</option>
-              <option value="June">June</option>
-              <option value="July">July</option>
-              <option value="August">August</option>
-              <option value="September">September</option>
-              <option value="October" selected="selected">October</option>
-              <option value="November">November</option>
-              <option value="December">December</option>
-            </select>
-          </div>
-          <div class="season__control season__control">
-            <img class="season__arrow" src="assets/icons/arrow.svg" />
-          </div>
-        </section>
-        <section class="calendar__days">
-          <div class="calendar__day-of-week" href="#">Sun</div>
-          <div class="calendar__day-of-week" href="#">Mon</div>
-          <div class="calendar__day-of-week" href="#">Tue</div>
-          <div class="calendar__day-of-week" href="#">Wed</div>
-          <div class="calendar__day-of-week" href="#">Thu</div>
-          <div class="calendar__day-of-week" href="#">Fri</div>
-          <div class="calendar__day-of-week" href="#">Sat</div>
-        </section>
-        <section class="calendar__grid">
-          <div class="calendar__day day">27</div>
-          <div class="calendar__day day">28</div>
-          <div class="calendar__day day">29</div>
-          <div class="calendar__day day">30</div>
-          <div class="calendar__day day">1</div>
-          <div class="calendar__day day">2</div>
-          <div class="calendar__day day">3</div>
-          <div class="calendar__day day">4</div>
-          <div class="calendar__day day">5</div>
-          <div class="calendar__day day">6</div>
-          <div class="calendar__day day">7</div>
-          <div class="calendar__day day">8</div>
-          <div class="calendar__day day">9</div>
-          <div class="calendar__day day">10</div>
-          <div class="calendar__day day">11</div>
-          <div class="calendar__day day">12</div>
-          <div class="calendar__day day">13</div>
-          <div class="calendar__day day">14</div>
-          <div class="calendar__day day">15</div>
-          <div class="calendar__day day">16</div>
-          <div class="calendar__day day">17</div>
-          <div class="calendar__day day">18</div>
-          <div class="calendar__day day">19</div>
-          <div class="calendar__day day">20</div>
-          <div class="calendar__day day">21</div>
-          <div class="calendar__day day">22</div>
-          <div class="calendar__day day">23</div>
-          <div class="calendar__day day">24</div>
-          <div class="calendar__day day">25</div>
-          <div class="calendar__day day">26</div>
-          <div class="calendar__day day">27</div>
-          <div class="calendar__day day">28</div>
-          <div class="calendar__day day">29</div>
-          <div class="calendar__day day">30</div>
-          <div class="calendar__day day">31</div>
-          <div class="calendar__day day">1</div>
-          <div class="calendar__day day">2</div>
-          <div class="calendar__day day">3</div>
-          <div class="calendar__day day">4</div>
-          <div class="calendar__day day">5</div>
-          <div class="calendar__day day">6</div>
-          <div class="calendar__day day">7</div>
-        </section>        
-          <a class="container__settings-btn" href="#"><img src="assets/icons/controls.svg" alt="settings"></a>        
-      </article>
-      <div class="container__pop-up container__pop-up_close pop-up">
-<span class="pop-up__title">Settings</span>
-<label class="pop-up__label" for="first-day">select first day of week:</label>
-<select class="pop-up__select" name="first-day" name="month" id="month">
-  <option value="January">January</option>
-  <option value="February">February</option>
-</select>
-<label class="pop-up__label" for="color-scheme">select theme's color:</label>
-<select class="pop-up__select" name="first-day" name="color" id="color-scheme">
-  <option value="multi">Multicolor</option>
-  <option value="dark">Dark</option>
-  <option value="white">White</option>
-</select>
-<input class="pop-up__btn btn" type="button" value="Save">
-<a class="pop-up__close-btn" href="#"><img src="assets/icons/close.svg" alt="close"></a>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles/reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <title>Calendar</title>
+</head>
+
+<body>
+  <div class="container">
+    <article class="container__calendar calendar">
+      <section class="calendar__section"></section>
+      <section class="calendar__season season">
+        <div class="season__control">
+          <img class="season__arrow season__arrow_mirrored" src="assets/icons/arrow.svg" />
+        </div>
+        <div class="season__select">
+          <select class="season__handler" name="month" id="month">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October" selected="selected">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        </div>
+        <div class="season__control season__control">
+          <img class="season__arrow" src="assets/icons/arrow.svg" />
+        </div>
+      </section>
+      <section class="calendar__days">
+        <div class="calendar__day-of-week" href="#">Sun</div>
+        <div class="calendar__day-of-week" href="#">Mon</div>
+        <div class="calendar__day-of-week" href="#">Tue</div>
+        <div class="calendar__day-of-week" href="#">Wed</div>
+        <div class="calendar__day-of-week" href="#">Thu</div>
+        <div class="calendar__day-of-week" href="#">Fri</div>
+        <div class="calendar__day-of-week" href="#">Sat</div>
+      </section>
+      <section class="calendar__grid">
+        <div class="calendar__day day">27</div>
+        <div class="calendar__day day">28</div>
+        <div class="calendar__day day">29</div>
+        <div class="calendar__day day">30</div>
+        <div class="calendar__day day">1</div>
+        <div class="calendar__day day">2</div>
+        <div class="calendar__day day">3</div>
+        <div class="calendar__day day">4</div>
+        <div class="calendar__day day">5</div>
+        <div class="calendar__day day">6</div>
+        <div class="calendar__day day">7</div>
+        <div class="calendar__day day">8</div>
+        <div class="calendar__day day">9</div>
+        <div class="calendar__day day">10</div>
+        <div class="calendar__day day">11</div>
+        <div class="calendar__day day">12</div>
+        <div class="calendar__day day">13</div>
+        <div class="calendar__day day">14</div>
+        <div class="calendar__day day">15</div>
+        <div class="calendar__day day">16</div>
+        <div class="calendar__day day">17</div>
+        <div class="calendar__day day">18</div>
+        <div class="calendar__day day">19</div>
+        <div class="calendar__day day">20</div>
+        <div class="calendar__day day">21</div>
+        <div class="calendar__day day">22</div>
+        <div class="calendar__day day">23</div>
+        <div class="calendar__day day">24</div>
+        <div class="calendar__day day">25</div>
+        <div class="calendar__day day">26</div>
+        <div class="calendar__day day">27</div>
+        <div class="calendar__day day">28</div>
+        <div class="calendar__day day">29</div>
+        <div class="calendar__day day">30</div>
+        <div class="calendar__day day">31</div>
+        <div class="calendar__day day">1</div>
+        <div class="calendar__day day">2</div>
+        <div class="calendar__day day">3</div>
+        <div class="calendar__day day">4</div>
+        <div class="calendar__day day">5</div>
+        <div class="calendar__day day">6</div>
+        <div class="calendar__day day">7</div>
+      </section>
+      <a class="container__settings-btn" href="#"><img src="assets/icons/controls.svg" alt="settings"></a>
+    </article>
+    <div class="container__pop-up container__pop-up_close pop-up">
+      <span class="pop-up__title">Settings</span>
+      <label class="pop-up__label" for="first-day">select first day of week:</label>
+      <select class="pop-up__select" name="first-day" id="month">
+        <option value="January">January</option>
+        <option value="February">February</option>
+      </select>
+      <label class="pop-up__label" for="color-scheme">select theme's color:</label>
+      <select class="pop-up__select" name="color" id="color-scheme">
+        <option value="multi">Multicolor</option>
+        <option value="dark">Dark</option>
+        <option value="white">White</option>
+      </select>
+      <input class="pop-up__btn btn" type="button" value="Save">
+      <a class="pop-up__close-btn" href="#"><img class="close__icon" src="assets/icons/close.svg" alt="close"></a>
     </div>
-    <script src="assets/js/controls.js"></script>
-  </body>
+  </div>
+  <script src="assets/js/controls.js"></script>
+</body>
 </html>
