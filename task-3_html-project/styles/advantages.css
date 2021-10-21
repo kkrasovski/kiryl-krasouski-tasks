@@ -1,0 +1,74 @@
+.advantages {
+  background: #fafafa;
+}
+
+.advantages__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages__single {
+  width: 33.33%;
+  padding: 40px 70px 43px 50px;
+  border: 1px solid rgba(238, 238, 238, 0.3);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.advantages__single:hover .advantage__icon {
+  animation: introtop;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.advantage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #ffffff;
+  font-size: 1.25rem;
+}
+
+.advantage__icon {
+  margin: 10px 0;
+  display: block;
+}
+
+.advantage__title {
+  margin: 13px 0 14px;
+}
+
+.advantage__desc {
+  margin-bottom: 12px;
+}
+
+.advantage__title {
+  font-weight: bold;
+}
+
+@keyframes introtop {
+  100% {
+    opacity: 0;
+    margin: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  70% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  30% {
+    opacity: 0.7;
+  }
+
+  0% {
+    opacity: 1;
+  }
+}

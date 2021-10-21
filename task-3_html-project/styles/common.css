@@ -1,0 +1,99 @@
+html {
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: "Hind", sans-serif;
+  color: #a1aaaf;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #50545f;
+}
+
+.block-title {
+  font-size: 1.85rem;
+  font-weight: bold;
+  color: #505767;
+}
+
+.title {
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.title-desc {
+  font-size: 1.25rem;
+}
+
+.button {
+  display: inline;
+  padding: 15px 30px;
+  color: #ffffff;
+  background: #797979;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.button:hover {
+  border: 0;
+  background: #1cb9ca;
+}
+
+.button_accented {
+  background: #49b4b4;
+}
+
+.button_submit {
+  background: #49b4b4;
+  border: 0;
+  cursor: pointer;
+}
+
+.button_submit:active {
+  background: #2b6969;  
+  cursor: pointer;
+}
+
+.button_thin {
+  border: 1px solid #ffffff;
+  background: transparent;
+}
+
+.input {
+  border: 0;
+  padding: 17px 15px 18px;
+  background: rgb(245 245 245 / 10%);
+  color: #ffffff;
+  outline: 1px solid #404146; 
+  cursor: pointer;
+}
+
+.input:focus {
+  color: #616161;
+  outline: 1px solid #666666; 
+}
+
+.header__container,
+.advantages__container,
+.latest__container,
+.partners__container,
+.reviews__container,
+.plans__container,
+.clients__container,
+.showcase__container,
+.sticky-menu__container,
+.footer__container {
+  width: 100%;
+  max-width: 1190px;
+  padding: 0 25px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
