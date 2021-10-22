@@ -1,0 +1,18 @@
+.partners {
+  background: #fafafa;
+}
+
+.companies {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.companies__single-img {
+  width: 190px;
+}
+
+.companies__single-img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

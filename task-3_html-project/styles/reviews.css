@@ -1,0 +1,40 @@
+.reviews__single {
+  width: 68%;
+  padding-left: 40px;
+}
+
+.review__line {
+  margin: 10px 0 20px;
+}
+
+.review__author {
+  margin: -3px 0 20px;
+  font-size: 1.3rem;
+  letter-spacing: -0.1px;
+}
+
+.review__name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.review__body {
+  position: relative;
+  font-size: 1.4rem;
+  letter-spacing: 0.1px;
+}
+
+.review__body::before {  
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: -30px;   
+  font-size: 4rem;
+  font-style: italic;
+  color: #1cb9ca;
+  content: '"';
+}
+
+.reviews__title {
+  padding-bottom: 15px;
+}
