@@ -22,16 +22,16 @@
     }
 
     function copy(obj) {
-      let result = {};
+      let newObj = {};
 
-      for (let i in obj) {
-        if (obj[i] instanceof Object) {
-          result[i] = copy(obj[i]);
+      for (let key in obj) {
+        if (obj[key] instanceof Object) {
+          newObj[key] = copy(obj[key]);
           continue;
         }
-        result[i] = obj[i];
+        newObj[key] = obj[key];
       }
-      return result
+      return newObj
     }
 
     console.log(copy(obj))
