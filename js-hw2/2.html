@@ -17,17 +17,14 @@
     function memo() {
       let cache = {};
 
-      return (...args) => {
-        let n = args;
-        if (n in cache) {
-          console.log('from cache');
-          console.log(cache[n]);
-          return cache[n];
+      return (...args) => {        
+        if (args in cache) {
+          console.log('from cache');          
+          return cache[args];
         } else {
           console.log('new calculating');
-          let result = sum(...n);
-          cache[n] = result;
-          console.log(result);
+          let result = sum(...args);
+          cache[args] = result;          
           return result;
         }
       }
