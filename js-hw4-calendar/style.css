@@ -61,6 +61,10 @@ html {
   appearance: none;
 }
 
+.season__item:nth-child(2n) {
+  background: #522952;
+}
+
 .season__handler_helper {
   background: #b05f6d;
   -webkit-appearance: auto;
