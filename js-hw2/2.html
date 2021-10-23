@@ -15,7 +15,7 @@
     const memedSum = memo(sum);
 
     function memo() {
-      let cache = {};
+      const cache = {};
 
       return (...args) => {        
         if (args in cache) {
@@ -23,7 +23,7 @@
           return cache[args];
         } else {
           console.log('new calculating');
-          let result = sum(...args);
+          const result = sum(...args);
           cache[args] = result;          
           return result;
         }
