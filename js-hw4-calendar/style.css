@@ -131,7 +131,7 @@ html {
 }
 
 .container__settings-btn:hover {
-  border-radius: 15px 0 15px 0px;
+  border-radius: 15px 0;
 }
 
 .container__pop-up {
