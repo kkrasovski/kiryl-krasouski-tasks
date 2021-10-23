@@ -73,7 +73,7 @@ html {
   outline: auto;
 }
 
-.season__arrow_mirrored {
+.arrow__icon_mirrored {
   transform: scaleX(-1);
 }
 
