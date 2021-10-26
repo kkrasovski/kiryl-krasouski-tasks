@@ -1,64 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Calendar</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/styles/reset.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <title>Calendar</title>
-</head>
-
-<body>
-  <div class="container">
-    <article class="container__calendar calendar">
-      <section class="calendar__section"></section>
-      <section class="calendar__season season">
-        <div class="season__control arrow arrow_prev">
-          <button class="arrow__icon arrow__icon_mirrored"></button>
-        </div>
-        <div class="season__select">
-          <h1 class="season__handler" name="month" id="months"></h1>
-        </div>
-        <div class="season__control arrow arrow_next">
-          <button class="arrow__icon"></button>
-        </div>
-      </section>
-      <section class="calendar__days">
-        <div class="calendar__day-of-week" href="#">Mon</div>
-        <div class="calendar__day-of-week" href="#">Tue</div>
-        <div class="calendar__day-of-week" href="#">Wed</div>
-        <div class="calendar__day-of-week" href="#">Thu</div>
-        <div class="calendar__day-of-week" href="#">Fri</div>
-        <div class="calendar__day-of-week" href="#">Sat</div>
-        <div class="calendar__day-of-week" href="#">Sun</div>
-      </section>
-      <section class="calendar__grid">
-      </section>
-      <button class="container__settings-btn" href="#"><img src="assets/icons/controls.svg" alt="settings"></button>
-    </article>
-    <div class="container__pop-up container__pop-up_close pop-up">
-      <h2 class="pop-up__title">Settings</h2>
-      <label class="pop-up__label" for="first-day">select first day of week:</label>
-      <select class="pop-up__select" name="first-day" id="month">
-        <option class="pop-up__select-item" value="January">January</option>
-        <option class="pop-up__select-item" value="February">February</option>
-      </select>
-      <label class="pop-up__label" for="color-scheme">select theme's color:</label>
-      <select class="pop-up__select" name="color" id="color-scheme">
-        <option class="pop-up__select-item" value="multi">Multicolor</option>
-        <option class="pop-up__select-item" value="dark">Dark</option>
-        <option class="pop-up__select-item" value="white">White</option>
-      </select>      
-      <button class="pop-up__btn btn">Save</button>
-      <button class="pop-up__close-btn"><img class="close__icon" src="assets/icons/close.svg"></button>
-    </div>
-  </div>
-  <script src="assets/js/calendar.js"></script>
-  <script src="assets/js/popup.js"></script>
-</body>
+  <body>
+    <div class="container">
+      <article class="container__calendar calendar">
+        <section class="calendar__section"></section>
+        <section class="calendar__season season">
+          <div class="season__control arrow arrow_prev">
+            <button class="arrow__icon arrow__icon_mirrored"></button>
+          </div>
+          <div class="season__select">
+            <h1 class="season__handler" name="month" id="months"></h1>            
+          </div>
+          <div class="season__control arrow arrow_next">
+            <button class="arrow__icon"></button>
+          </div>
+        </section>
+        
+          <section class="calendar__days">
+            
+            <div class="calendar__day-of-week" href="#">Mon</div>
+            <div class="calendar__day-of-week" href="#">Tue</div>
+            <div class="calendar__day-of-week" href="#">Wed</div>
+            <div class="calendar__day-of-week" href="#">Thu</div>
+            <div class="calendar__day-of-week" href="#">Fri</div>
+            <div class="calendar__day-of-week" href="#">Sat</div>
+            <div class="calendar__day-of-week" href="#">Sun</div>
+          </section>
+        
+        <section class="calendar__grid"></section>
+        <button class="container__settings-btn">
+          <img src="assets/icons/controls.svg" alt="settings" />
+        </button>
+      </article>
+      <div class="container__pop-up container__pop-up_close pop-up">
+        <h2 class="pop-up__title">Settings</h2>
+        <label class="pop-up__label" for="first-day"
+          >select first day of week:</label
+        >
+        <select class="pop-up__select" name="first-day" id="month">
+          <option class="pop-up__select-item" value="mon">Mon</option>
+          <option class="pop-up__select-item" value="sun">Sun</option>          
+        </select>
+        <label class="pop-up__label" for="color-scheme"
+          >select theme's color:</label
+        >
+        <select class="pop-up__select" name="color" id="color-scheme">
+          <option class="pop-up__select-item" value="multi">Multicolor</option>
+          <option class="pop-up__select-item" value="dark">Dark</option>
+          <option class="pop-up__select-item" value="white">White</option>
+        </select>
+        <button class="pop-up__btn btn" id="save">Save</button>
+        <button class="pop-up__close-btn">
+          <img class="close__icon" src="assets/icons/close.svg" />
+        </button>
+      </div>
+    </div> 
+    <script src="assets/js/calendar.js"></script>
+    <script src="assets/js/popup.js"></script>
+  </body>
 </html>
