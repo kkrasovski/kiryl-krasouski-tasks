@@ -15,8 +15,7 @@
 }
 
 .todo__add {
-  margin-bottom: 30px;
-  background: #e1e1e1;
+  margin-bottom: 30px;  
   padding: 15px 0;
 }
 
@@ -24,31 +23,56 @@
   margin-bottom: 15px;
 }
 
+.todo-task {
+  display: flex;
+  align-items: center;
+}
+
+.todo__input_text {
+  padding: 4px;
+  font-size: 1.2rem;
+}
 
 .todo-task_box {
   padding: 5px;
 }
 
 .todo-task__done {
-border: 1px solid salmon;
 flex-basis: 30px;
 text-align: center;
 }
 
-.todo-task__name {
-  border: 1px solid salmon;
+.todo-task__name {  
   flex-grow: 3;
-  text-align: center;
+  text-align: left;
 }
 
 .todo-task__edit {
-  border: 1px solid salmon;
-  
   text-align: center;
 }
 
-.todo-task__del {
-  border: 1px solid salmon;
- 
+.todo-task__del { 
   text-align: center;
+}
+
+.task__ckeck {
+  width: 20px;
+  height: 20px;
+}
+.todo-task__edit {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: url(assets/icons/edit.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.todo-task__del {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: url(assets/icons/del.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;  
 }

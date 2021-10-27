@@ -190,6 +190,10 @@ html {
   text-align: center;
 }
 
+.pop-up__date {
+  text-align: center;
+}
+
 .pop-up__select {
   width: 100%;
   margin-bottom: 25px;
