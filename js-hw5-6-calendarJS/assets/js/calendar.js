@@ -1,5 +1,7 @@
 const date = new Date();
+console.log(date)
 date.setDate(1);
+console.log(date)
 const daysLabelsMon = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const daysLabelsSun = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const monthLabel = [
@@ -61,7 +63,7 @@ const renderCalendar = () => {
   document.querySelector(".season__handler").innerHTML =
     monthLabel[date.getMonth()];
 
-  let days = "";
+
 
   for (let i = 1; i <= lastDay; i++) {
     let calendarSingleDay = document.createElement("div");
@@ -78,19 +80,9 @@ const renderCalendar = () => {
     calendarSingleDay.addEventListener("click", (e) => {
       todoOpen(e);     
     });
-    // if (
-    //   i === new Date().getDate() &&
-    //   date.getMonth() === new Date().getMonth()
-    // ) {
-    //   days += `<div class="calendar__day day_current">${i}</div>`;
-    // } else {
-    //   days += `<div class="calendar__day day">${i}</div>`;
-    // }
   }
 
   for (let j = 1; j <= nextDays; j++) {
-    // days += `<div class="calendar__day day_next">${j}</div>`;
-    // calendarGrid.innerHTML = days;
     let calendarSingleDay = document.createElement("div");
     calendarSingleDay.className = "calendar__day day_next";
     calendarSingleDay.innerText = j;
@@ -100,9 +92,8 @@ const renderCalendar = () => {
     });
   }
 
-  //for (let x = firstDayIndex; x > 0; x--) {
-    for (let x = 0 ; x < firstDayIndex; x++) {
-    // days += `<div class="calendar__day day_prev">${prevLastDay - x + 1}</div>`
+ 
+    for (let x = 0 ; x < firstDayIndex; x++) {  
     let calendarSingleDay = document.createElement("div");
     calendarSingleDay.className = "calendar__day day_prev";
     calendarSingleDay.innerText = prevLastDay - x;
@@ -112,18 +103,6 @@ const renderCalendar = () => {
     });
   }
 
-  // open todo
-
-  // function dateForTodo() {
-  //   let daysArr = document.querySelectorAll(".calendar__day");
-  //   for (let i = 0; i < daysArr.length; i++) {
-  //     daysArr[i].addEventListener("click", (e) => {
-  //       console.log(e.target);
-  //     });
-  //   }
-  // }
-
-  // dateForTodo();
 };
 renderCalendar();
 
@@ -167,6 +146,7 @@ function SelectFirstDay() {
     firstWeekDayHandler.options[firstWeekDayHandler.selectedIndex].value;
   localStorage.setItem("firstWeekDay", firstWeekDay);
   console.log(localStorage);
+  console.log(date)
   setFirstDay();
 }
 

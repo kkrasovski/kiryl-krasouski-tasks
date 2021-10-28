@@ -4,7 +4,7 @@ let todoWrapper = document.querySelector(".todo__wrapper");
 let delBtn = document.querySelector(".todo-task__del");
 let totalTasks = document.querySelector(".todo__counter");
 
-let todoList = { 1: "1" };
+let todoList = {};
 let counter = 0;
 
 todoAddBtn.addEventListener("click", (e) => {
