@@ -16,9 +16,9 @@ const monthLabel = [
   "November",
   "December",
 ];
-
+let calendarGrid = document.querySelector(".calendar__grid");
 const renderCalendar = () => {
-  const calendarGrid = document.querySelector(".calendar__grid");
+
 
   const lastDayIndex = new Date(
     date.getFullYear(),
@@ -40,9 +40,12 @@ const renderCalendar = () => {
 
   let firstDayIndex = date.getDay();
 
-  let nextDays = 7 - lastDayIndex - 1; 
+  let nextDays = 7 - lastDayIndex - 1;
 
-  if (localStorage.firstWeekDay == "mon" || localStorage.firstWeekDay == undefined) {
+  if (
+    localStorage.firstWeekDay == "mon" ||
+    localStorage.firstWeekDay == undefined
+  ) {
     firstDayIndex = date.getDay() - 1;
     if (date.getDay() == 0) {
       firstDayIndex = date.getDay() - 1 + 7;
@@ -55,38 +58,77 @@ const renderCalendar = () => {
     }
   }
 
-
-
   document.querySelector(".season__handler").innerHTML =
     monthLabel[date.getMonth()];
 
   let days = "";
 
-  for (let x = firstDayIndex; x > 0; x--) {
-    days += `<div class="calendar__day day_prev">${prevLastDay - x + 1}</div>`;
-  }
-
   for (let i = 1; i <= lastDay; i++) {
+    let calendarSingleDay = document.createElement("div");
+    calendarSingleDay.innerText = i;
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      days += `<div class="calendar__day day_current">${i}</div>`;
+      calendarSingleDay.className = "calendar__day day_current";
     } else {
-      days += `<div class="calendar__day day">${i}</div>`;
+      calendarSingleDay.className = "calendar__day day";
     }
+    calendarGrid.append(calendarSingleDay);
+    calendarSingleDay.addEventListener("click", (e) => {
+      console.log(e.target);
+    });
+    // if (
+    //   i === new Date().getDate() &&
+    //   date.getMonth() === new Date().getMonth()
+    // ) {
+    //   days += `<div class="calendar__day day_current">${i}</div>`;
+    // } else {
+    //   days += `<div class="calendar__day day">${i}</div>`;
+    // }
   }
 
   for (let j = 1; j <= nextDays; j++) {
-    days += `<div class="calendar__day day_next">${j}</div>`;
-    calendarGrid.innerHTML = days;
+    // days += `<div class="calendar__day day_next">${j}</div>`;
+    // calendarGrid.innerHTML = days;
+    let calendarSingleDay = document.createElement("div");
+    calendarSingleDay.className = "calendar__day day_next";
+    calendarSingleDay.innerText = j;
+    calendarGrid.append(calendarSingleDay);
+    calendarSingleDay.addEventListener("click", (e) => {
+      console.log(e.target);
+    });
   }
+
+  //for (let x = firstDayIndex; x > 0; x--) {
+    for (let x = 0 ; x < firstDayIndex; x++) {
+    // days += `<div class="calendar__day day_prev">${prevLastDay - x + 1}</div>`
+    let calendarSingleDay = document.createElement("div");
+    calendarSingleDay.className = "calendar__day day_prev";
+    calendarSingleDay.innerText = prevLastDay - x;
+    calendarGrid.prepend(calendarSingleDay);
+    calendarSingleDay.addEventListener("click", (e) => {
+      console.log(e.target);
+    });
+  }
+
+  // open todo
+
+  // function dateForTodo() {
+  //   let daysArr = document.querySelectorAll(".calendar__day");
+  //   for (let i = 0; i < daysArr.length; i++) {
+  //     daysArr[i].addEventListener("click", (e) => {
+  //       console.log(e.target);
+  //     });
+  //   }
+  // }
+
+  // dateForTodo();
 };
 renderCalendar();
 
-
 // draw names of the day
-function setFirstDay() {  
+function setFirstDay() {
   const daysOfWeek = document.querySelector(".calendar__days");
   let daysNames = "";
   if (localStorage.firstWeekDay == "sun") {
@@ -105,11 +147,13 @@ function setFirstDay() {
 document.querySelector(".arrow_prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
   console.log(date);
+  calendarGrid.innerHTML = "";
   renderCalendar();
 });
 
 document.querySelector(".arrow_next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
+  calendarGrid.innerHTML = "";
   renderCalendar();
   console.log(date);
 });
@@ -126,15 +170,24 @@ function SelectFirstDay() {
   setFirstDay();
 }
 
-
-
-
 let saveSettings = document.querySelector("#save");
 
 saveSettings.addEventListener("click", () => {
   SelectFirstDay();
   popUpHandler();
+  calendarGrid.innerHTML = "";
   renderCalendar();
 });
 
+// function dateForTodo() {
+// let daysArr = document.querySelectorAll('.calendar__day');
+// console.log(daysArr[0])
+// for (let i=0; i< daysArr.length; i++) {
+// daysArr[i].addEventListener("click", (e) => {
+//   console.log(e.target)
+// })
 
+// }
+// }
+
+// dateForTodo();
