@@ -37,9 +37,8 @@
   padding: 5px;
 }
 
-.todo-task__done {
-flex-basis: 30px;
-text-align: center;
+.todo-task_done {
+  background: salmon;
 }
 
 .todo-task__name {  
