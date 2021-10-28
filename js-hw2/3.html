@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>3 "Apply polyfill"</title>
+  </head>
+  <body>
+    <script>
+      const user = {
+        name: "Kirill",
+        id: 1,
+        age: 19,
+      };
+
+      function registration(...args) {
+        if (this.age >= 18) {
+          console.log(`${this.name}, registration allowed for you`);
+          console.log(`domain: ${args[0]}, date: ${args[1]}`);
+        } else {
+          console.log(`${this.name}, registration is forbidden for you`);
+          console.log(`domain: ${args[0]}, date: ${args[1]}`);
+        }
+      }
+
+      function apply(fn, context, args) {
+        const uniqId = Math.random().toString();
+        context[uniqId] = fn;
+        const result = context[uniqId](...args);
+        delete context[uniqId];
+        return result;
+      }
+
+      apply(registration, user, ["google.com", new Date()]);
+      
+    </script>
+  </body>
+</html>

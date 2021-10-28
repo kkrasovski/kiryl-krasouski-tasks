@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <title>2 - Memo pattern</title>
+</head>
+<body>
+  <!-- // Realize memo pattern
+  // const sum = (a,b) => a + b;
+  // const memedSum = memo(sum);
+  // console.log(memedSum(1,2));
+  // console.log(memedSum(1,2)); // second time there is no calculation, we get answer from cache -->
+  <script>
+
+    const sum = (a, b) => a + b;
+    const memedSum = memo(sum);
+
+    function memo() {
+      const cache = {};
+
+      return (...args) => {        
+        if (args in cache) {
+          console.log('from cache');          
+          return cache[args];
+        } else {
+          console.log('new calculating');
+          const result = sum(...args);
+          cache[args] = result;          
+          return result;
+        }
+      }
+    }
+
+    console.log(memedSum(1, 4));
+    console.log(memedSum(1, 4));
+    console.log(memedSum(1, 4));
+    console.log(memedSum(1, 4));
+    
+  </script>
+</body>
+
+</html>
