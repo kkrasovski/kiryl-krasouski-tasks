@@ -76,7 +76,7 @@ const renderCalendar = () => {
     }
     calendarGrid.append(calendarSingleDay);
     calendarSingleDay.addEventListener("click", (e) => {
-      console.log(e.target);
+      todoOpen(e);     
     });
     // if (
     //   i === new Date().getDate() &&
@@ -96,7 +96,7 @@ const renderCalendar = () => {
     calendarSingleDay.innerText = j;
     calendarGrid.append(calendarSingleDay);
     calendarSingleDay.addEventListener("click", (e) => {
-      console.log(e.target);
+      todoOpen(e);     
     });
   }
 
@@ -108,7 +108,7 @@ const renderCalendar = () => {
     calendarSingleDay.innerText = prevLastDay - x;
     calendarGrid.prepend(calendarSingleDay);
     calendarSingleDay.addEventListener("click", (e) => {
-      console.log(e.target);
+      todoOpen(e);      
     });
   }
 
@@ -179,15 +179,6 @@ saveSettings.addEventListener("click", () => {
   renderCalendar();
 });
 
-// function dateForTodo() {
-// let daysArr = document.querySelectorAll('.calendar__day');
-// console.log(daysArr[0])
-// for (let i=0; i< daysArr.length; i++) {
-// daysArr[i].addEventListener("click", (e) => {
-//   console.log(e.target)
-// })
 
-// }
-// }
 
-// dateForTodo();
+

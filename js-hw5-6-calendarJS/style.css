@@ -163,7 +163,7 @@ html {
   border-radius: 15px 0;
 }
 
-.container__pop-up {
+.container__pop-up, .container__todo {
   position: absolute;
   left: calc(50% - 250px);
   top: 35%;
@@ -179,6 +179,10 @@ html {
 }
 
 .container__pop-up_close {
+  display: none;
+}
+
+.container__todo_close {
   display: none;
 }
 

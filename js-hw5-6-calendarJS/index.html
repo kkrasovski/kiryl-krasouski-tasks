@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/styles/reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="todo.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -69,8 +70,31 @@
           <img class="close__icon" src="assets/icons/close.svg" />
         </button>
       </div>
+
+      <div class="container__todo container__todo_close">
+        <h2 class="pop-up__title">Todo</h2>
+        <p class="pop-up__date">Task for 24.10.2021</p>
+        <div class="pop-up__content todo">
+          <form action="">
+            <div class="todo__section todo__add">
+              <input class="todo__input_text" type="text" />
+              <button class="todo__add-btn">Add</button>
+            </div>
+            <ul class="todo__wrapper">
+             
+            </ul>
+            <div class="todo__total">Tasks for day: <span class="todo__counter"></span></div>
+          </form>
+        </div>
+        <button class="pop-up__close-btn pop-up__close-btn_todo">
+          <img class="close__icon" src="assets/icons/close.svg" />
+        </button>
+      </div>
+
+
     </div> 
     <script src="assets/js/calendar.js"></script>
+    <script src="assets/js/todo.js"></script>
     <script src="assets/js/todoPopup.js"></script>
     <script src="assets/js/settingsPopup.js"></script>
   </body>

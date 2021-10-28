@@ -31,9 +31,9 @@ function addInList(value) {
     li.appendChild(btn);
 
     btn.addEventListener("click", (e) => {
-      todoWrapper.removeChild(li);
-      totalTasks.textContent = counter;
+      todoWrapper.removeChild(li);      
       delete todoList[li.dataset.id];
+      totalTasks.textContent =  Object.keys(todoList).length;
     });
 
     li.addEventListener("click", (e) => {
