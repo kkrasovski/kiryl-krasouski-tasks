@@ -1,7 +1,9 @@
 const date = new Date();
-console.log(date)
 date.setDate(1);
-console.log(date)
+let todoList = {};
+let counter = 0;
+let hi = '1111'
+
 const daysLabelsMon = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const daysLabelsSun = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const monthLabel = [
@@ -21,7 +23,7 @@ const monthLabel = [
 let calendarGrid = document.querySelector(".calendar__grid");
 const renderCalendar = () => {
 
-
+ 
   const lastDayIndex = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
@@ -60,6 +62,8 @@ const renderCalendar = () => {
     }
   }
 
+let kras = '1';
+
   document.querySelector(".season__handler").innerHTML =
     monthLabel[date.getMonth()];
 
@@ -77,9 +81,11 @@ const renderCalendar = () => {
       calendarSingleDay.className = "calendar__day day";
     }
     calendarGrid.append(calendarSingleDay);
+    
     calendarSingleDay.addEventListener("click", (e) => {
-      todoOpen(e);     
+      todoOpen(e, date);      
     });
+   
   }
 
   for (let j = 1; j <= nextDays; j++) {
@@ -88,7 +94,9 @@ const renderCalendar = () => {
     calendarSingleDay.innerText = j;
     calendarGrid.append(calendarSingleDay);
     calendarSingleDay.addEventListener("click", (e) => {
-      todoOpen(e);     
+     
+      todoOpen(e, todoList, counter);   
+     
     });
   }
 
@@ -99,12 +107,20 @@ const renderCalendar = () => {
     calendarSingleDay.innerText = prevLastDay - x;
     calendarGrid.prepend(calendarSingleDay);
     calendarSingleDay.addEventListener("click", (e) => {
-      todoOpen(e);      
+      todoOpen(e);  
+     
     });
   }
 
 };
 renderCalendar();
+
+
+  
+
+
+
+
 
 // draw names of the day
 function setFirstDay() {
@@ -158,7 +174,5 @@ saveSettings.addEventListener("click", () => {
   calendarGrid.innerHTML = "";
   renderCalendar();
 });
-
-
 
 
