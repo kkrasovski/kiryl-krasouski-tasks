@@ -1,6 +1,6 @@
 const date = new Date();
 date.setDate(1);
-let todoList = {};
+
 let counter = 0;
 let hi = '1111'
 
