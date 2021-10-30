@@ -62,7 +62,7 @@ const renderCalendar = () => {
     }
   }
 
-let kras = '1';
+
 
   document.querySelector(".season__handler").innerHTML =
     monthLabel[date.getMonth()];
