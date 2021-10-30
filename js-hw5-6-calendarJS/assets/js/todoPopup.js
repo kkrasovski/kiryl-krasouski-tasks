@@ -33,7 +33,7 @@ function todoOpen(e, date) {
 
   // });
   todoAddBtn.addEventListener("click", () => {addInList(todoInput)});
-  drawlist()
+  drawList()
 }
 
 
@@ -48,16 +48,13 @@ function todoOpen(e, date) {
 
 
 
-let addInList = function (todoInput) {
-
-  
+let addInList = function (todoInput) {  
   
   let value = todoInput.value;
   if (value === "") {
     return;
   }
   counter++; 
-
   todoList[counter] = value;
   base[dateId] = todoList;
   todoInput.value = "";
@@ -66,10 +63,10 @@ let addInList = function (todoInput) {
   console.log(dateId)
   console.log(base);
   console.log()
-  drawlist(base)
+  drawList(base)
 };
 
-function drawlist() {
+function drawList() {
   console.log(base);
   console.log(dateId)
   let todoWrapper = document.querySelector(".todo__wrapper");
