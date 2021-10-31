@@ -39,15 +39,6 @@ function todoOpen(e, date) {
 
 
 
-
-
-
-
-
-
-
-
-
 let addInList = function (todoInput) {  
   
   let value = todoInput.value;
@@ -56,43 +47,70 @@ let addInList = function (todoInput) {
   }
   counter++; 
   todoList[counter] = value;
-  base[dateId] = todoList;
+  //localStorage[dateId] = todoList;
+  localStorage.setItem(dateId, JSON.stringify(todoList))
+  //console.log(localStorage)
   todoInput.value = "";
 
-  console.log()
-  console.log(dateId)
-  console.log(base);
-  console.log()
-  drawList(base)
+ // console.log()
+ // console.log(dateId)
+  //console.log(base);
+ // console.log()
+ // drawList(base)
+  drawList()
 };
 
 function drawList() {
-  console.log(base);
-  console.log(dateId)
+ // console.log(localStorage);
+  //console.log(dateId)
   let todoWrapper = document.querySelector(".todo__wrapper");
    todoWrapper.innerHTML = "";
   let totalTasks = document.querySelector(".todo__counter");
   //if (base[dateId]) {
-  if (base.hasOwnProperty(dateId)) {
-    totalTasks.textContent = Object.keys(base[dateId]).length;
+  if (localStorage.hasOwnProperty(dateId)) {
+    console.log(localStorage)
+    console.log(localStorage.getItem(dateId))
+    totalTasks.textContent = Object.keys(localStorage.getItem(dateId)).length;
+
   } else {
     totalTasks.textContent = '0';
   }
-
-  for (key in base[dateId]) {
+//console.log(JSON.parse (localStorage.getItem(dateId)))
+  for (key in JSON.parse (localStorage.getItem(dateId))) {
+    
     const li = document.createElement("li");
     li.className = "todo__task todo-task";
-    li.textContent = base[dateId][key];
+    //li.textContent = localStorage[dateId][key];
+    
+    
+    li.textContent = JSON.parse(localStorage.getItem(dateId))[key].length
+   
     li.dataset.id = key;
     const btn = document.createElement("div");
     btn.className = "todo-task__del";
     li.appendChild(btn);
 
+
+
+
     btn.addEventListener("click", (e) => {
       todoWrapper.removeChild(li);
-      delete base[dateId][li.dataset.id];
-      console.log(base);
-      totalTasks.textContent = Object.keys(base[dateId]).length;
+      // delete localStorage[dateId][li.dataset.id];
+      //localStorage.removeItem([dateId][li.dataset.id])
+      let myStorage = JSON.parse(localStorage.getItem(dateId)); 
+      console.log(myStorage)
+      console.log(li.dataset.id)
+      console.log(dateId);      
+      delete myStorage[li.dataset.id];
+      console.log(myStorage)
+      localStorage[dateId] = JSON.stringify(myStorage);
+
+
+
+
+
+    //  console.log(localStorage);
+      totalTasks.textContent = Object.keys(localStorage[dateId]).length;
     });
 
     li.addEventListener("click", (e) => {
