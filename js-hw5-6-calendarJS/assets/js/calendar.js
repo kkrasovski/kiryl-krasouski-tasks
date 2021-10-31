@@ -1,6 +1,5 @@
 const date = new Date();
 date.setDate(1);
-
 let counter = 0;
 let hi = '1111'
 
@@ -82,8 +81,7 @@ const renderCalendar = () => {
     }
     calendarGrid.append(calendarSingleDay);
     
-    calendarSingleDay.addEventListener("click", (e) => {
-      console.log(date)
+    calendarSingleDay.addEventListener("click", (e) => {     
       todoOpen(e, date);      
     });
    
@@ -161,7 +159,7 @@ document.querySelector(".arrow_next").addEventListener("click", () => {
 
 let firstWeekDayHandler = document.querySelector('[name="first-day"]');
 
-function SelectFirstDay() {
+function selectFirstDay() {
   let firstWeekDay =
     firstWeekDayHandler.options[firstWeekDayHandler.selectedIndex].value;
   localStorage.setItem("firstWeekDay", firstWeekDay);
@@ -170,13 +168,37 @@ function SelectFirstDay() {
   setFirstDay();
 }
 
+// ON / OF todo list
+
+
+
+document.querySelector(".pop-up__chekbox-item").addEventListener("change", todoActivation);
+
+function todoActivation() {
+ 
+ console.log(typeof addTodo.checked)
+    if (!addTodo.checked) {   
+      localStorage.setItem("todoActive", false);
+    
+    } else {
+      localStorage.setItem("todoActive", true);  
+  
+      
+   
+   
+    } 
+}
+
+
+
+
 let saveSettings = document.querySelector("#save");
 
 saveSettings.addEventListener("click", () => {
-  SelectFirstDay();
+  selectFirstDay();
   popUpHandler();
   calendarGrid.innerHTML = "";
-  renderCalendar();
+  renderCalendar(); 
 });
 
 
