@@ -83,6 +83,7 @@ const renderCalendar = () => {
     calendarGrid.append(calendarSingleDay);
     
     calendarSingleDay.addEventListener("click", (e) => {
+      console.log(date)
       todoOpen(e, date);      
     });
    
@@ -93,11 +94,12 @@ const renderCalendar = () => {
     calendarSingleDay.className = "calendar__day day_next";
     calendarSingleDay.innerText = j;
     calendarGrid.append(calendarSingleDay);
-    calendarSingleDay.addEventListener("click", (e) => {
-     
-      todoOpen(e, todoList, counter);   
-     
+
+    calendarSingleDay.addEventListener("click", (e) => {     
+      let nextDate = new Date(date.setMonth(date.getMonth()+1));
+      todoOpen(e, nextDate);    
     });
+
   }
 
  
@@ -106,10 +108,12 @@ const renderCalendar = () => {
     calendarSingleDay.className = "calendar__day day_prev";
     calendarSingleDay.innerText = prevLastDay - x;
     calendarGrid.prepend(calendarSingleDay);
+
     calendarSingleDay.addEventListener("click", (e) => {
-      todoOpen(e);  
-     
+      let prevDate = new Date(date.setMonth(date.getMonth()-1));
+      todoOpen(e, prevDate);         
     });
+
   }
 
 };
