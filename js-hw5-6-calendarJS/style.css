@@ -243,3 +243,8 @@ html {
 .btn:hover {
   color: #fff;
 }
+
+.weekend {
+  color: #47b39d;
+ font-weight: 600;
+}
