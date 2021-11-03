@@ -2,7 +2,8 @@ const date = new Date();
 date.setDate(1);
 let counter = 0;
 let hi = "1111";
-
+let weekendFirst = 4;
+let weekendSecond = 2;
 const daysLabelsMon = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const daysLabelsSun = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const monthLabel = [
@@ -40,7 +41,7 @@ const renderCalendar = () => {
   ).getDate();
 
   let firstDayIndex = date.getDay();
-//console.log(firstDayIndex)
+  //console.log(firstDayIndex)
   let nextDays = 7 - lastDayIndex - 1;
 
   if (
@@ -48,7 +49,7 @@ const renderCalendar = () => {
     localStorage.firstWeekDay == undefined
   ) {
     firstDayIndex = date.getDay() - 1;
-    console.log('день начала недели', date.getDay())
+    
     if (date.getDay() == 0) {
       firstDayIndex = date.getDay() - 1 + 7;
     }
@@ -63,9 +64,14 @@ const renderCalendar = () => {
   document.querySelector(".season__handler").innerHTML =
     monthLabel[date.getMonth()];
 
-    let weekendFirst = 2;
-    let weekendSecond;
 
+ 
+  let dateWeekend = new Date(date.getTime());
+  
+  let lastDateWeekend = new Date(dateWeekend.setMonth(date.getMonth()-1));
+  let nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth()+1));
+
+// main grid
   for (let i = 1; i <= lastDay; i++) {
     let dateWeekend = new Date(date.getTime());
     dateWeekend.setDate(i);
@@ -87,15 +93,28 @@ const renderCalendar = () => {
     calendarSingleDay.addEventListener("click", (e) => {
       todoOpen(e, date);
     });
-    if (dateWeekend.getDay() == weekendFirst || dateWeekend.getDay() == weekendSecond) {
-      calendarSingleDay.classList.add("weekend");
-    }
-  }
 
+    // weekendFirst.forEach(element => {
+    //   console.log('из конфига', element, 'и', dateWeekend.getDay());
+    
+    //      if (
+    //       dateWeekend.getDay() == element     
+    //     ) {
+    //       calendarSingleDay.classList.add("weekend");
+    //     }
+    // })
+    setWeekends(dateWeekend,calendarSingleDay)
+  }
+// next grid
   for (let j = 1; j <= nextDays; j++) {
-    let dateWeekend = new Date(date.getTime());
-    dateWeekend.setMonth(date.getMonth() + 1);
-    dateWeekend.setDate(j);
+  
+    nextDateWeekend.setDate(j);
+    if (nextDateWeekend.getMonth() == 1) {
+      nextDateWeekend.setFullYear(dateWeekend.getFullYear()+1);
+      console.log(nextDateWeekend);
+    }
+   // console.log('просто следующий месяц', nextDateWeekend);
+
     let calendarSingleDay = document.createElement("div");
     calendarSingleDay.className = "calendar__day day_next";
     calendarSingleDay.innerText = j;
@@ -104,50 +123,36 @@ const renderCalendar = () => {
     calendarSingleDay.addEventListener("click", (e) => {
       let nextDate = new Date(date.setMonth(date.getMonth() + 1));
       todoOpen(e, nextDate);
+      
+      prevDate = new Date(date.setMonth(date.getMonth() - 1));
     });
-    
-    if (dateWeekend.getDay() == weekendFirst || dateWeekend.getDay() == weekendSecond) {
-      calendarSingleDay.classList.add("weekend");
-    }
+
+
+
+
+  
+    setWeekends(nextDateWeekend,calendarSingleDay)
+
   }
 
 
+// prev grid
+  for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
+    lastDateWeekend.setDate(x);
+  //  console.log('пред',lastDateWeekend)
  
-  let dateWeekend = new Date(date.getTime()); 
-  //console.log(dateWeekend); // copy of date
-  //dateWeekend.setMonth(date.getMonth() ); // prev month 
-  //console.log(dateWeekend);
-  //console.log('индекс первого дня', firstDayIndex)
-  // prev day in month
-  //for (let x = 1; x < firstDayIndex +1; x++) {
-    for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
-      console.log('начало недели',dateWeekend)
-      console.log('Последнее число предыдущего месяца', x)
-      console.log('текущий месяц', date.getMonth())
-      dateWeekend.setMonth(date.getMonth() -1 ); // предыдущий месяц
-      console.log("пред месяц", dateWeekend )
-      // if (date.getMonth() == 0) {
-      console.log(date)
-      // }
-     
-    dateWeekend.setDate(x);
-
-  console.log('предыдущий месяц с числом',dateWeekend)
     let calendarSingleDay = document.createElement("div");
     calendarSingleDay.className = "calendar__day day_prev";
     calendarSingleDay.innerText = x;
-    //calendarSingleDay.innerText = prevLastDay - x+1;
     calendarGrid.prepend(calendarSingleDay);
-
     calendarSingleDay.addEventListener("click", (e) => {
       let prevDate = new Date(date.setMonth(date.getMonth() - 1));
       todoOpen(e, prevDate);
+      prevDate = new Date(date.setMonth(date.getMonth() + 1));
     });
-    //console.log(dateWeekend.getDay())
-    //console.log(weekendFirst)
-    if (dateWeekend.getDay()  == weekendFirst || dateWeekend.getDay() == weekendSecond) {
-      calendarSingleDay.classList.add("weekend");
-    }
+  
+    setWeekends(lastDateWeekend,calendarSingleDay)
+    
   }
 };
 renderCalendar();
@@ -171,7 +176,7 @@ function setFirstDay() {
 
 document.querySelector(".arrow_prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
-  console.log(date);
+
   calendarGrid.innerHTML = "";
   renderCalendar();
 });
@@ -179,9 +184,8 @@ document.querySelector(".arrow_prev").addEventListener("click", () => {
 document.querySelector(".arrow_next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   calendarGrid.innerHTML = "";
-  console.log('next');
+  console.log("next");
   renderCalendar();
- 
 });
 
 // select first day in settings
@@ -220,3 +224,14 @@ saveSettings.addEventListener("click", () => {
   calendarGrid.innerHTML = "";
   renderCalendar();
 });
+
+ function setWeekends (weekendDays, g) {
+  
+  if (
+    weekendDays.getDay() == weekendFirst ||
+    weekendDays.getDay() == weekendSecond
+  ) {
+    g.classList.add("weekend");
+  }
+ 
+}

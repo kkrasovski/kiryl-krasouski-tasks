@@ -26,7 +26,7 @@ function todoOpen(e, date) {
   let todoInput = document.querySelector(".todo__input_text");
   todoAddBtn.addEventListener("click", (e) => {
     addInList(todoInput);
-e.preventDefault()
+    e.preventDefault();
   });
   drawList();
 }
