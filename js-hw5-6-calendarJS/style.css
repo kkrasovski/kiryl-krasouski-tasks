@@ -225,6 +225,20 @@ box-sizing: border-box;
   padding: 5px 0;
 }
 
+.pop-up__chekbox-item {
+  display: block;
+  margin: 5px 0 15px;
+}
+
+.pop-up__label-radio {
+  display: inline;
+  margin: 15px 0;
+}
+
+.pop-up__radio-item {
+  margin-right: 35px;
+}
+
 .pop-up__btn {
   display: block;
   margin: 15px auto 0;
