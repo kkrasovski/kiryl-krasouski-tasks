@@ -1,7 +1,10 @@
 const date = new Date();
 date.setDate(1);
-let counter = 0;
+
 let hi = "1111";
+if (localStorage.getItem("showAdditionalDays") == null) {
+  localStorage.setItem("showAdditionalDays", true);
+}
 if (
   localStorage.getItem("firstWeekendDay") == null &&
   localStorage.getItem("secondWeekendDay") == null
@@ -74,11 +77,17 @@ const renderCalendar = () => {
   let nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() + 1));
 
   //current prev months days in current month
+
+ 
+  
   for (let i = 1; i <= lastDay; i++) {
     let dateWeekend = new Date(date.getTime());
     dateWeekend.setDate(i);
 
     let calendarSingleDay = document.createElement("div");
+
+
+    console.log()
     calendarSingleDay.innerText = i;
     if (
       i === new Date().getDate() &&
@@ -91,11 +100,10 @@ const renderCalendar = () => {
     }
 
     // set icon if todo true
-let dateCode =`${i}${date.getMonth()}${date.getFullYear()}`;
-if (
-  localStorage.getItem(dateCode) != null) {
-    calendarSingleDay.classList.add("have-tasks");
-  } 
+    let dateCode = `${i}${date.getMonth()}${date.getFullYear()}`;
+    if (localStorage.getItem(dateCode) != null) {
+      calendarSingleDay.classList.add("have-tasks");
+    }
 
     calendarGrid.append(calendarSingleDay);
 
@@ -105,7 +113,10 @@ if (
 
     setWeekends(dateWeekend, calendarSingleDay);
   }
+
   // next months days in current month
+  if (localStorage.getItem("showAdditionalDays") == "true") {
+ 
   for (let j = 1; j <= nextDays; j++) {
     nextDateWeekend.setDate(j);
     if (nextDateWeekend.getMonth() == 1) {
@@ -117,11 +128,10 @@ if (
     calendarSingleDay.innerText = j;
     calendarGrid.append(calendarSingleDay);
 
-    let dateCode =`${j}${nextDateWeekend.getMonth()}${nextDateWeekend.getFullYear()}`;
-if (
-  localStorage.getItem(dateCode) != null) {
-    calendarSingleDay.classList.add("have-tasks");
-  } 
+    let dateCode = `${j}${nextDateWeekend.getMonth()}${nextDateWeekend.getFullYear()}`;
+    if (localStorage.getItem(dateCode) != null) {
+      calendarSingleDay.classList.add("have-tasks");
+    }
 
     calendarSingleDay.addEventListener("click", (e) => {
       let nextDate = new Date(date.setMonth(date.getMonth() + 1));
@@ -131,20 +141,27 @@ if (
     });
 
     setWeekends(nextDateWeekend, calendarSingleDay);
+  } 
+} else {
+  for (let j = 1; j <= nextDays; j++) {
+    let calendarSingleDay = document.createElement("div");
+    calendarSingleDay.className = "calendar__day day_inactive";
+    calendarGrid.append(calendarSingleDay);
   }
+}
 
   // prev months days in current month
+  if (localStorage.getItem("showAdditionalDays") == "true") {
   for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
     lastDateWeekend.setDate(x);
     let calendarSingleDay = document.createElement("div");
     calendarSingleDay.className = "calendar__day day_prev";
     calendarSingleDay.innerText = x;
     calendarGrid.prepend(calendarSingleDay);
-    let dateCode =`${x}${lastDateWeekend.getMonth()}${lastDateWeekend.getFullYear()}`;
-    if (
-      localStorage.getItem(dateCode) != null) {
-        calendarSingleDay.classList.add("have-tasks");
-      } 
+    let dateCode = `${x}${lastDateWeekend.getMonth()}${lastDateWeekend.getFullYear()}`;
+    if (localStorage.getItem(dateCode) != null) {
+      calendarSingleDay.classList.add("have-tasks");
+    }
     calendarSingleDay.addEventListener("click", (e) => {
       let prevDate = new Date(date.setMonth(date.getMonth() - 1));
       todoOpen(e, prevDate);
@@ -152,6 +169,14 @@ if (
     });
     setWeekends(lastDateWeekend, calendarSingleDay);
   }
+} else {
+  for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
+    let calendarSingleDay = document.createElement("div");
+    calendarSingleDay.className = "calendar__day day_inactive";
+    calendarGrid.prepend(calendarSingleDay);
+  }
+}
+
 };
 renderCalendar();
 
@@ -209,7 +234,7 @@ function selectFirstDay() {
 // ON / OF todo list in settings
 
 document
-  .querySelector(".pop-up__chekbox-item")
+  .querySelector(".pop-up__checkbox-item")
   .addEventListener("change", todoActivation);
 
 function todoActivation() {
@@ -227,6 +252,7 @@ saveSettings.addEventListener("click", () => {
   popUpHandler();
   selectWeekends();
   calendarGrid.innerHTML = "";
+  showMonth();
   renderCalendar();
 });
 
@@ -254,3 +280,26 @@ function selectWeekends() {
   localStorage.setItem("firstWeekendDay", firstWeekendDay);
   localStorage.setItem("secondWeekendDay", secondWeekendDay);
 }
+
+// hide or show days before and after current month
+let showRearMonth = document.getElementById("show-month");
+let hideRearMonth = document.getElementById("hide-month");
+
+if (localStorage.getItem("showAdditionalDays") == "true") {
+  showRearMonth.checked = true;
+} else {
+  hideRearMonth.checked = true;
+}
+
+function showMonth() {
+  if (showRearMonth.checked) {
+    console.log("true");
+    localStorage.setItem("showAdditionalDays", true);
+  }
+
+  if (hideRearMonth.checked) {
+    console.log("false");
+    localStorage.setItem("showAdditionalDays", false);
+  }
+}
+

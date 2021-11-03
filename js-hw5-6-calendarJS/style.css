@@ -137,6 +137,11 @@ html {
   color:#f3f3f3;
 }
 
+.day_inactive:hover {
+  cursor: auto;
+  background: none;
+}
+
 .day_prev, .day_next {
  background: #fafafa;
  color: #b9b9b9
@@ -225,7 +230,7 @@ box-sizing: border-box;
   padding: 5px 0;
 }
 
-.pop-up__chekbox-item {
+.pop-up__checkbox-item {
   display: block;
   margin: 5px 0 15px;
 }

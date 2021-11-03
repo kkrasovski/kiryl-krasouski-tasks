@@ -1,6 +1,7 @@
 let base = {};
 let dateId;
 let todoList = {};
+let counter = 0;
 function todoOpen(e, date) {
   if (localStorage.todoActive == "false") {
     return;
@@ -67,17 +68,6 @@ function drawList() {
     const btn = document.createElement("div");
     btn.className = "todo-task__del";
     li.appendChild(btn);
-
-    // btn.addEventListener("click", (e) => {
-    //   todoWrapper.removeChild(li);
-    //   let myStorage = JSON.parse(localStorage.getItem(dateId));
-    //   console.log(myStorage)
-    //   delete myStorage[li.dataset.id];
-    //   localStorage[dateId] = JSON.stringify(myStorage);
-    //   totalTasks.textContent = Object.keys(
-    //     JSON.parse(localStorage.getItem(dateId))
-    //   ).length;
-    // });
     
     btn.addEventListener("click", (e) => {
       todoWrapper.removeChild(li);
