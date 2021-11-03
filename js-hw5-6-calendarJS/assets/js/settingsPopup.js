@@ -4,8 +4,6 @@ let todoPopUp = document.querySelector(".container__pop-up");
 let calendar = document.querySelector(".container__calendar");
 
 settingsBtn.addEventListener("click", popUpHandler);
-//closeBtn.addEventListener("click", popUpHandler);
-
 
 function popUpHandler() {
   popUp.classList.toggle("container__pop-up_close");

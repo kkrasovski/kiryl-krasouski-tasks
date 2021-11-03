@@ -45,7 +45,7 @@ html {
   width: 100%;
 }
 
-.season__handler {  
+.season__handler {
   width: 100%;
   box-sizing: border-box;
   border: none;
@@ -73,7 +73,8 @@ html {
   outline: auto;
 }
 
-.arrow, .arrow__icon {
+.arrow,
+.arrow__icon {
   cursor: pointer;
 }
 
@@ -86,7 +87,6 @@ html {
 }
 
 .arrow__icon_mirrored {
-  
 }
 
 .arrow__icon_mirrored {
@@ -134,7 +134,7 @@ html {
 
 .day_current {
   background: #462446;
-  color:#f3f3f3;
+  color: #f3f3f3;
 }
 
 .day_inactive:hover {
@@ -142,9 +142,10 @@ html {
   background: none;
 }
 
-.day_prev, .day_next {
- background: #fafafa;
- color: #b9b9b9
+.day_prev,
+.day_next {
+  background: #fafafa;
+  color: #b9b9b9;
 }
 
 .container__settings-btn {
@@ -154,7 +155,7 @@ html {
   box-sizing: border-box;
   width: 63px;
   height: 63px;
-  padding: 15px;  
+  padding: 15px;
   border: 0;
   border-radius: 15px;
   background: #ffffff;
@@ -168,7 +169,8 @@ html {
   border-radius: 15px 0;
 }
 
-.container__pop-up, .container__todo {
+.container__pop-up,
+.container__todo {
   position: absolute;
   left: calc(50% - 250px);
   top: 35%;
@@ -177,7 +179,7 @@ html {
   padding: 35px;
   box-sizing: border-box;
   border: 1px solid #f3f3f3;
-  background: #ffffff;;
+  background: #ffffff;
   -webkit-box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);
   -moz-box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);
   box-shadow: 0px 0px 44px 9px rgba(34, 60, 80, 0.11);
@@ -191,7 +193,7 @@ html {
   display: none;
 }
 
-.pop-up__title {  
+.pop-up__title {
   padding: 15px;
   margin-bottom: 15px;
   font-size: 2rem;
@@ -216,8 +218,8 @@ html {
 }
 
 .pop-up__select_half {
-width: 45%;
-box-sizing: border-box;
+  width: 45%;
+  box-sizing: border-box;
 }
 
 .pop-up__set-of-weekend {
@@ -275,18 +277,18 @@ box-sizing: border-box;
 
 .weekend {
   color: #47b39d;
- font-weight: 600;
+  font-weight: 600;
 }
 
-.have-tasks {  
+.have-tasks {
   position: relative;
 }
 
-.have-tasks::after { 
+.have-tasks::after {
   position: absolute;
   right: 5px;
-  bottom: 5px; 
-  display: block;  
+  bottom: 5px;
+  display: block;
   width: 5px;
   height: 5px;
   border-radius: 5px;

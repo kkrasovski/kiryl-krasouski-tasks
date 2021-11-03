@@ -1,6 +1,8 @@
 const date = new Date();
 date.setDate(1);
 
+let holidayConfig = ["2022.01.14", "2022.01.4", "2021.12.02", "2021.11.30"];
+
 let hi = "1111";
 if (localStorage.getItem("showAdditionalDays") == null) {
   localStorage.setItem("showAdditionalDays", true);
@@ -50,7 +52,6 @@ const renderCalendar = () => {
   ).getDate();
 
   let firstDayIndex = date.getDay();
-  //console.log(firstDayIndex)
   let nextDays = 7 - lastDayIndex - 1;
 
   if (
@@ -76,18 +77,14 @@ const renderCalendar = () => {
   let lastDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() - 1));
   let nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() + 1));
 
-  //current prev months days in current month
+  //current  months days in current month
 
- 
-  
   for (let i = 1; i <= lastDay; i++) {
     let dateWeekend = new Date(date.getTime());
     dateWeekend.setDate(i);
 
     let calendarSingleDay = document.createElement("div");
 
-
-    console.log()
     calendarSingleDay.innerText = i;
     if (
       i === new Date().getDate() &&
@@ -105,6 +102,19 @@ const renderCalendar = () => {
       calendarSingleDay.classList.add("have-tasks");
     }
 
+    // find holiday
+    holidayConfig.forEach((item) => {
+      let holiday = new Date(item);
+
+      let currentHolidayDay = new Date(
+        `${date.getFullYear()}, ${date.getMonth() + 1}, ${i}`
+      );
+
+      if (Date.parse(holiday) === Date.parse(currentHolidayDay)) {
+        calendarSingleDay.classList.add("weekend");
+      }
+    });
+
     calendarGrid.append(calendarSingleDay);
 
     calendarSingleDay.addEventListener("click", (e) => {
@@ -116,67 +126,93 @@ const renderCalendar = () => {
 
   // next months days in current month
   if (localStorage.getItem("showAdditionalDays") == "true") {
- 
-  for (let j = 1; j <= nextDays; j++) {
-    nextDateWeekend.setDate(j);
-    if (nextDateWeekend.getMonth() == 1) {
-      nextDateWeekend.setFullYear(dateWeekend.getFullYear() + 1);
+    for (let j = 1; j <= nextDays; j++) {
+      nextDateWeekend.setDate(j);
+      if (nextDateWeekend.getMonth() == 1) {
+        nextDateWeekend.setFullYear(dateWeekend.getFullYear() + 1);
+      }
+
+      let calendarSingleDay = document.createElement("div");
+      calendarSingleDay.className = "calendar__day day_next";
+      calendarSingleDay.innerText = j;
+      calendarGrid.append(calendarSingleDay);
+
+      // set icon if todo true
+      let dateCode = `${j}${nextDateWeekend.getMonth()}${nextDateWeekend.getFullYear()}`;
+      if (localStorage.getItem(dateCode) != null) {
+        calendarSingleDay.classList.add("have-tasks");
+      }
+      // find holiday
+      holidayConfig.forEach((item) => {
+        let holiday = new Date(item);
+        let nextHolidayDay = new Date(
+          `${date.getFullYear()}, ${nextDateWeekend.getMonth() + 1}, ${j}`
+        );
+
+        if (Date.parse(holiday) === Date.parse(nextHolidayDay)) {
+          calendarSingleDay.classList.add("weekend");
+        }
+      });
+
+      calendarSingleDay.addEventListener("click", (e) => {
+        let nextDate = new Date(date.setMonth(date.getMonth() + 1));
+        todoOpen(e, nextDate);
+
+        prevDate = new Date(date.setMonth(date.getMonth() - 1));
+      });
+
+      setWeekends(nextDateWeekend, calendarSingleDay);
     }
-
-    let calendarSingleDay = document.createElement("div");
-    calendarSingleDay.className = "calendar__day day_next";
-    calendarSingleDay.innerText = j;
-    calendarGrid.append(calendarSingleDay);
-
-    let dateCode = `${j}${nextDateWeekend.getMonth()}${nextDateWeekend.getFullYear()}`;
-    if (localStorage.getItem(dateCode) != null) {
-      calendarSingleDay.classList.add("have-tasks");
+  } else {
+    for (let j = 1; j <= nextDays; j++) {
+      let calendarSingleDay = document.createElement("div");
+      calendarSingleDay.className = "calendar__day day_inactive";
+      calendarGrid.append(calendarSingleDay);
     }
-
-    calendarSingleDay.addEventListener("click", (e) => {
-      let nextDate = new Date(date.setMonth(date.getMonth() + 1));
-      todoOpen(e, nextDate);
-
-      prevDate = new Date(date.setMonth(date.getMonth() - 1));
-    });
-
-    setWeekends(nextDateWeekend, calendarSingleDay);
-  } 
-} else {
-  for (let j = 1; j <= nextDays; j++) {
-    let calendarSingleDay = document.createElement("div");
-    calendarSingleDay.className = "calendar__day day_inactive";
-    calendarGrid.append(calendarSingleDay);
   }
-}
 
   // prev months days in current month
   if (localStorage.getItem("showAdditionalDays") == "true") {
-  for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
-    lastDateWeekend.setDate(x);
-    let calendarSingleDay = document.createElement("div");
-    calendarSingleDay.className = "calendar__day day_prev";
-    calendarSingleDay.innerText = x;
-    calendarGrid.prepend(calendarSingleDay);
-    let dateCode = `${x}${lastDateWeekend.getMonth()}${lastDateWeekend.getFullYear()}`;
-    if (localStorage.getItem(dateCode) != null) {
-      calendarSingleDay.classList.add("have-tasks");
-    }
-    calendarSingleDay.addEventListener("click", (e) => {
-      let prevDate = new Date(date.setMonth(date.getMonth() - 1));
-      todoOpen(e, prevDate);
-      prevDate = new Date(date.setMonth(date.getMonth() + 1));
-    });
-    setWeekends(lastDateWeekend, calendarSingleDay);
-  }
-} else {
-  for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
-    let calendarSingleDay = document.createElement("div");
-    calendarSingleDay.className = "calendar__day day_inactive";
-    calendarGrid.prepend(calendarSingleDay);
-  }
-}
+    for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
+      lastDateWeekend.setDate(x);
+      let calendarSingleDay = document.createElement("div");
+      calendarSingleDay.className = "calendar__day day_prev";
+      calendarSingleDay.innerText = x;
+      calendarGrid.prepend(calendarSingleDay);
 
+      // set icon if todo true
+      let dateCode = `${x}${lastDateWeekend.getMonth()}${lastDateWeekend.getFullYear()}`;
+      if (localStorage.getItem(dateCode) != null) {
+        calendarSingleDay.classList.add("have-tasks");
+      }
+
+      //  find holiday
+      holidayConfig.forEach((item) => {
+        let holiday = new Date(item);
+
+        let prevHolidayDay = new Date(
+          `${date.getFullYear()}, ${lastDateWeekend.getMonth() + 1}, ${x}`
+        );
+
+        if (Date.parse(holiday) === Date.parse(prevHolidayDay)) {
+          calendarSingleDay.classList.add("weekend");
+        }
+      });
+
+      calendarSingleDay.addEventListener("click", (e) => {
+        let prevDate = new Date(date.setMonth(date.getMonth() - 1));
+        todoOpen(e, prevDate);
+        prevDate = new Date(date.setMonth(date.getMonth() + 1));
+      });
+      setWeekends(lastDateWeekend, calendarSingleDay);
+    }
+  } else {
+    for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
+      let calendarSingleDay = document.createElement("div");
+      calendarSingleDay.className = "calendar__day day_inactive";
+      calendarGrid.prepend(calendarSingleDay);
+    }
+  }
 };
 renderCalendar();
 
@@ -221,9 +257,9 @@ function setWeekends(weekendDays, g) {
 
 // SETTINGS
 
-// select first day in settings
 let firstWeekDayHandler = document.querySelector('[name="first-day"]');
 
+// settings for first day of the week
 function selectFirstDay() {
   let firstWeekDay =
     firstWeekDayHandler.options[firstWeekDayHandler.selectedIndex].value;
@@ -231,14 +267,12 @@ function selectFirstDay() {
   setFirstDay();
 }
 
-// ON / OF todo list in settings
-
+// ON/OF ToDo list
 document
   .querySelector(".pop-up__checkbox-item")
   .addEventListener("change", todoActivation);
 
 function todoActivation() {
-  console.log(typeof addTodo.checked);
   if (!addTodo.checked) {
     localStorage.setItem("todoActive", false);
   } else {
@@ -246,6 +280,7 @@ function todoActivation() {
   }
 }
 
+// Save Btn
 let saveSettings = document.querySelector("#save");
 saveSettings.addEventListener("click", () => {
   selectFirstDay();
@@ -255,6 +290,8 @@ saveSettings.addEventListener("click", () => {
   showMonth();
   renderCalendar();
 });
+
+// default weekend setting 
 
 const firstWeekend = document.getElementById("first-weekend");
 const secondWeekend = document.getElementById("second-weekend");
@@ -281,7 +318,7 @@ function selectWeekends() {
   localStorage.setItem("secondWeekendDay", secondWeekendDay);
 }
 
-// hide or show days before and after current month
+// settings for days of the next and previous month
 let showRearMonth = document.getElementById("show-month");
 let hideRearMonth = document.getElementById("hide-month");
 
@@ -293,13 +330,10 @@ if (localStorage.getItem("showAdditionalDays") == "true") {
 
 function showMonth() {
   if (showRearMonth.checked) {
-    console.log("true");
     localStorage.setItem("showAdditionalDays", true);
   }
 
   if (hideRearMonth.checked) {
-    console.log("false");
     localStorage.setItem("showAdditionalDays", false);
   }
 }
-
