@@ -259,7 +259,18 @@ box-sizing: border-box;
  font-weight: 600;
 }
 
-.have-tasks {
-  font-size:20px;
-  color: red;
+.have-tasks {  
+  position: relative;
+}
+
+.have-tasks::after { 
+  position: absolute;
+  right: 5px;
+  bottom: 5px; 
+  display: block;  
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: #b05f6d;
+  content: "";
 }
