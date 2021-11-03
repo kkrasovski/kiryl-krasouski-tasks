@@ -49,7 +49,7 @@
       </article>
       <div class="container__pop-up container__pop-up_close pop-up">
         <h2 class="pop-up__title">Settings</h2>
-        <label class="pop-up__label" for="first-day"
+        <label class="pop-up__label" for="month"
           >select first day of week:</label
         >
         <select class="pop-up__select" name="first-day" id="month">
@@ -64,6 +64,29 @@
           <option class="pop-up__select-item" value="dark">Dark</option>
           <option class="pop-up__select-item" value="white">White</option>
         </select>
+        <label class="pop-up__label" for="weekend-set"
+        >Set two default weekends:</label>
+<div class="pop-up__set-of-weekend">
+  <select class="pop-up__select pop-up__select_half" name="color" id="first-weekend">
+    <option class="pop-up__select-item" value="0">Sunday</option>
+    <option class="pop-up__select-item" value="1">Monday</option>
+    <option class="pop-up__select-item" value="2">Tuesday</option>
+    <option class="pop-up__select-item" value="3">Wednesday</option>
+    <option class="pop-up__select-item" value="4">Thursday</option>
+    <option class="pop-up__select-item" value="5">Friday</option>
+    <option class="pop-up__select-item" value="6">Saturday</option>
+  </select>
+  <select class="pop-up__select pop-up__select_half" name="color" id="second-weekend">
+    <option class="pop-up__select-item" value="0">Sunday</option>
+    <option class="pop-up__select-item" value="1">Monday</option>
+    <option class="pop-up__select-item" value="2">Tuesday</option>
+    <option class="pop-up__select-item" value="3">Wednesday</option>
+    <option class="pop-up__select-item" value="4">Thursday</option>
+    <option class="pop-up__select-item" value="5">Friday</option>
+    <option class="pop-up__select-item" value="6">Saturday</option>
+  </select>
+</div>
+
         <label class="pop-up__label" for="add-todo">add ToDo list</label>
         <input
           class="pop-up__chekbox-item"

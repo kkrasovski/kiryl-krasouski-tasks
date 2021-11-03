@@ -210,6 +210,16 @@ html {
   cursor: pointer;
 }
 
+.pop-up__select_half {
+width: 45%;
+box-sizing: border-box;
+}
+
+.pop-up__set-of-weekend {
+  display: flex;
+  justify-content: space-between;
+}
+
 .pop-up__label {
   display: block;
   padding: 5px 0;
@@ -247,4 +257,9 @@ html {
 .weekend {
   color: #47b39d;
  font-weight: 600;
+}
+
+.have-tasks {
+  font-size:20px;
+  color: red;
 }

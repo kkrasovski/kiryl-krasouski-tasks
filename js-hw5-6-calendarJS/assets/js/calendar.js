@@ -2,8 +2,14 @@ const date = new Date();
 date.setDate(1);
 let counter = 0;
 let hi = "1111";
-let weekendFirst = 4;
-let weekendSecond = 2;
+if (
+  localStorage.getItem("firstWeekendDay") == null &&
+  localStorage.getItem("secondWeekendDay") == null
+) {
+  localStorage.setItem("firstWeekendDay", 6);
+  localStorage.setItem("secondWeekendDay", 0);
+}
+
 const daysLabelsMon = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const daysLabelsSun = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const monthLabel = [
@@ -49,7 +55,7 @@ const renderCalendar = () => {
     localStorage.firstWeekDay == undefined
   ) {
     firstDayIndex = date.getDay() - 1;
-    
+
     if (date.getDay() == 0) {
       firstDayIndex = date.getDay() - 1 + 7;
     }
@@ -63,15 +69,11 @@ const renderCalendar = () => {
 
   document.querySelector(".season__handler").innerHTML =
     monthLabel[date.getMonth()];
-
-
- 
   let dateWeekend = new Date(date.getTime());
-  
-  let lastDateWeekend = new Date(dateWeekend.setMonth(date.getMonth()-1));
-  let nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth()+1));
+  let lastDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() - 1));
+  let nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() + 1));
 
-// main grid
+  //current prev months days in current month
   for (let i = 1; i <= lastDay; i++) {
     let dateWeekend = new Date(date.getTime());
     dateWeekend.setDate(i);
@@ -88,32 +90,29 @@ const renderCalendar = () => {
       calendarSingleDay.className = "calendar__day day";
     }
 
+    // set icon if todo true
+let dateCode =`${i}${date.getMonth()}${date.getFullYear()}`;
+if (
+  localStorage.getItem(dateCode) != null) {
+    calendarSingleDay.classList.add("have-tasks");
+  } 
+
+
+
     calendarGrid.append(calendarSingleDay);
 
     calendarSingleDay.addEventListener("click", (e) => {
       todoOpen(e, date);
     });
 
-    // weekendFirst.forEach(element => {
-    //   console.log('из конфига', element, 'и', dateWeekend.getDay());
-    
-    //      if (
-    //       dateWeekend.getDay() == element     
-    //     ) {
-    //       calendarSingleDay.classList.add("weekend");
-    //     }
-    // })
-    setWeekends(dateWeekend,calendarSingleDay)
+    setWeekends(dateWeekend, calendarSingleDay);
   }
-// next grid
+  // next months days in current month
   for (let j = 1; j <= nextDays; j++) {
-  
     nextDateWeekend.setDate(j);
     if (nextDateWeekend.getMonth() == 1) {
-      nextDateWeekend.setFullYear(dateWeekend.getFullYear()+1);
-      console.log(nextDateWeekend);
+      nextDateWeekend.setFullYear(dateWeekend.getFullYear() + 1);
     }
-   // console.log('просто следующий месяц', nextDateWeekend);
 
     let calendarSingleDay = document.createElement("div");
     calendarSingleDay.className = "calendar__day day_next";
@@ -123,24 +122,16 @@ const renderCalendar = () => {
     calendarSingleDay.addEventListener("click", (e) => {
       let nextDate = new Date(date.setMonth(date.getMonth() + 1));
       todoOpen(e, nextDate);
-      
+
       prevDate = new Date(date.setMonth(date.getMonth() - 1));
     });
 
-
-
-
-  
-    setWeekends(nextDateWeekend,calendarSingleDay)
-
+    setWeekends(nextDateWeekend, calendarSingleDay);
   }
 
-
-// prev grid
+  // prev months days in current month
   for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
     lastDateWeekend.setDate(x);
-  //  console.log('пред',lastDateWeekend)
- 
     let calendarSingleDay = document.createElement("div");
     calendarSingleDay.className = "calendar__day day_prev";
     calendarSingleDay.innerText = x;
@@ -150,9 +141,7 @@ const renderCalendar = () => {
       todoOpen(e, prevDate);
       prevDate = new Date(date.setMonth(date.getMonth() + 1));
     });
-  
-    setWeekends(lastDateWeekend,calendarSingleDay)
-    
+    setWeekends(lastDateWeekend, calendarSingleDay);
   }
 };
 renderCalendar();
@@ -184,24 +173,31 @@ document.querySelector(".arrow_prev").addEventListener("click", () => {
 document.querySelector(".arrow_next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   calendarGrid.innerHTML = "";
-  console.log("next");
   renderCalendar();
 });
 
-// select first day in settings
+function setWeekends(weekendDays, g) {
+  if (
+    weekendDays.getDay() == localStorage.firstWeekendDay ||
+    weekendDays.getDay() == localStorage.secondWeekendDay
+  ) {
+    g.classList.add("weekend");
+  }
+}
 
+// SETTINGS
+
+// select first day in settings
 let firstWeekDayHandler = document.querySelector('[name="first-day"]');
 
 function selectFirstDay() {
   let firstWeekDay =
     firstWeekDayHandler.options[firstWeekDayHandler.selectedIndex].value;
   localStorage.setItem("firstWeekDay", firstWeekDay);
-  console.log(localStorage);
-  console.log(date);
   setFirstDay();
 }
 
-// ON / OF todo list
+// ON / OF todo list in settings
 
 document
   .querySelector(".pop-up__chekbox-item")
@@ -217,21 +213,35 @@ function todoActivation() {
 }
 
 let saveSettings = document.querySelector("#save");
-
 saveSettings.addEventListener("click", () => {
   selectFirstDay();
   popUpHandler();
+  selectWeekends();
   calendarGrid.innerHTML = "";
   renderCalendar();
 });
 
- function setWeekends (weekendDays, g) {
-  
-  if (
-    weekendDays.getDay() == weekendFirst ||
-    weekendDays.getDay() == weekendSecond
-  ) {
-    g.classList.add("weekend");
+const firstWeekend = document.getElementById("first-weekend");
+const secondWeekend = document.getElementById("second-weekend");
+
+for (let i = 0; i < firstWeekend.options.length; i++) {
+  let firstDefaultWeekend = firstWeekend.options[i];
+  if (firstDefaultWeekend.value == localStorage.getItem("firstWeekendDay")) {
+    firstDefaultWeekend.setAttribute("selected", true);
   }
- 
+}
+
+for (let i = 0; i < secondWeekend.options.length; i++) {
+  let secondDefaultWeekend = secondWeekend.options[i];
+  if (secondDefaultWeekend.value == localStorage.getItem("secondWeekendDay")) {
+    secondDefaultWeekend.setAttribute("selected", true);
+  }
+}
+
+function selectWeekends() {
+  let firstWeekendDay = firstWeekend.options[firstWeekend.selectedIndex].value;
+  let secondWeekendDay =
+    secondWeekend.options[secondWeekend.selectedIndex].value;
+  localStorage.setItem("firstWeekendDay", firstWeekendDay);
+  localStorage.setItem("secondWeekendDay", secondWeekendDay);
 }

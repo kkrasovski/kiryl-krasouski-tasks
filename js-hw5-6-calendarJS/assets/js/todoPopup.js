@@ -41,6 +41,8 @@ let addInList = function (todoInput) {
   localStorage.setItem(dateId, JSON.stringify(todoList));
   todoInput.value = "";
   drawList();
+  calendarGrid.innerHTML = "";
+        renderCalendar();
 };
 
 function drawList() {
@@ -49,9 +51,7 @@ function drawList() {
   let totalTasks = document.querySelector(".todo__counter");
 
   if (localStorage.hasOwnProperty(dateId)) {
-    console.log(localStorage);
-    console.log(localStorage.getItem(dateId));
-    console.log(Object.keys(localStorage.getItem(dateId)).length);
+    console.log(localStorage);    
     totalTasks.textContent = Object.keys(
       JSON.parse(localStorage.getItem(dateId))
     ).length;
@@ -68,16 +68,33 @@ function drawList() {
     btn.className = "todo-task__del";
     li.appendChild(btn);
 
+    // btn.addEventListener("click", (e) => {
+    //   todoWrapper.removeChild(li);
+    //   let myStorage = JSON.parse(localStorage.getItem(dateId));
+    //   console.log(myStorage)
+    //   delete myStorage[li.dataset.id];
+    //   localStorage[dateId] = JSON.stringify(myStorage);
+    //   totalTasks.textContent = Object.keys(
+    //     JSON.parse(localStorage.getItem(dateId))
+    //   ).length;
+    // });
+    
     btn.addEventListener("click", (e) => {
       todoWrapper.removeChild(li);
       let myStorage = JSON.parse(localStorage.getItem(dateId));
+      console.log(myStorage)
+      console.log(localStorage)
       delete myStorage[li.dataset.id];
       localStorage[dateId] = JSON.stringify(myStorage);
       totalTasks.textContent = Object.keys(
         JSON.parse(localStorage.getItem(dateId))
       ).length;
+      if (totalTasks.textContent == 0) {
+        localStorage.removeItem(dateId);
+        calendarGrid.innerHTML = "";
+        renderCalendar();
+      }
     });
-
     li.addEventListener("click", (e) => {
       li.classList.toggle("todo-task_done");
     });
