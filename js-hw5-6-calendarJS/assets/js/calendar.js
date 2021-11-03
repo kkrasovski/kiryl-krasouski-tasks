@@ -97,8 +97,6 @@ if (
     calendarSingleDay.classList.add("have-tasks");
   } 
 
-
-
     calendarGrid.append(calendarSingleDay);
 
     calendarSingleDay.addEventListener("click", (e) => {
@@ -119,6 +117,12 @@ if (
     calendarSingleDay.innerText = j;
     calendarGrid.append(calendarSingleDay);
 
+    let dateCode =`${j}${nextDateWeekend.getMonth()}${nextDateWeekend.getFullYear()}`;
+if (
+  localStorage.getItem(dateCode) != null) {
+    calendarSingleDay.classList.add("have-tasks");
+  } 
+
     calendarSingleDay.addEventListener("click", (e) => {
       let nextDate = new Date(date.setMonth(date.getMonth() + 1));
       todoOpen(e, nextDate);
@@ -136,6 +140,11 @@ if (
     calendarSingleDay.className = "calendar__day day_prev";
     calendarSingleDay.innerText = x;
     calendarGrid.prepend(calendarSingleDay);
+    let dateCode =`${x}${lastDateWeekend.getMonth()}${lastDateWeekend.getFullYear()}`;
+    if (
+      localStorage.getItem(dateCode) != null) {
+        calendarSingleDay.classList.add("have-tasks");
+      } 
     calendarSingleDay.addEventListener("click", (e) => {
       let prevDate = new Date(date.setMonth(date.getMonth() - 1));
       todoOpen(e, prevDate);
