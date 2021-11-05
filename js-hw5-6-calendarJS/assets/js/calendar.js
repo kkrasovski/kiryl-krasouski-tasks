@@ -99,7 +99,7 @@ const renderCalendar = () => {
     // set icon if todo true
     let dateCode = `${i}${date.getMonth()}${date.getFullYear()}`;
     if (localStorage.getItem(dateCode) != null) {
-      calendarSingleDay.classList.add("have-tasks");
+      calendarSingleDay.classList.add("day_have-tasks");
     }
 
     // find holiday
@@ -111,7 +111,7 @@ const renderCalendar = () => {
       );
 
       if (Date.parse(holiday) === Date.parse(currentHolidayDay)) {
-        calendarSingleDay.classList.add("weekend");
+        calendarSingleDay.classList.add("day_weekend");
       }
     });
 
@@ -140,7 +140,7 @@ const renderCalendar = () => {
       // set icon if todo true
       let dateCode = `${j}${nextDateWeekend.getMonth()}${nextDateWeekend.getFullYear()}`;
       if (localStorage.getItem(dateCode) != null) {
-        calendarSingleDay.classList.add("have-tasks");
+        calendarSingleDay.classList.add("day_have-tasks");
       }
       // find holiday
       holidayConfig.forEach((item) => {
@@ -150,7 +150,7 @@ const renderCalendar = () => {
         );
 
         if (Date.parse(holiday) === Date.parse(nextHolidayDay)) {
-          calendarSingleDay.classList.add("weekend");
+          calendarSingleDay.classList.add("day_weekend");
         }
       });
 
@@ -183,7 +183,7 @@ const renderCalendar = () => {
       // set icon if todo true
       let dateCode = `${x}${lastDateWeekend.getMonth()}${lastDateWeekend.getFullYear()}`;
       if (localStorage.getItem(dateCode) != null) {
-        calendarSingleDay.classList.add("have-tasks");
+        calendarSingleDay.classList.add("day_have-tasks");
       }
 
       //  find holiday
@@ -251,7 +251,7 @@ function setWeekends(weekendDays, g) {
     weekendDays.getDay() == localStorage.firstWeekendDay ||
     weekendDays.getDay() == localStorage.secondWeekendDay
   ) {
-    g.classList.add("weekend");
+    g.classList.add("day_weekend");
   }
 }
 

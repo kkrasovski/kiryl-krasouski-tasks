@@ -87,9 +87,6 @@ html {
 }
 
 .arrow__icon_mirrored {
-}
-
-.arrow__icon_mirrored {
   transform: scaleX(-1);
 }
 
@@ -146,6 +143,27 @@ html {
 .day_next {
   background: #fafafa;
   color: #b9b9b9;
+}
+
+.day_weekend {
+  color: #47b39d;
+  font-weight: 600;
+}
+
+.day_have-tasks {
+  position: relative;
+}
+
+.day_have-tasks::after {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: #b05f6d;
+  content: "";
 }
 
 .container__settings-btn {
@@ -280,28 +298,6 @@ html {
   color: #fff;
 }
 
-.weekend {
-  color: #47b39d;
-  font-weight: 600;
-}
-
-.have-tasks {
-  position: relative;
-}
-
-.have-tasks::after {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  display: block;
-  width: 5px;
-  height: 5px;
-  border-radius: 5px;
-  background: #b05f6d;
-  content: "";
-}
-
-
 .container__weather {
   position: relative;
   width: 50%;
@@ -334,7 +330,6 @@ html {
 .weather-day {
 display: flex;
 flex-direction: column;
-
 }
 
 .weather-day__title {
