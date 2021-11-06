@@ -75,3 +75,8 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;  
 }
+
+.todo__total {
+  text-align: right;
+  color: #b9b9b9;
+}
