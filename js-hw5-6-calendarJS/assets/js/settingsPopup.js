@@ -1,7 +1,7 @@
-let settingsBtn = document.querySelector(".container__settings-btn");
-let popUp = document.querySelector(".container__pop-up");
-let todoPopUp = document.querySelector(".container__pop-up");
-let calendar = document.querySelector(".container__calendar");
+const settingsBtn = document.querySelector(".container__settings-btn");
+const popUp = document.querySelector(".container__pop-up");
+const todoPopUp = document.querySelector(".container__pop-up");
+const calendar = document.querySelector(".container__calendar");
 
 settingsBtn.addEventListener("click", popUpHandler);
 
