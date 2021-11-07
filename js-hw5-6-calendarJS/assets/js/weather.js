@@ -16,27 +16,31 @@ fetch(apiUrl)
       "Saturday",
     ];
 
-    let dayOfWeekToday = new Date().getDay();
-    console.log("день недели сегодня", dayOfWeekToday);
+    let dayOfWeekToday = new Date().getDay();   
+   console.log(dayOfWeekToday)
+   if (dayOfWeekToday === 0) {
+    dayOfWeekToday = 7;
+   }
+  
     for (let i = 0; i <= 7 - dayOfWeekToday; i++) {
-      let weatherGrid = document.querySelector(".weather__grid");
+      const weatherGrid = document.querySelector(".weather__grid");
       const dayOfWeek = new Date(data.daily[i].dt * 1000);
       const date = `${dayOfWeek.getDate()}.${dayOfWeek.getMonth()}.${dayOfWeek.getFullYear()}`;
       const temperature = Math.round(data.daily[i].temp.day) + "&deg;";
       console.log
 
-      let weatherDay = document.createElement("div");
+      const weatherDay = document.createElement("div");
       weatherDay.className = "weather__for-day weather-day";
 
-      let weatherTitle = document.createElement("h2");
+      const weatherTitle = document.createElement("h2");
       weatherTitle.className = "weather-day__title";
       weatherTitle.textContent = daysLabelWeather[dayOfWeek.getDay()];
 
-      let weatherDate = document.createElement("div");
+      const weatherDate = document.createElement("div");
       weatherDate.className = "weather-day__date";
       weatherDate.textContent =  date;
 
-      let weatherTemperature = document.createElement("div");
+      const weatherTemperature = document.createElement("div");
       weatherTemperature.className = "weather-day__temperature";
       weatherTemperature.innerHTML = temperature;
 

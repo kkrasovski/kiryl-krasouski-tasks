@@ -13,10 +13,10 @@ function todoOpen(e, date) {
     e.target.innerText
   ).toDateString();
   dateId = `${e.target.innerText}${date.getMonth()}${date.getFullYear()}`;
-  let todoAddBtn = document.querySelector(".todo__add-btn");
-  let todoPopUpWrapper = document.querySelector(".container__todo");
-  let closeBtnTodo = document.querySelector(".pop-up__close-btn_todo");
-  let dateForTodo = document.querySelector(".pop-up__nunber");
+  const todoAddBtn = document.querySelector(".todo__add-btn");
+  const todoPopUpWrapper = document.querySelector(".container__todo");
+  const closeBtnTodo = document.querySelector(".pop-up__close-btn_todo");
+  const dateForTodo = document.querySelector(".pop-up__nunber");
 
   dateForTodo.innerText = currentDay;
   todoPopUpWrapper.classList.toggle("container__todo_close");
@@ -24,7 +24,7 @@ function todoOpen(e, date) {
     todoPopUpWrapper.classList.add("container__todo_close");
   });
 
-  let todoInput = document.querySelector(".todo__input_text");
+  const todoInput = document.querySelector(".todo__input_text");
   todoAddBtn.addEventListener("click", (e) => {
     addInList(todoInput);
     e.preventDefault();
@@ -47,9 +47,9 @@ let addInList = function (todoInput) {
 };
 
 function drawList() {
-  let todoWrapper = document.querySelector(".todo__wrapper");
+  const todoWrapper = document.querySelector(".todo__wrapper");
   todoWrapper.innerHTML = "";
-  let totalTasks = document.querySelector(".todo__counter");
+  const totalTasks = document.querySelector(".todo__counter");
 
   if (localStorage.hasOwnProperty(dateId)) {
     console.log(localStorage);    

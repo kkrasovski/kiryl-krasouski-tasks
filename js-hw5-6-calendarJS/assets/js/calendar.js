@@ -1,9 +1,9 @@
 const date = new Date();
 date.setDate(1);
 
-let holidayConfig = ["2022.01.14", "2022.01.4", "2021.12.02", "2021.11.30"];
+const holidayConfig = ["2022.01.14", "2022.01.4", "2021.12.02", "2021.11.30"];
 
-let hi = "1111";
+
 if (localStorage.getItem("showAdditionalDays") == null) {
   localStorage.setItem("showAdditionalDays", true);
 }
@@ -31,7 +31,7 @@ const monthLabel = [
   "November",
   "December",
 ];
-let calendarGrid = document.querySelector(".calendar__grid");
+const calendarGrid = document.querySelector(".calendar__grid");
 const renderCalendar = () => {
   const lastDayIndex = new Date(
     date.getFullYear(),
@@ -83,7 +83,7 @@ const renderCalendar = () => {
     let dateWeekend = new Date(date.getTime());
     dateWeekend.setDate(i);
 
-    let calendarSingleDay = document.createElement("div");
+    const calendarSingleDay = document.createElement("div");
 
     calendarSingleDay.innerText = i;
     if (
@@ -132,7 +132,7 @@ const renderCalendar = () => {
         nextDateWeekend.setFullYear(dateWeekend.getFullYear() + 1);
       }
 
-      let calendarSingleDay = document.createElement("div");
+      const calendarSingleDay = document.createElement("div");
       calendarSingleDay.className = "calendar__day day_next";
       calendarSingleDay.innerText = j;
       calendarGrid.append(calendarSingleDay);
@@ -165,7 +165,7 @@ const renderCalendar = () => {
     }
   } else {
     for (let j = 1; j <= nextDays; j++) {
-      let calendarSingleDay = document.createElement("div");
+      const calendarSingleDay = document.createElement("div");
       calendarSingleDay.className = "calendar__day day_inactive";
       calendarGrid.append(calendarSingleDay);
     }
@@ -175,7 +175,7 @@ const renderCalendar = () => {
   if (localStorage.getItem("showAdditionalDays") == "true") {
     for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
       lastDateWeekend.setDate(x);
-      let calendarSingleDay = document.createElement("div");
+      const calendarSingleDay = document.createElement("div");
       calendarSingleDay.className = "calendar__day day_prev";
       calendarSingleDay.innerText = x;
       calendarGrid.prepend(calendarSingleDay);
@@ -208,7 +208,7 @@ const renderCalendar = () => {
     }
   } else {
     for (let x = prevLastDay; x > prevLastDay - firstDayIndex; x--) {
-      let calendarSingleDay = document.createElement("div");
+      const calendarSingleDay = document.createElement("div");
       calendarSingleDay.className = "calendar__day day_inactive";
       calendarGrid.prepend(calendarSingleDay);
     }
@@ -281,7 +281,7 @@ function todoActivation() {
 }
 
 // Save Btn
-let saveSettings = document.querySelector("#save");
+const saveSettings = document.querySelector("#save");
 saveSettings.addEventListener("click", () => {
   selectFirstDay();
   popUpHandler();
@@ -319,8 +319,8 @@ function selectWeekends() {
 }
 
 // settings for days of the next and previous month
-let showRearMonth = document.getElementById("show-month");
-let hideRearMonth = document.getElementById("hide-month");
+const showRearMonth = document.getElementById("show-month");
+const hideRearMonth = document.getElementById("hide-month");
 
 if (localStorage.getItem("showAdditionalDays") == "true") {
   showRearMonth.checked = true;
