@@ -45,6 +45,7 @@ const monthLabel = [
 ];
 const calendarGrid = document.querySelector(".calendar__grid");
 const renderCalendar = () => {
+  calendarGrid.innerHTML = "";
   const lastDayIndex = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
