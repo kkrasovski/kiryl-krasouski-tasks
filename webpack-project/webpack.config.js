@@ -9,7 +9,7 @@ const { config } = require("process");
 const isDev = process.env.NODE_ENV === 'development';
 console.log('IS DEV', isDev)
 const isProd = !isDev;
-
+const webpack = require('webpack')
 const optimization = () => {
   const config = {   
   }
@@ -25,7 +25,7 @@ const optimization = () => {
 module.exports = {
 
   entry: {
-    main: "./src/index.js",
+    main: ['webpack-dev-server/client', './src/index.js'],
   },
   output: {
     filename: 'bundle.js',
@@ -41,7 +41,8 @@ module.exports = {
       }
     }),
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
+
+     new CopyWebpackPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, "src/favicon.ico"),
@@ -59,7 +60,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 4200,  
+    port: 4300,  
     hot: isDev
   },
   module: {
@@ -71,7 +72,11 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'svg-inline-loader'
-    }
+    },
+    {
+      test: /\.s[ac]ss$/,
+      use: [MiniCssExtractPlugin.loader, "sass-loader"],     
+    },
     ]
   }
 }
