@@ -36,7 +36,7 @@
 .todo-task_box {
   padding: 5px;
 }
-
+s
 .todo-task_done {
   background: salmon;
 }
@@ -62,7 +62,7 @@
   width: 30px;
   height: 30px;
   border: 0;
-  background: url(assets/icons/edit.png);
+  background: url(../icons/edit.png);
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
@@ -71,7 +71,7 @@
   width: 30px;
   height: 30px;
   border: 0;
-  background: url(assets/icons/del.png);
+  background: url(../icons/del.png);
   background-position: 50% 50%;
   background-repeat: no-repeat;  
 }
