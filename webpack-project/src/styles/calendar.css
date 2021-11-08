@@ -1,0 +1,150 @@
+
+.calendar__season {
+  padding: 15px;
+  background: #b05f6d;
+}
+
+.season {
+  display: flex;
+  align-items: center;
+}
+
+.season__control,
+.season__select {
+  padding: 15px;
+}
+
+.season__control {
+  background: #462446;
+  width: 24px;
+}
+
+.season__control:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.season__select {
+  width: 100%;
+}
+
+.season__handler {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  padding: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  background: #462446;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.season__item:nth-child(2n) {
+  background: #522952;
+}
+
+.season__handler_helper {
+  background: #b05f6d;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  appearance: auto;
+  outline: auto;
+}
+
+.arrow,
+.arrow__icon {
+  cursor: pointer;
+}
+
+.arrow__icon {
+  height: 30px;
+  width: 18px;
+  border: none;
+  background: url(./../assets/icons/arrow.png);
+  background-repeat: no-repeat;
+}
+
+.arrow__icon_mirrored {
+  transform: scaleX(-1);
+}
+
+.calendar__days {
+  display: flex;
+}
+
+.calendar__day-of-week {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.calendar__day-of-week:hover {
+  background: #b05f6d;
+  color: #ffc153;
+}
+
+.calendar__grid {
+  display: flex;
+  flex-wrap: wrap;
+  background: #f3f3f3;
+}
+
+.calendar__day {
+  padding: 15px;
+  width: calc(100% / 7);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.calendar__day:hover {
+  font-weight: 700;
+  background: #ffffff;
+  color: #47b39d;
+  cursor: pointer;
+}
+
+.day_current {
+  background: #462446;
+  color: #f3f3f3;
+}
+
+.day_inactive:hover {
+  cursor: auto;
+  background: none;
+}
+
+.day_prev,
+.day_next {
+  background: #fafafa;
+  color: #b9b9b9;
+}
+
+.day_weekend {
+  color: #47b39d;
+  font-weight: 600;
+}
+
+.day_have-tasks {
+  position: relative;
+}
+
+.day_have-tasks::after {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: #b05f6d;
+  content: "";
+}

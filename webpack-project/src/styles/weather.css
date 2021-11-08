@@ -1,0 +1,44 @@
+.weather__title {
+  padding: 15px 0;
+  font-size: 36px;
+  text-align: center;
+}
+
+.weather__grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.weather__for-day {
+  width: 100%;
+  margin: 0 5px;
+  padding: 10px 5px;
+  border: 2px solid #b05f6d;
+}
+
+.weather-day {
+display: flex;
+flex-direction: column;
+}
+
+.weather-day__title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.weather-day__date {
+  margin: 5px 0;
+  padding: 5px 0;
+  border-radius: 5px;
+  font-size: 12px;
+  text-align: center;
+  background: #ffc153;  
+}
+
+.weather-day__temperature {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+}
