@@ -74,8 +74,8 @@ module.exports = {
         loader: 'svg-inline-loader'
     },
     {
-      test: /\.s[ac]ss$/,
-      use: [MiniCssExtractPlugin.loader, "sass-loader"],     
+      test: /\.scss$/,
+      use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]          
     },
     ]
   }

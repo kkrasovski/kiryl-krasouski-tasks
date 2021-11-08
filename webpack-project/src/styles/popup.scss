@@ -1,0 +1,72 @@
+.pop-up {
+  &__title {
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__date {
+    text-align: center;
+  }
+
+  &__select {
+    width: 100%;
+    margin-bottom: 25px;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ffffff;
+    background: #b05f6d;
+    cursor: pointer;
+  }
+
+  &__select_half {
+    width: 45%;
+    box-sizing: border-box;
+  }
+
+  &__set-of-weekend {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__label {
+    display: block;
+    padding: 5px 0;
+  }
+
+  &__checkbox-item {
+    display: block;
+    margin: 5px 0 15px;
+  }
+
+  &__label-radio {
+    display: inline;
+    margin: 15px 0;
+  }
+
+  &__radio-item {
+    margin-right: 35px;
+  }
+
+  &__btn {
+    display: block;
+    margin: 15px auto 0;
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 5px;
+    border: 0;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    border: 0;
+    background: #ffffff;
+  }
+}
