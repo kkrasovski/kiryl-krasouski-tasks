@@ -37,7 +37,12 @@ let addInList = function (todoInput) {
   if (value === "") {
     return;
   }
-  counter++;
+  console.log(counter)
+  counter++; 
+
+  if (localStorage.hasOwnProperty(dateId)) {
+    todoList = JSON.parse(localStorage[dateId]);
+  }
   todoList[counter] = value;
   localStorage.setItem(dateId, JSON.stringify(todoList));
   todoInput.value = "";
