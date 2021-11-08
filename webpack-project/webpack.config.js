@@ -25,14 +25,14 @@ const optimization = () => {
 module.exports = {
 
   entry: {
-    main: ['webpack-dev-server/client', './src/index.js'],
+    main: "./src/index.js",
   },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, "dist"),
   },
   optimization: optimization(),
-  
+  devtool: isDev ? 'source-map' : false,
   plugins: [
     new HTMLWebpackPlugin({
       template: "./src/index.html",
