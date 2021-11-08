@@ -2,6 +2,9 @@ let base = {};
 let dateId;
 let todoList = {};
 let counter = 0;
+if (localStorage.getItem("nextId") === null) {
+  localStorage.setItem("nextId", 0);
+}
 function todoOpen(e, date) {
   if (localStorage.todoActive == "false") {
     return;
@@ -37,18 +40,17 @@ let addInList = function (todoInput) {
   if (value === "") {
     return;
   }
-  console.log(counter)
-  counter++; 
-
+  let nextId = localStorage.getItem("nextId");
   if (localStorage.hasOwnProperty(dateId)) {
     todoList = JSON.parse(localStorage[dateId]);
   }
-  todoList[counter] = value;
+  todoList[nextId] = value;
+  nextId++;
   localStorage.setItem(dateId, JSON.stringify(todoList));
   todoInput.value = "";
+  localStorage.setItem("nextId", nextId);
   drawList();
-  calendarGrid.innerHTML = "";
-        renderCalendar();
+  renderCalendar();
 };
 
 function drawList() {
