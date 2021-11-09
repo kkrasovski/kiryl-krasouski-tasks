@@ -54,24 +54,56 @@ s
   text-align: center;
 }
 
+.todo-task__edit {
+  background: salmon;
+  width: 20px;
+  height: 20px;
+}
+
+.todo-task_done {
+  text-decoration: line-through;
+}
+
 .task__ckeck {
   width: 20px;
   height: 20px;
 }
+
+.todo__task-text {
+  width:100%;
+}
 .todo-task__edit {
   width: 30px;
   height: 30px;
+  padding: 0 10px;
   border: 0;
   background: url(../icons/edit.png);
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
 
+.todo-task__editor {
+  width: 80%;
+  padding-right: 30px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 .todo-task__del {
   width: 30px;
   height: 30px;
+  padding: 0 10px;
   border: 0;
   background: url(../icons/del.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;  
+}
+
+.todo-task__save {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background: url(../icons/accept.png);
   background-position: 50% 50%;
   background-repeat: no-repeat;  
 }

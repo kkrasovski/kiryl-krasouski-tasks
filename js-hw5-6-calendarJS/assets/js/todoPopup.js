@@ -59,7 +59,7 @@ function drawList() {
   const totalTasks = document.querySelector(".todo__counter");
 
   if (localStorage.hasOwnProperty(dateId)) {
-    console.log(localStorage);    
+    console.log(localStorage);
     totalTasks.textContent = Object.keys(
       JSON.parse(localStorage.getItem(dateId))
     ).length;
@@ -70,17 +70,23 @@ function drawList() {
   for (key in JSON.parse(localStorage.getItem(dateId))) {
     const li = document.createElement("li");
     li.className = "todo__task todo-task";
-    li.textContent = JSON.parse(localStorage.getItem(dateId))[key];
+
+    const taskText = document.createElement("div");
+    taskText.className = "todo__task-text";
+    taskText.textContent = JSON.parse(localStorage.getItem(dateId))[key];
+    li.appendChild(taskText);
     li.dataset.id = key;
     const btn = document.createElement("div");
     btn.className = "todo-task__del";
+    const btnEdit = document.createElement("div");
+    btnEdit.className = "todo-task__edit";
     li.appendChild(btn);
-    
+    li.appendChild(btnEdit);
     btn.addEventListener("click", (e) => {
       todoWrapper.removeChild(li);
       let myStorage = JSON.parse(localStorage.getItem(dateId));
-      console.log(myStorage)
-      console.log(localStorage)
+      console.log(myStorage);
+      console.log(localStorage);
       delete myStorage[li.dataset.id];
       localStorage[dateId] = JSON.stringify(myStorage);
       totalTasks.textContent = Object.keys(
@@ -91,6 +97,32 @@ function drawList() {
         calendarGrid.innerHTML = "";
         renderCalendar();
       }
+    });
+    btnEdit.addEventListener("click", (e) => {
+      e.stopPropagation();
+      li.textContent = "";
+      const taskEditor = document.createElement("input");
+      taskEditor.className = "todo-task__editor";
+      taskEditor.type = "text";
+      taskEditor.value = JSON.parse(localStorage.getItem(dateId))[
+        li.dataset.id
+      ];
+      taskEditor.dataset.id = li.dataset.id;
+      const saveTask = document.createElement("div");
+      saveTask.className = "todo-task__save";
+      li.appendChild(taskEditor);
+      li.appendChild(saveTask);
+      saveTask.addEventListener("click", (e) => {
+        const listEdit = JSON.parse(localStorage.getItem(dateId));
+        listEdit[li.dataset.id] = taskEditor.value;
+        if (taskEditor.value === "") {
+          return;
+        }
+        localStorage.setItem(dateId, JSON.stringify(listEdit));
+        drawList();
+      });
+
+      console.log(JSON.parse(localStorage.getItem(dateId))[key]);
     });
     li.addEventListener("click", (e) => {
       li.classList.toggle("todo-task_done");

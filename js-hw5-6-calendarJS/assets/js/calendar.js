@@ -4,15 +4,12 @@ date.setDate(1);
 const holidayConfig = ["2022.01.14", "2022.01.4", "2021.12.02", "2021.11.30"];
 
 document.querySelector(".arrow_prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-
-  calendarGrid.innerHTML = "";
+  date.setMonth(date.getMonth() - 1);  
   renderCalendar();
 });
 
 document.querySelector(".arrow_next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  calendarGrid.innerHTML = "";
+  date.setMonth(date.getMonth() + 1);  
   renderCalendar();
 });
 
