@@ -27,6 +27,9 @@
     text-align: right;
     color: #b9b9b9;
   }
+  &__task-text {
+    width:100%;
+  }
 }
 
 .todo-task {
@@ -39,8 +42,8 @@
   }
 
   &_done {
-    background: salmon;
-  }
+    text-decoration: line-through;
+  } 
 
   &__name {
     flex-grow: 3;
@@ -58,6 +61,7 @@
   &__edit {
     width: 30px;
     height: 30px;
+    padding: 0 10px;
     border: 0;
     background: url(./../assets/icons/edit.png);
     background-position: 50% 50%;
@@ -67,13 +71,24 @@
   &__del {
     width: 30px;
     height: 30px;
+    padding: 0 10px;
     border: 0;
     background: url(./../assets/icons/del.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
-}
-.task__check {
-  width: 20px;
-  height: 20px;
+  &__save {
+    width: 16px;
+    height: 16px;
+    border: 0;
+    background: url(./../assets/icons/accept.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;  
+  }
+  &__editor {
+    width: 80%;
+    padding-right: 30px;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
 }

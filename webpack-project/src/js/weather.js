@@ -17,7 +17,6 @@ fetch(apiUrl)
     ];
 
     let dayOfWeekToday = new Date().getDay();
-    console.log(dayOfWeekToday);
     if (dayOfWeekToday === 0) {
       dayOfWeekToday = 7;
     }
