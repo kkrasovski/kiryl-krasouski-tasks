@@ -1,47 +1,22 @@
 const date = new Date();
 date.setDate(1);
 import { todoOpen } from "./todoPopup";
-const holidayConfig = ["2022.01.14", "2022.01.4", "2021.12.02", "2021.11.30"];
-
-document.querySelector(".arrow_prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-
-  calendarGrid.innerHTML = "";
-  renderCalendar();
-});
-
-document.querySelector(".arrow_next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  calendarGrid.innerHTML = "";
-  renderCalendar();
-});
-
-if (localStorage.getItem("showAdditionalDays") == null) {
-  localStorage.setItem("showAdditionalDays", true);
-}
-if (
-  localStorage.getItem("firstWeekendDay") == null &&
-  localStorage.getItem("secondWeekendDay") == null
-) {
-  localStorage.setItem("firstWeekendDay", 6);
-  localStorage.setItem("secondWeekendDay", 0);
-}
-
-const monthLabel = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+import { switchMonth } from "./month-switch";
+import { holidayConfig } from "./defaultSettings";
+import { monthLabel } from "./defaultSettings";
+import { setWeekends } from "./drawWeekends";
+import { haveTask } from "./haveTask";
+import { setHolidays } from "./drawSomeWeekends";
 const calendarGrid = document.querySelector(".calendar__grid");
+
+document.querySelector(".arrow_prev").addEventListener("click", function () {
+  switchMonth(-1, date, renderCalendar);
+});
+
+document.querySelector(".arrow_next").addEventListener("click", function () {
+  switchMonth(+1, date, renderCalendar);
+});
+
 export const renderCalendar = () => {
   calendarGrid.innerHTML = "";
   const lastDayIndex = new Date(
@@ -70,11 +45,9 @@ export const renderCalendar = () => {
     localStorage.firstWeekDay == undefined
   ) {
     firstDayIndex = date.getDay() - 1;
-
     if (date.getDay() == 0) {
       firstDayIndex = date.getDay() - 1 + 7;
     }
-
     if (lastDayIndex == 0) {
       nextDays = 7;
     } else {
@@ -84,9 +57,9 @@ export const renderCalendar = () => {
 
   document.querySelector(".season__handler").innerHTML =
     monthLabel[date.getMonth()];
-  let dateWeekend = new Date(date.getTime());
-  let lastDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() - 1));
-  let nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() + 1));
+  const dateWeekend = new Date(date.getTime());
+  const lastDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() - 1));
+  const nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() + 1));
 
   //current  months days in current month
 
@@ -106,27 +79,14 @@ export const renderCalendar = () => {
     } else {
       calendarSingleDay.className = "calendar__day day";
     }
-
-    // set icon if todo true
-    let dateCode = `${i}${date.getMonth()}${date.getFullYear()}`;
-    if (localStorage.getItem(dateCode) != null) {
-      calendarSingleDay.classList.add("day_have-tasks");
-    }
-
-    // find holiday
-    holidayConfig.forEach((item) => {
-      let holiday = new Date(item);
-
-      let currentHolidayDay = new Date(
-        `${date.getFullYear()}, ${date.getMonth() + 1}, ${i}`
-      );
-
-      if (Date.parse(holiday) === Date.parse(currentHolidayDay)) {
-        calendarSingleDay.classList.add("day_weekend");
-      }
-    });
-
     calendarGrid.append(calendarSingleDay);
+    // set "have task icon"
+    haveTask(i, date, calendarSingleDay);
+
+    let currentHolidayDay = new Date(
+      `${date.getFullYear()}, ${date.getMonth() + 1}, ${i}`
+    );
+    setHolidays(date, i, calendarSingleDay, currentHolidayDay);
 
     calendarSingleDay.addEventListener("click", (e) => {
       todoOpen(e, date);
@@ -148,30 +108,18 @@ export const renderCalendar = () => {
       calendarSingleDay.innerText = j;
       calendarGrid.append(calendarSingleDay);
 
-      // set icon if todo true
-      let dateCode = `${j}${nextDateWeekend.getMonth()}${nextDateWeekend.getFullYear()}`;
-      if (localStorage.getItem(dateCode) != null) {
-        calendarSingleDay.classList.add("day_have-tasks");
-      }
-      // find holiday
-      holidayConfig.forEach((item) => {
-        let holiday = new Date(item);
-        let nextHolidayDay = new Date(
-          `${date.getFullYear()}, ${nextDateWeekend.getMonth() + 1}, ${j}`
-        );
+      // set "have task icon"
+      haveTask(j, date, calendarSingleDay);
 
-        if (Date.parse(holiday) === Date.parse(nextHolidayDay)) {
-          calendarSingleDay.classList.add("day_weekend");
-        }
-      });
+      let nextHolidayDay = new Date(
+        `${date.getFullYear()}, ${nextDateWeekend.getMonth() + 1}, ${j}`
+      );
+      setHolidays(date, j, calendarSingleDay, nextHolidayDay);
 
       calendarSingleDay.addEventListener("click", (e) => {
         let nextDate = new Date(date.setMonth(date.getMonth() + 1));
         todoOpen(e, nextDate);
-
-        let prevDate = new Date(date.setMonth(date.getMonth() - 1));
       });
-
       setWeekends(nextDateWeekend, calendarSingleDay);
     }
   } else {
@@ -191,24 +139,13 @@ export const renderCalendar = () => {
       calendarSingleDay.innerText = x;
       calendarGrid.prepend(calendarSingleDay);
 
-      // set icon if todo true
-      let dateCode = `${x}${lastDateWeekend.getMonth()}${lastDateWeekend.getFullYear()}`;
-      if (localStorage.getItem(dateCode) != null) {
-        calendarSingleDay.classList.add("day_have-tasks");
-      }
+      // set "have task icon"
+      haveTask(x, date, calendarSingleDay);
 
-      //  find holiday
-      holidayConfig.forEach((item) => {
-        let holiday = new Date(item);
-
-        let prevHolidayDay = new Date(
-          `${date.getFullYear()}, ${lastDateWeekend.getMonth() + 1}, ${x}`
-        );
-
-        if (Date.parse(holiday) === Date.parse(prevHolidayDay)) {
-          calendarSingleDay.classList.add("weekend");
-        }
-      });
+      let prevHolidayDay = new Date(
+        `${date.getFullYear()}, ${lastDateWeekend.getMonth() + 1}, ${x}`
+      );
+      setHolidays(date, x, calendarSingleDay, prevHolidayDay);
 
       calendarSingleDay.addEventListener("click", (e) => {
         let prevDate = new Date(date.setMonth(date.getMonth() - 1));
@@ -226,13 +163,3 @@ export const renderCalendar = () => {
   }
 };
 renderCalendar();
-
-// draw weekends
-function setWeekends(weekendDays, g) {
-  if (
-    weekendDays.getDay() == localStorage.firstWeekendDay ||
-    weekendDays.getDay() == localStorage.secondWeekendDay
-  ) {
-    g.classList.add("day_weekend");
-  }
-}

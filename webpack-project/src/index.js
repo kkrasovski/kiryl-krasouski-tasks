@@ -1,3 +1,4 @@
+import "./js/defaultSettings"
 import "./js/todoPopup"
 import "./js/settingsPopup"
 import "./js/weather"

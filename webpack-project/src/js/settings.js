@@ -20,12 +20,12 @@ function setFirstDay() {
   let daysNames = "";
   if (localStorage.firstWeekDay == "sun") {
     for (let k = 0; k < 7; k++) {
-      daysNames += `<div class="calendar__day-of-week" href="#">${daysLabelsSun[k]}</div>`;
+      daysNames += `<div class="calendar__day-of-week">${daysLabelsSun[k]}</div>`;
       daysOfWeek.innerHTML = daysNames;
     }
   } else {
     for (let k = 0; k < 7; k++) {
-      daysNames += `<div class="calendar__day-of-week" href="#">${daysLabelsMon[k]}</div>`;
+      daysNames += `<div class="calendar__day-of-week">${daysLabelsMon[k]}</div>`;
       daysOfWeek.innerHTML = daysNames;
     }
   }
