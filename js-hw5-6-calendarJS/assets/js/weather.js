@@ -16,8 +16,7 @@ fetch(apiUrl)
       "Saturday",
     ];
 
-    let dayOfWeekToday = new Date().getDay();   
-   console.log(dayOfWeekToday)
+    let dayOfWeekToday = new Date().getDay(); 
    if (dayOfWeekToday === 0) {
     dayOfWeekToday = 7;
    }
@@ -26,8 +25,7 @@ fetch(apiUrl)
       const weatherGrid = document.querySelector(".weather__grid");
       const dayOfWeek = new Date(data.daily[i].dt * 1000);
       const date = `${dayOfWeek.getDate()}.${dayOfWeek.getMonth()}.${dayOfWeek.getFullYear()}`;
-      const temperature = Math.round(data.daily[i].temp.day) + "&deg;";
-      console.log
+      const temperature = Math.round(data.daily[i].temp.day) + "&deg;";     
 
       const weatherDay = document.createElement("div");
       weatherDay.className = "weather__for-day weather-day";

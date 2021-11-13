@@ -58,8 +58,7 @@ function drawList() {
   todoWrapper.innerHTML = "";
   const totalTasks = document.querySelector(".todo__counter");
 
-  if (localStorage.hasOwnProperty(dateId)) {
-    console.log(localStorage);
+  if (localStorage.hasOwnProperty(dateId)) {    
     totalTasks.textContent = Object.keys(
       JSON.parse(localStorage.getItem(dateId))
     ).length;
@@ -84,9 +83,7 @@ function drawList() {
     li.appendChild(btnEdit);
     btn.addEventListener("click", (e) => {
       todoWrapper.removeChild(li);
-      let myStorage = JSON.parse(localStorage.getItem(dateId));
-      console.log(myStorage);
-      console.log(localStorage);
+      let myStorage = JSON.parse(localStorage.getItem(dateId));    
       delete myStorage[li.dataset.id];
       localStorage[dateId] = JSON.stringify(myStorage);
       totalTasks.textContent = Object.keys(
@@ -121,8 +118,7 @@ function drawList() {
         localStorage.setItem(dateId, JSON.stringify(listEdit));
         drawList();
       });
-
-      console.log(JSON.parse(localStorage.getItem(dateId))[key]);
+     
     });
     li.addEventListener("click", (e) => {
       li.classList.toggle("todo-task_done");
