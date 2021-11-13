@@ -6,7 +6,7 @@ if (localStorage.getItem("nextId") === null) {
   localStorage.setItem("nextId", 0);
 }
 function todoOpen(e, date) {
-  if (localStorage.todoActive == "false") {
+  if (localStorage.todoActive === "false") {
     return;
   }
   todoList = {};
@@ -92,7 +92,7 @@ function drawList() {
       totalTasks.textContent = Object.keys(
         JSON.parse(localStorage.getItem(dateId))
       ).length;
-      if (totalTasks.textContent == 0) {
+      if (totalTasks.textContent === 0) {
         localStorage.removeItem(dateId);
         calendarGrid.innerHTML = "";
         renderCalendar();

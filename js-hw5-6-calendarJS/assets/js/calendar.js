@@ -13,12 +13,12 @@ document.querySelector(".arrow_next").addEventListener("click", () => {
   renderCalendar();
 });
 
-if (localStorage.getItem("showAdditionalDays") == null) {
+if (localStorage.getItem("showAdditionalDays") === null) {
   localStorage.setItem("showAdditionalDays", true);
 }
 if (
-  localStorage.getItem("firstWeekendDay") == null &&
-  localStorage.getItem("secondWeekendDay") == null
+  localStorage.getItem("firstWeekendDay") === null &&
+  localStorage.getItem("secondWeekendDay") === null
 ) {
   localStorage.setItem("firstWeekendDay", 6);
   localStorage.setItem("secondWeekendDay", 0);
@@ -65,16 +65,16 @@ const renderCalendar = () => {
   let nextDays = 7 - lastDayIndex - 1;
 
   if (
-    localStorage.firstWeekDay == "mon" ||
-    localStorage.firstWeekDay == undefined
+    localStorage.firstWeekDay === "mon" ||
+    localStorage.firstWeekDay === undefined
   ) {
     firstDayIndex = date.getDay() - 1;
 
-    if (date.getDay() == 0) {
+    if (date.getDay() === 0) {
       firstDayIndex = date.getDay() - 1 + 7;
     }
 
-    if (lastDayIndex == 0) {
+    if (lastDayIndex === 0) {
       nextDays = 7;
     } else {
       nextDays = 7 - lastDayIndex;
@@ -138,7 +138,7 @@ const renderCalendar = () => {
   if (localStorage.getItem("showAdditionalDays") == "true") {
     for (let j = 1; j <= nextDays; j++) {
       nextDateWeekend.setDate(j);
-      if (nextDateWeekend.getMonth() == 1) {
+      if (nextDateWeekend.getMonth() === 1) {
         nextDateWeekend.setFullYear(dateWeekend.getFullYear() + 1);
       }
 
@@ -230,7 +230,7 @@ renderCalendar();
 function setFirstDay() {
   const daysOfWeek = document.querySelector(".calendar__days");
   let daysNames = "";
-  if (localStorage.firstWeekDay == "sun") {
+  if (localStorage.firstWeekDay === "sun") {
     for (let k = 0; k < 7; k++) {
       daysNames += `<div class="calendar__day-of-week" href="#">${daysLabelsSun[k]}</div>`;
       daysOfWeek.innerHTML = daysNames;
@@ -245,8 +245,8 @@ function setFirstDay() {
 // draw weekends
 function setWeekends(weekendDays, g) {
   if (
-    weekendDays.getDay() == localStorage.firstWeekendDay ||
-    weekendDays.getDay() == localStorage.secondWeekendDay
+    weekendDays.getDay() == JSON.parse(localStorage.firstWeekendDay) ||
+    weekendDays.getDay() == JSON.parse(localStorage.secondWeekendDay)
   ) {
     g.classList.add("day_weekend");
   }
