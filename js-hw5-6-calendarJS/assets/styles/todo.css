@@ -36,7 +36,7 @@
 .todo-task_box {
   padding: 5px;
 }
-s
+
 .todo-task_done {
   background: salmon;
 }
@@ -64,7 +64,7 @@ s
   text-decoration: line-through;
 }
 
-.task__ckeck {
+.task__check {
   width: 20px;
   height: 20px;
 }
