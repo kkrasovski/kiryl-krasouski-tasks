@@ -17,8 +17,8 @@
 }
 
 .weather-day {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .weather-day__title {
@@ -34,7 +34,7 @@ flex-direction: column;
   border-radius: 5px;
   font-size: 12px;
   text-align: center;
-  background: #ffc153;  
+  background: #ffc153;
 }
 
 .weather-day__temperature {
