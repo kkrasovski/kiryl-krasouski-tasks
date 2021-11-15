@@ -63,7 +63,8 @@ function drawList() {
       JSON.parse(localStorage.getItem(dateId))
     ).length;
   } else {
-    totalTasks.textContent = "0";
+    totalTasks.textContent = 0;  
+    console.log(typeof totalTasks.textContent)
   }
 
   for (key in JSON.parse(localStorage.getItem(dateId))) {
@@ -81,20 +82,44 @@ function drawList() {
     btnEdit.className = "todo-task__edit";
     li.appendChild(btn);
     li.appendChild(btnEdit);
+
     btn.addEventListener("click", (e) => {
       todoWrapper.removeChild(li);
-      let myStorage = JSON.parse(localStorage.getItem(dateId));    
+      let myStorage = JSON.parse(localStorage.getItem(dateId));      
       delete myStorage[li.dataset.id];
       localStorage[dateId] = JSON.stringify(myStorage);
       totalTasks.textContent = Object.keys(
         JSON.parse(localStorage.getItem(dateId))
       ).length;
-      if (totalTasks.textContent === 0) {
+      console.log(typeof Object.keys(
+        JSON.parse(localStorage.getItem(dateId))
+      ).length)
+      console.log(Object.keys(
+        JSON.parse(localStorage.getItem(dateId))
+      ))
+      console.log(totalTasks.textContent)
+      console.log(typeof totalTasks.textContent)
+      if (totalTasks.textContent === "0") {
         localStorage.removeItem(dateId);
-        calendarGrid.innerHTML = "";
         renderCalendar();
       }
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     btnEdit.addEventListener("click", (e) => {
       e.stopPropagation();
       li.textContent = "";
@@ -117,8 +142,7 @@ function drawList() {
         }
         localStorage.setItem(dateId, JSON.stringify(listEdit));
         drawList();
-      });
-     
+      });     
     });
     li.addEventListener("click", (e) => {
       li.classList.toggle("todo-task_done");
