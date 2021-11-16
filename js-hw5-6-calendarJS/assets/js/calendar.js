@@ -244,8 +244,6 @@ function setFirstDay() {
 }
 // draw weekends
 function setWeekends(weekendDays, g) {
-  console.log(weekendDays.getDay())
-  console.log(JSON.parse(localStorage.firstWeekendDay))
   if (
     weekendDays.getDay() === JSON.parse(localStorage.firstWeekendDay) ||
     weekendDays.getDay() === JSON.parse(localStorage.secondWeekendDay)

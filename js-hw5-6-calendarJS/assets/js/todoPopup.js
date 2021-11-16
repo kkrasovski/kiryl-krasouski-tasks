@@ -105,21 +105,6 @@ function drawList() {
       }
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     btnEdit.addEventListener("click", (e) => {
       e.stopPropagation();
       li.textContent = "";
@@ -134,15 +119,17 @@ function drawList() {
       saveTask.className = "todo-task__save";
       li.appendChild(taskEditor);
       li.appendChild(saveTask);
-      saveTask.addEventListener("click", (e) => {
-        const listEdit = JSON.parse(localStorage.getItem(dateId));
-        listEdit[li.dataset.id] = taskEditor.value;
-        if (taskEditor.value === "") {
+
+      saveTask.addEventListener("click", () => {
+        const listEdit = JSON.parse(localStorage.getItem(dateId));      
+        if (!taskEditor.value) {
           return;
         }
+        listEdit[li.dataset.id] = taskEditor.value;  
         localStorage.setItem(dateId, JSON.stringify(listEdit));
         drawList();
-      });     
+      });  
+         
     });
     li.addEventListener("click", (e) => {
       li.classList.toggle("todo-task_done");
