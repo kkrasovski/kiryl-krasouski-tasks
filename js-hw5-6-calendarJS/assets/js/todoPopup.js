@@ -27,11 +27,13 @@ function todoOpen(e, date) {
     todoPopUpWrapper.classList.add("container__todo_close");
   });
 
-  const todoInput = document.querySelector(".todo__input_text");
-  todoAddBtn.addEventListener("click", (e) => {
+  let todoInput = document.querySelector(".todo__input_text");
+  let formValue = document.querySelector(".pop-up__form");
+
+  formValue.onsubmit = (e) => {
     addInList(todoInput);
     e.preventDefault();
-  });
+  };
   drawList();
 }
 
@@ -58,13 +60,13 @@ function drawList() {
   todoWrapper.innerHTML = "";
   const totalTasks = document.querySelector(".todo__counter");
 
-  if (localStorage.hasOwnProperty(dateId)) {    
+  if (localStorage.hasOwnProperty(dateId)) {
     totalTasks.textContent = Object.keys(
       JSON.parse(localStorage.getItem(dateId))
     ).length;
   } else {
-    totalTasks.textContent = 0;  
-    console.log(typeof totalTasks.textContent)
+    totalTasks.textContent = 0;
+    console.log(typeof totalTasks.textContent);
   }
 
   for (key in JSON.parse(localStorage.getItem(dateId))) {
@@ -85,20 +87,18 @@ function drawList() {
 
     btn.addEventListener("click", (e) => {
       todoWrapper.removeChild(li);
-      let myStorage = JSON.parse(localStorage.getItem(dateId));      
+      let myStorage = JSON.parse(localStorage.getItem(dateId));
       delete myStorage[li.dataset.id];
       localStorage[dateId] = JSON.stringify(myStorage);
       totalTasks.textContent = Object.keys(
         JSON.parse(localStorage.getItem(dateId))
       ).length;
-      console.log(typeof Object.keys(
-        JSON.parse(localStorage.getItem(dateId))
-      ).length)
-      console.log(Object.keys(
-        JSON.parse(localStorage.getItem(dateId))
-      ))
-      console.log(totalTasks.textContent)
-      console.log(typeof totalTasks.textContent)
+      console.log(
+        typeof Object.keys(JSON.parse(localStorage.getItem(dateId))).length
+      );
+      console.log(Object.keys(JSON.parse(localStorage.getItem(dateId))));
+      console.log(totalTasks.textContent);
+      console.log(typeof totalTasks.textContent);
       if (totalTasks.textContent === "0") {
         localStorage.removeItem(dateId);
         renderCalendar();
@@ -121,15 +121,14 @@ function drawList() {
       li.appendChild(saveTask);
 
       saveTask.addEventListener("click", () => {
-        const listEdit = JSON.parse(localStorage.getItem(dateId));      
+        const listEdit = JSON.parse(localStorage.getItem(dateId));
         if (!taskEditor.value) {
           return;
         }
-        listEdit[li.dataset.id] = taskEditor.value;  
+        listEdit[li.dataset.id] = taskEditor.value;
         localStorage.setItem(dateId, JSON.stringify(listEdit));
         drawList();
-      });  
-         
+      });
     });
     li.addEventListener("click", (e) => {
       li.classList.toggle("todo-task_done");
