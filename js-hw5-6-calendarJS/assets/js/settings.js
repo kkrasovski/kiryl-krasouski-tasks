@@ -64,8 +64,7 @@ function selectWeekends() {
 // settings for days of the next and previous month
 const showRearMonth = document.getElementById("show-month");
 const hideRearMonth = document.getElementById("hide-month");
-
-if (localStorage.getItem("showAdditionalDays") === "true") {
+if (JSON.parse(localStorage.showAdditionalDays) === true) {
   showRearMonth.checked = true;
 } else {
   hideRearMonth.checked = true;
