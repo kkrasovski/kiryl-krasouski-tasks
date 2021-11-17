@@ -24,15 +24,17 @@ function todoActivation() {
 }
 
 // Save Btn
-const saveSettings = document.querySelector("#save");
-saveSettings.addEventListener("click", () => {
+const popUpSettings = document.querySelector(".pop-up__settings");
+
+popUpSettings.onsubmit = (e) => {
+  e.preventDefault(); 
   selectFirstDay();
   popUpHandler();
   selectWeekends();
   calendarGrid.innerHTML = "";
   showMonth();
   renderCalendar();
-});
+}
 
 // default weekend setting 
 

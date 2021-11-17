@@ -33,6 +33,7 @@ function todoOpen(e, date) {
   formValue.onsubmit = (e) => {
     addInList(todoInput);
     e.preventDefault();
+   
   };
   drawList();
 }
