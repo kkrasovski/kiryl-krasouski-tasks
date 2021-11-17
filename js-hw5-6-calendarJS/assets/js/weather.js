@@ -49,7 +49,4 @@ fetch(apiUrl)
       weatherGrid.append(weatherDay);
     }
 
-  })
-  .catch(function () {
-
   });
