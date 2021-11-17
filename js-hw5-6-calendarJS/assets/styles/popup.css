@@ -42,16 +42,11 @@
   margin: 5px 0 15px;
 }
 
-.pop-up__label-radio {  
-  margin: 15px 0;
-}
-
 .pop-up__radio-item {
   margin-right: 35px;
 }
 
-.pop-up__btn {
-  display: block;
+.pop-up__btn {  
   margin: 15px auto 0;
   width: 100%;
   padding: 1rem 0;
