@@ -32,9 +32,9 @@
   justify-content: space-between;
 }
 
-.pop-up__label {
-  display: block;
+.pop-up__label {  
   padding: 5px 0;
+  line-height: 2;
 }
 
 .pop-up__checkbox-item {
@@ -42,8 +42,7 @@
   margin: 5px 0 15px;
 }
 
-.pop-up__label-radio {
-  display: inline;
+.pop-up__label-radio {  
   margin: 15px 0;
 }
 

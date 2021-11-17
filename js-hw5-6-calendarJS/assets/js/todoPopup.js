@@ -67,7 +67,6 @@ function drawList() {
     ).length;
   } else {
     totalTasks.textContent = 0;
-    console.log(typeof totalTasks.textContent);
   }
 
   for (key in JSON.parse(localStorage.getItem(dateId))) {
@@ -93,17 +92,13 @@ function drawList() {
       localStorage[dateId] = JSON.stringify(myStorage);
       totalTasks.textContent = Object.keys(
         JSON.parse(localStorage.getItem(dateId))
-      ).length;
-      console.log(
-        typeof Object.keys(JSON.parse(localStorage.getItem(dateId))).length
-      );
-      console.log(Object.keys(JSON.parse(localStorage.getItem(dateId))));
-      console.log(totalTasks.textContent);
-      console.log(typeof totalTasks.textContent);
+      ).length; 
+     
       if (totalTasks.textContent === "0") {
         localStorage.removeItem(dateId);
         renderCalendar();
       }
+      
     });
 
     btnEdit.addEventListener("click", (e) => {
