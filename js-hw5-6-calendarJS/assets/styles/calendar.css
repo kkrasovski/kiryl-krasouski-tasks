@@ -4,6 +4,13 @@
   background: #b05f6d;
 }
 
+.calendar__year {
+  padding: 5px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .season {
   display: flex;
   align-items: center;

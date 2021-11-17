@@ -87,6 +87,9 @@ const renderCalendar = () => {
   let lastDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() - 1));
   let nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() + 1));
 
+  //current year
+  document.querySelector(".calendar__year").innerHTML = date.getFullYear();
+
   //current  months days in current month
 
   for (let i = 1; i <= lastDay; i++) {
