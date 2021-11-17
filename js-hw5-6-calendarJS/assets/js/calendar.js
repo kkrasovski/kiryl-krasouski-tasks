@@ -1,8 +1,8 @@
 const date = new Date();
 date.setDate(1);
 
-const holidayConfig = ["2022.01.14", "2022.01.4", "2021.12.02", "2021.11.30"];
-
+//const holidayConfig = ["2022.01.14", "2022.01.4", "2021.12.02", "2021.11.30"];
+const holidayConfig = ["01 14", "01 4", "12 02", "11 30"];
 document.querySelector(".arrow_prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);  
   renderCalendar();
@@ -117,7 +117,8 @@ const renderCalendar = () => {
 
     // find holiday
     holidayConfig.forEach((item) => {
-      let holiday = new Date(item);
+      let holiday = new Date(`${date.getFullYear()}, ${item}`);
+   
 
       let currentHolidayDay = new Date(
         `${date.getFullYear()}, ${date.getMonth() + 1}, ${i}`
@@ -157,7 +158,7 @@ const renderCalendar = () => {
       }
       // find holiday
       holidayConfig.forEach((item) => {
-        let holiday = new Date(item);
+        let holiday = new Date(`${date.getFullYear()}, ${item}`);
         let nextHolidayDay = new Date(
           `${date.getFullYear()}, ${nextDateWeekend.getMonth() + 1}, ${j}`
         );
@@ -201,7 +202,7 @@ const renderCalendar = () => {
 
       //  find holiday
       holidayConfig.forEach((item) => {
-        let holiday = new Date(item);
+        let holiday = new Date(`${date.getFullYear()}, ${item}`);
 
         let prevHolidayDay = new Date(
           `${date.getFullYear()}, ${lastDateWeekend.getMonth() + 1}, ${x}`
