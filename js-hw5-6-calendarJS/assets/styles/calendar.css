@@ -45,7 +45,7 @@
   color: #ffffff;
   background: #462446;
   outline: none;
-  cursor: pointer;
+  cursor: default;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -91,7 +91,7 @@
   font-weight: 500;
   color: #000000;
   text-decoration: none;
-  cursor: pointer;
+  cursor: default;
 }
 
 .calendar__day-of-week:hover {

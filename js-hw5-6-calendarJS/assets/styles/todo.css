@@ -18,6 +18,10 @@
   padding: 15px 0;
 }
 
+.todo__add-btn {
+  cursor: pointer;
+}
+
 .todo__task {
   margin-bottom: 15px;
 }
@@ -51,12 +55,14 @@
 
 .todo-task__del { 
   text-align: center;
+  cursor: pointer;
 }
 
 .todo-task__edit {
   background: salmon;
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 .todo-task_done {
@@ -105,6 +111,7 @@
   background: url(../icons/accept.png);
   background-position: 50% 50%;
   background-repeat: no-repeat;  
+  cursor: pointer;
 }
 
 .todo__total {

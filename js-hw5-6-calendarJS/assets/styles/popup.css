@@ -37,13 +37,19 @@
   line-height: 2;
 }
 
+.pop-up_label-radio {
+  cursor: pointer;
+}
+
 .pop-up__checkbox-item {
   display: block;
   margin: 5px 0 15px;
+  cursor: pointer;
 }
 
 .pop-up__radio-item {
   margin-right: 35px;
+  cursor: pointer;
 }
 
 .pop-up__btn {  
@@ -61,4 +67,5 @@
   padding: 15px;
   border: 0;
   background: #ffffff;
+  cursor: pointer;
 }
