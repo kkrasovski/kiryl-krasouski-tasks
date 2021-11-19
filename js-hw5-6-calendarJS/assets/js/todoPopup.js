@@ -27,10 +27,10 @@ function todoOpen(e, date) {
     todoPopUpWrapper.classList.add("container__todo_close");
   });
 
-  let todoInput = document.querySelector(".todo__input_text");
-  let formValue = document.querySelector(".pop-up__form");
+  const todoInput = document.querySelector(".todo__input_text");
+  const popUpForm = document.querySelector(".pop-up__form");
 
-  formValue.onsubmit = (e) => {
+  popUpForm.onsubmit = (e) => {
     addInList(todoInput);
     e.preventDefault();
    
