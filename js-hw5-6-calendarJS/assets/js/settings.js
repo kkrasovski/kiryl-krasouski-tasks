@@ -11,9 +11,7 @@ function selectFirstDay() {
 }
 
 // ON/OF ToDo list
-document
-  .querySelector(".pop-up__checkbox-item")
-  .addEventListener("change", todoActivation);
+// document
 
 function todoActivation() {
   if (!addTodo.checked) {
@@ -34,6 +32,7 @@ popUpSettings.onsubmit = (e) => {
   calendarGrid.innerHTML = "";
   showMonth();
   renderCalendar();
+  todoActivation();
 }
 
 // default weekend setting 
