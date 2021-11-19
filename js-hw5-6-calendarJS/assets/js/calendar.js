@@ -246,6 +246,7 @@ function setFirstDay() {
     }
   }
 }
+
 // draw weekends
 function setWeekends(weekendDays, g) {
   if (
