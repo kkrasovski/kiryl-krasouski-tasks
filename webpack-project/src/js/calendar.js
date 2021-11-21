@@ -5,7 +5,6 @@ import { switchMonth } from "./month-switch";
 import { holidayConfig } from "./defaultSettings";
 import { monthLabel } from "./defaultSettings";
 import { setWeekends } from "./drawWeekends";
-import { haveTask } from "./haveTask";
 import { setHolidays } from "./drawSomeWeekends";
 const calendarGrid = document.querySelector(".calendar__grid");
 
@@ -41,14 +40,16 @@ export const renderCalendar = () => {
   let nextDays = 7 - lastDayIndex - 1;
 
   if (
-    localStorage.firstWeekDay == "mon" ||
-    localStorage.firstWeekDay == undefined
+    localStorage.firstWeekDay === "mon" ||
+    localStorage.firstWeekDay === undefined
   ) {
     firstDayIndex = date.getDay() - 1;
-    if (date.getDay() == 0) {
+
+    if (date.getDay() === 0) {
       firstDayIndex = date.getDay() - 1 + 7;
     }
-    if (lastDayIndex == 0) {
+
+    if (lastDayIndex === 0) {
       nextDays = 7;
     } else {
       nextDays = 7 - lastDayIndex;
@@ -57,11 +58,12 @@ export const renderCalendar = () => {
 
   document.querySelector(".season__handler").innerHTML =
     monthLabel[date.getMonth()];
-  const dateWeekend = new Date(date.getTime());
-  const lastDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() - 1));
-  const nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() + 1));
+  let dateWeekend = new Date(date.getTime());
+  let lastDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() - 1));
+  let nextDateWeekend = new Date(dateWeekend.setMonth(date.getMonth() + 1));
 
-  //current  months days in current month
+  //current year
+  document.querySelector(".calendar__year").innerHTML = date.getFullYear();
 
   for (let i = 1; i <= lastDay; i++) {
     let dateWeekend = new Date(date.getTime());
@@ -81,7 +83,10 @@ export const renderCalendar = () => {
     }
     calendarGrid.append(calendarSingleDay);
     // set "have task icon"
-    haveTask(i, date, calendarSingleDay);
+    let dateCode = `${i}${date.getMonth()}${date.getFullYear()}`;
+    if (localStorage.getItem(dateCode) != null) {
+      calendarSingleDay.classList.add("day_have-tasks");
+    }
 
     let currentHolidayDay = new Date(
       `${date.getFullYear()}, ${date.getMonth() + 1}, ${i}`
@@ -107,9 +112,12 @@ export const renderCalendar = () => {
       calendarSingleDay.className = "calendar__day day_next";
       calendarSingleDay.innerText = j;
       calendarGrid.append(calendarSingleDay);
-
-      // set "have task icon"
-      haveTask(j, date, calendarSingleDay);
+      
+      // set icon if todo true
+      let dateCode = `${j}${nextDateWeekend.getMonth()}${nextDateWeekend.getFullYear()}`;
+      if (localStorage.getItem(dateCode) != null) {
+        calendarSingleDay.classList.add("day_have-tasks");
+      }
 
       let nextHolidayDay = new Date(
         `${date.getFullYear()}, ${nextDateWeekend.getMonth() + 1}, ${j}`
@@ -140,7 +148,11 @@ export const renderCalendar = () => {
       calendarGrid.prepend(calendarSingleDay);
 
       // set "have task icon"
-      haveTask(x, date, calendarSingleDay);
+      // set icon if todo true
+      let dateCode = `${x}${nextDateWeekend.getMonth()}${nextDateWeekend.getFullYear()}`;
+      if (localStorage.getItem(dateCode) != null) {
+        calendarSingleDay.classList.add("day_have-tasks");
+      }
 
       let prevHolidayDay = new Date(
         `${date.getFullYear()}, ${lastDateWeekend.getMonth() + 1}, ${x}`

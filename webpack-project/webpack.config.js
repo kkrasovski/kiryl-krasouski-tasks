@@ -7,7 +7,6 @@ const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugi
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const { config } = require("process");
 const isDev = process.env.NODE_ENV === 'development';
-console.log('IS DEV', isDev)
 const isProd = !isDev;
 const webpack = require('webpack')
 const optimization = () => {
@@ -61,7 +60,7 @@ module.exports = {
   ],
   devServer: {
     port: 4300,  
-    hot: isDev
+    hot: isDev,   
   },
   module: {
     rules:[

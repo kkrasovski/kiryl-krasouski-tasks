@@ -83,6 +83,13 @@ $dedicatedColor: #47b39d;
     display: flex;
   }
 
+  &__year {
+    padding: 5px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
   &__day-of-week {
     width: 100%;
     padding: 15px;
@@ -113,7 +120,7 @@ $dedicatedColor: #47b39d;
 
   &__day:hover {
     font-weight: 700;
-    background: $semiLightColor;
+    background: #dadada;
     color: $dedicatedColor;
     cursor: pointer;
   }
@@ -124,7 +131,12 @@ $dedicatedColor: #47b39d;
     background: $mainColor;
     color: $semiLightColor;
   }
-  
+
+  &_current:hover {
+    background: $mainColor;
+    color: $semiLightColor;
+  }
+
   &_inactive:hover {
     cursor: auto;
     background: none;

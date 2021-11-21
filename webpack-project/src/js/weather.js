@@ -16,17 +16,16 @@ fetch(apiUrl)
       "Saturday",
     ];
 
-    let dayOfWeekToday = new Date().getDay();
-    if (dayOfWeekToday === 0) {
-      dayOfWeekToday = 7;
-    }
-
+    let dayOfWeekToday = new Date().getDay(); 
+   if (dayOfWeekToday === 0) {
+    dayOfWeekToday = 7;
+   }
+  
     for (let i = 0; i <= 7 - dayOfWeekToday; i++) {
       const weatherGrid = document.querySelector(".weather__grid");
       const dayOfWeek = new Date(data.daily[i].dt * 1000);
       const date = `${dayOfWeek.getDate()}.${dayOfWeek.getMonth()}.${dayOfWeek.getFullYear()}`;
-      const temperature = Math.round(data.daily[i].temp.day) + "&deg;";
-      console.log;
+      const temperature = Math.round(data.daily[i].temp.day) + "&deg;";     
 
       const weatherDay = document.createElement("div");
       weatherDay.className = "weather__for-day weather-day";
@@ -37,7 +36,7 @@ fetch(apiUrl)
 
       const weatherDate = document.createElement("div");
       weatherDate.className = "weather-day__date";
-      weatherDate.textContent = date;
+      weatherDate.textContent =  date;
 
       const weatherTemperature = document.createElement("div");
       weatherTemperature.className = "weather-day__temperature";
@@ -49,5 +48,5 @@ fetch(apiUrl)
 
       weatherGrid.append(weatherDay);
     }
-  })
-  .catch(function () {});
+
+  });

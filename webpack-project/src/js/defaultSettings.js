@@ -1,9 +1,4 @@
-export const holidayConfig = [
-  "2022.01.14",
-  "2022.01.4",
-  "2021.12.02",
-  "2021.11.30",
-];
+export const holidayConfig = ["01 14", "01 4", "12 02", "11 30"];
 
 export const monthLabel = [
   "January",

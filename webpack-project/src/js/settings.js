@@ -45,14 +45,17 @@ function todoActivation() {
 }
 
 // Save Btn
-const saveSettings = document.querySelector("#save");
-saveSettings.addEventListener("click", () => {
+const popUpSettings = document.querySelector(".pop-up__settings");
+
+popUpSettings.onsubmit = (e) => {
+  e.preventDefault(); 
   selectFirstDay();
   popUpHandler();
-  selectWeekends();
+  selectWeekends(); 
   showMonth();
   renderCalendar();
-});
+  todoActivation();
+}
 
 // default weekend setting
 
@@ -61,14 +64,14 @@ const secondWeekend = document.getElementById("second-weekend");
 
 for (let i = 0; i < firstWeekend.options.length; i++) {
   let firstDefaultWeekend = firstWeekend.options[i];
-  if (firstDefaultWeekend.value == localStorage.getItem("firstWeekendDay")) {
+  if (firstDefaultWeekend.value === localStorage.getItem("firstWeekendDay")) {
     firstDefaultWeekend.setAttribute("selected", true);
   }
 }
 
 for (let i = 0; i < secondWeekend.options.length; i++) {
   let secondDefaultWeekend = secondWeekend.options[i];
-  if (secondDefaultWeekend.value == localStorage.getItem("secondWeekendDay")) {
+  if (secondDefaultWeekend.value === localStorage.getItem("secondWeekendDay")) {
     secondDefaultWeekend.setAttribute("selected", true);
   }
 }
@@ -85,7 +88,7 @@ function selectWeekends() {
 const showRearMonth = document.getElementById("show-month");
 const hideRearMonth = document.getElementById("hide-month");
 
-if (localStorage.getItem("showAdditionalDays") == "true") {
+if (JSON.parse(localStorage.showAdditionalDays) === true) {
   showRearMonth.checked = true;
 } else {
   hideRearMonth.checked = true;

@@ -30,7 +30,8 @@
             <button class="arrow__icon"></button>
           </div>
         </section>
-
+        <section class="calendar__year">
+        </section>
         <section class="calendar__days">
           <div class="calendar__day-of-week">Mon</div>
           <div class="calendar__day-of-week">Tue</div>
@@ -43,7 +44,7 @@
 
         <section class="calendar__grid"></section>
         <button class="container__settings-btn">
-          <img src="./assets/icons/controls.svg" alt="settings" />
+          <img src="assets/icons/controls.svg" alt="settings" />
         </button>
       </article>
       <article class="container__weather weater">
@@ -51,7 +52,9 @@
         <div class="weather__grid"></div>
       </article>
       <div class="container__pop-up container__pop-up_close pop-up">
+        
         <h2 class="pop-up__title">Settings</h2>
+        <form class="pop-up__settings" method="post">
         <label class="pop-up__label" for="month"
           >select first day of week:</label
         >
@@ -98,7 +101,7 @@
           id="addTodo"
           checked
         />
-        <label class="pop-up__label pop-up__label-radio" for="hide-month"
+        <label class="pop-up__label pop-up_label-radio" for="hide-month"
           >Hide days</label
         >
         <input
@@ -108,7 +111,7 @@
           id="hide-month"
           value="false"
         />
-        <label class="pop-up__label pop-up__label-radio" for="show-month"
+        <label class="pop-up__label pop-up_label-radio" for="show-month"
           >Show days</label
         >
         <input
@@ -119,6 +122,7 @@
           value="true"
         />
         <button class="pop-up__btn btn" id="save">Save</button>
+      </form>
       </div>
 
       <div class="container__todo container__todo_close">
@@ -127,16 +131,17 @@
           Task for <span class="pop-up__nunber"></span>
         </p>
         <div class="pop-up__content todo">
-          <form action="">
+          <form class="pop-up__form" method="post">
             <div class="todo__section todo__add">
               <input class="todo__input_text" type="text" />
-              <button class="todo__add-btn">Add</button>
+              <button class="todo__add-btn" >Add</button>
             </div>
+          </form>
             <ul class="todo__wrapper"></ul>
             <div class="todo__total">
               Tasks for day: <span class="todo__counter"></span>
             </div>
-          </form>
+         
         </div>
         <button class="pop-up__close-btn pop-up__close-btn_todo">
           <img class="close__icon" src="assets/icons/close.svg" />
