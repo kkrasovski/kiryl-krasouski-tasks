@@ -1,0 +1,120 @@
+.todo-task {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo__add {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo__input_text {
+  width: 100%;
+  margin-right: 20px;  
+}
+
+.todo__add {
+  margin-bottom: 30px;  
+  padding: 15px 0;
+}
+
+.todo__add-btn {
+  cursor: pointer;
+}
+
+.todo__task {
+  margin-bottom: 15px;
+}
+
+.todo-task {
+  display: flex;
+  align-items: center;
+}
+
+.todo__input_text {
+  padding: 4px;
+  font-size: 1.2rem;
+}
+
+.todo-task_box {
+  padding: 5px;
+}
+
+.todo-task_done {
+  background: salmon;
+}
+
+.todo-task__name {  
+  flex-grow: 3;
+  text-align: left;
+}
+
+.todo-task__edit {
+  text-align: center;
+}
+
+.todo-task__del { 
+  text-align: center;
+  cursor: pointer;
+}
+
+.todo-task__edit {
+  background: salmon;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-task_done {
+  text-decoration: line-through;
+}
+
+.task__check {
+  width: 20px;
+  height: 20px;
+}
+
+.todo__task-text {
+  width:100%;
+}
+.todo-task__edit {
+  width: 30px;
+  height: 30px;
+  padding: 0 10px;
+  border: 0;
+  background: url(../icons/edit.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.todo-task__editor {
+  width: 80%;
+  padding-right: 30px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.todo-task__del {
+  width: 30px;
+  height: 30px;
+  padding: 0 10px;
+  border: 0;
+  background: url(../icons/del.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;  
+}
+
+.todo-task__save {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background: url(../icons/accept.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;  
+  cursor: pointer;
+}
+
+.todo__total {
+  text-align: right;
+  color: #b9b9b9;
+}
