@@ -1,0 +1,7 @@
+<div class="user {{name}}" [title]="name" [class.disabled]="disabled">
+  <div class="user__title">
+  {{name}}
+  </div>
+  <button (click)="addUser($event)">click</button>
+  <input  type="text" [(ngModel)]="name">
+</div>
