@@ -1,0 +1,10 @@
+.list-item {
+  text-align: center;
+
+  &__link {
+    margin: 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #09194f;
+  }
+}

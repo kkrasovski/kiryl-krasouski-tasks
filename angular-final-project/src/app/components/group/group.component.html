@@ -1,0 +1,15 @@
+<h1 class="title">Группы</h1>
+<div class="list">
+  <a class="list__single list-item"  *ngFor="let item of groups" [routerLink]="['/groups', item.id]">
+    <img class="list-item__icon list-item__elem" src="assets/img/pocket.png" />
+    <div class="list-item__title list-item__elem">{{item.name}} </div>
+
+    <img
+      class="list-item__delete-icon list-item__elem"
+      src="assets/img/delete.png"
+    />
+  </a>
+</div>
+<div class="container__button">
+  <a class="container__add-button button">Добавить</a>
+</div>

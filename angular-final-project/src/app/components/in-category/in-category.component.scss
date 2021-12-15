@@ -1,0 +1,22 @@
+.single-item {
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+  &__cost {
+    font-weight: bold;
+  }
+  &__currency {
+    font-weight: bold;
+  }
+  &__date {
+    font-weight: bold;
+  }
+}

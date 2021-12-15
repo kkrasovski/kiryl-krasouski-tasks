@@ -1,0 +1,5 @@
+.single-item__line {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+}

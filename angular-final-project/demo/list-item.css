@@ -1,0 +1,29 @@
+.list-item__elem {
+    padding: 10px;
+}
+
+.list-item__title {
+    font-weight: 700;
+}
+
+.list-item__delete-icon {
+    transition:         transform .8s ease-in-out;
+    height: 24px;
+}
+
+
+.list-item__delete-icon:hover {
+opacity: 0.4;
+transform: rotate(310deg); 
+animation-duration: .5s;
+animation-timing-function: ease-out;
+}
+.list__single:hover {
+    -webkit-box-shadow: 2px 1px 9px 0px rgba(34, 60, 80, 0.13);
+    -moz-box-shadow: 2px 1px 9px 0px rgba(34, 60, 80, 0.13);
+    box-shadow: 2px 1px 9px 0px rgba(34, 60, 80, 0.13);
+}
+
+.list-item__title {
+    flex-grow: 2;
+}

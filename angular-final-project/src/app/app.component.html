@@ -1,0 +1,57 @@
+<div class="screen">
+  <div class="content">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+
+
+  </div>
+  <div class="screen__footer footer">
+    <a
+      class="footer__button footer__link"
+      routerLink=""
+      routerLinkActive="footer__active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <div class="nav-btn">
+        <img src="../assets/icon/service.svg" alt="" />
+      </div>
+    </a>
+
+    <a
+      class="footer__button footer__link"
+      routerLink="products"
+      routerLinkActive="footer__active"
+    >
+      <div class="nav-btn">
+        <img src="../assets/icon/basket.svg" alt="" />
+      </div>
+    </a>
+
+    <a
+      class="footer__button footer__link"
+      routerLink="groups"
+      routerLinkActive="footer__active"
+    >
+      <div class="nav-btn">
+        <img src="../assets/icon/group-basket.svg" alt="" />
+      </div>
+    </a>
+
+    <a
+      class="footer__button footer__link"
+      routerLink="rooms"
+      routerLinkActive="footer__active"
+    >
+      <div class="nav-btn">
+        <img src="../assets/icon/home.svg" alt="" />
+      </div>
+    </a>
+
+    <!-- <div class="footer__button">
+      <div class="nav-btn">
+        <a href=""><img src="../assets/icon/group-service.svg" alt="" /></a>
+      </div>
+    </div> -->
+  </div>
+</div>
