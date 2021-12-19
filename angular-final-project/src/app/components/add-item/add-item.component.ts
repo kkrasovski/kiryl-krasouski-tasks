@@ -32,7 +32,7 @@ export class AddItemComponent implements OnInit {
   ngOnInit() {
     this.addItem = new FormGroup({
       name: new FormControl('', Validators.required),
-      price: new FormControl('', [Validators.required,  Validators.max(4)]),
+      price: new FormControl('', [Validators.required,  Validators.maxLength(4),  Validators.pattern(/^\d+$/),]),
       group: new FormControl('', Validators.required),
       room: new FormControl('', Validators.required),
     });
