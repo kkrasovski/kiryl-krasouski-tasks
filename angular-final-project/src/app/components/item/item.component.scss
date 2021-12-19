@@ -3,17 +3,18 @@ display: flex;
 width: 100%;
 align-items: center;
 border: 1px solid #09194f36;
-color: #09194f;
+
 margin: 10px 0;
+
 
   &__single {
     width:100%;
-
     display: flex;
     justify-content: stretch;
     align-items: center;
     text-decoration: none;
     cursor: pointer;
+    color: #09194f;
   }
   &:hover {
     -webkit-box-shadow: 2px 1px 9px 0px rgba(34, 60, 80, 0.13);
@@ -30,13 +31,21 @@ margin: 10px 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-
-
-  &__title {
     flex-grow: 2;
     flex-basis: 130px;
-    text-align: center;
   }
+
+  &__delete-icon {
+    transition: transform 0.8s ease-in-out;
+    height: 24px;
+  }
+
+  &__delete-icon:hover {
+    opacity: 0.4;
+    transform: rotate(310deg);
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+  }
+
+
 }

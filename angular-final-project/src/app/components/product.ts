@@ -1,3 +1,5 @@
+import { Product } from './products.model';
+
 export const products = [
   {
     id: 1,
@@ -5,8 +7,6 @@ export const products = [
     room: "спальная",
     price: 30,
     category: "электрика",
-    date: "Thu Jan 01 1970",
-    comment: "куплен на распродаже",
   },
   {
     id: 2,
@@ -14,8 +14,6 @@ export const products = [
     room: "спальная",
     price: 1030,
     category: "смеси",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
   },
   {
     id: 3,
@@ -23,8 +21,6 @@ export const products = [
     room: "спальная",
     price: 100,
     category: "расходники",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
   },
   {
     id: 4,
@@ -32,8 +28,6 @@ export const products = [
     room: "спальная",
     price: 1230,
     category: "напольные покрытия",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
   },
   {
     id: 13,
@@ -41,8 +35,7 @@ export const products = [
     room: "кухня",
     price: 690,
     category: "напольные покрытия",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
+
   },
   {
     id: 5,
@@ -50,8 +43,7 @@ export const products = [
     room: "кухня",
     price: 930,
     category: "электрика",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
+
   },
   {
     id: 6,
@@ -59,8 +51,7 @@ export const products = [
     room: "туалет",
     price: 1010,
     category: "сантехника",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
+
   },
   {
     id: 11,
@@ -68,8 +59,7 @@ export const products = [
     room: "спальная",
     price: 745,
     category: "электрика",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
+
   },
   {
     id: 7,
@@ -77,8 +67,7 @@ export const products = [
     room: "туалет",
     price: 1125,
     category: "напольные покрытия",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
+
   },
   {
     id: 8,
@@ -86,8 +75,7 @@ export const products = [
     room: "туалет",
     price: 500,
     category: "электрика",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
+
   },
   {
     id: 9,
@@ -95,8 +83,7 @@ export const products = [
     room: "спальная",
     price: 600,
     category: "электрика",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
+
   },
   {
     id: 10,
@@ -104,41 +91,65 @@ export const products = [
     room: "кухня",
     price: 480,
     category: "сантехника",
-    date: "Thu Jan 01 1970",
-    comment: "12мм Egger",
+
   }
 ];
+
+// export class ProductsListDb {
+//   public productsDb: any = [
+//     new Product(
+//       1,
+//       'лампочка',
+//       30,
+//       'спальная',
+
+//       'электрика',
+//       'Thu Jan 01 1970',
+//       'куплен на распродаже'
+//     ),
+//     new Product(
+//       2,
+//       'шпаклёва',
+//       1030,
+//       'спальная',
+
+//       'смеси',
+//       'Thu Jan 01 1970',
+//       '12мм Egger'
+//     ),
+//   ];
+// }
 
 export const rooms = [
   {
     id: 1,
-    name: "спальная",
+    name: 'спальная',
   },
   {
     id: 2,
-    name: "кухня",
+    name: 'кухня',
   },
   {
     id: 3,
-    name: "туалет",
-  }
+    name: 'туалет',
+  },
 ];
 
 export const groups = [
   {
     id: 1,
-    name: "электрика",
+    name: 'электрика',
   },
   {
     id: 2,
-    name: "смеси",
+    name: 'смеси',
   },
   {
     id: 6,
-    name: "напольные покрытия",
+    name: 'напольные покрытия',
   },
   {
     id: 7,
-    name: "сантехника",
-  }
+    name: 'сантехника',
+  },
 ];

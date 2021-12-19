@@ -1,15 +1,10 @@
 <h1 class="title">Мои покупки</h1>
+
+<app-filter-products (inputValue)="filter($event)" [listSize] = "listSize" [isFiltered] = "isFiltered"></app-filter-products>
+
 <div class="list">
-  <a class="list__single list-item"  *ngFor="let item of products" [routerLink]="['/products', item.id]">
-    <img class="list-item__icon list-item__elem" src="assets/img/pocket.png" />
-    <div class="list-item__title list-item__elem">{{item.name}} </div>
-    <div class="list-item__price list-item__elem">{{item.price}} BYN</div>
-    <img
-      class="list-item__delete-icon list-item__elem"
-      src="assets/img/delete.png"
-    />
-  </a>
+<app-item *ngFor="let item of products.reverse()" [item] = "item" ></app-item>
 </div>
 <div class="container__button">
-  <a class="container__add-button button">Добавить</a>
+ <app-add-btn [title] = "title" ></app-add-btn>
 </div>

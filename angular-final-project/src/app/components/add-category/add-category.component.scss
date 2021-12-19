@@ -1,0 +1,25 @@
+.add-item {
+  &__section {
+    padding: 15px 0;
+  }
+
+  &__text {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #09194f;
+    outline: none;
+  }
+
+  &__text:focus {
+    background: #dededf;
+  }
+  &__btn {
+    display: block;
+    margin: 15px auto;
+    padding: 15px;
+    width: 200px;
+    border: 0;
+  }
+}

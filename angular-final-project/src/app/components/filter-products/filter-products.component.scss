@@ -1,0 +1,13 @@
+.filter {
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  &__message {
+    padding: 10px;
+  }
+  &__form {
+    width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+  }
+}

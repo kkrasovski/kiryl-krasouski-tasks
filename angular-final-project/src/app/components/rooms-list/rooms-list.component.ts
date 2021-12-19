@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { rooms } from '../product';
 @Component({
   selector: 'app-rooms-list',
@@ -7,9 +8,12 @@ import { rooms } from '../product';
 })
 export class RoomsListComponent implements OnInit {
   rooms = rooms;
-  constructor() { }
+  title = 'название комнаты';
+  name = 'rooms';
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
   }
 
 }

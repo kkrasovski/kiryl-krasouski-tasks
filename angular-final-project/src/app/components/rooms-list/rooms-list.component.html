@@ -1,15 +1,7 @@
 <h1 class="title">Комнаты</h1>
 <div class="list">
-  <a class="list__single list-item"  *ngFor="let item of rooms" [routerLink]="['/rooms', item.id]">
-    <img class="list-item__icon list-item__elem" src="assets/img/pocket.png" />
-    <div class="list-item__title list-item__elem">{{item.name}} </div>
-
-    <img
-      class="list-item__delete-icon list-item__elem"
-      src="assets/img/delete.png"
-    />
-  </a>
+  <app-item *ngFor="let item of rooms.reverse()" [item] = "item"></app-item>
 </div>
 <div class="container__button">
-  <a class="container__add-button button">Добавить</a>
+  <app-add-btn [title] = "title" [parentName] = "name"></app-add-btn>
 </div>

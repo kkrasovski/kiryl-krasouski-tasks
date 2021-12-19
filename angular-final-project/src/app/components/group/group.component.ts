@@ -7,6 +7,8 @@ import { groups } from '../product';
 })
 export class GroupComponent implements OnInit {
   groups = groups;
+  title = 'название группы';
+  name = 'groups';
   constructor() {}
 
   ngOnInit(): void {}

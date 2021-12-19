@@ -1,0 +1,14 @@
+<div class="list-item">
+<a class="list-item__single" [routerLink]="[link, item.id]">
+  <img class="list-item__icon list-item__elem" src="assets/img/pocket.png" />
+  <div class="list-item__title list-item__elem">{{item.name}} </div>
+  <div class="list-item__price list-item__elem">{{item.price}} BYN</div>
+</a>
+
+  <img
+    class="list-item__delete-icon list-item__elem"
+    src="assets/img/delete.png"
+    (click)="deleteElement()"
+  />
+
+</div>

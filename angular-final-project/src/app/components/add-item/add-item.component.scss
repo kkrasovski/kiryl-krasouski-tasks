@@ -1,15 +1,32 @@
 .add-item {
   &__section {
-    padding: 15px 0;
+    padding: 10px 0;
   }
 
   &__text {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
     border: 1px solid #09194f;
     outline: none;
+  }
+
+  &__section_select{
+    display: flex;
+    align-items: center;
+  }
+
+  &__half {
+    min-width: 50%;
+    display: block;
+  }
+
+  &__select {
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #09194f;
   }
 
   &__text:focus {
@@ -23,3 +40,10 @@
     border: 0;
   }
 }
+.btn:disabled  {
+    border: 2px solid #09194f;
+    background: #ffffff;
+    color: #09194f;
+    opacity: 0.5;
+  }
+

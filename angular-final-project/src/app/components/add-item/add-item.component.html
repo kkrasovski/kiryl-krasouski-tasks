@@ -1,15 +1,36 @@
-<h1 class="title">выбрать лестницу</h1>
+<h1 class="title">{{titleMain}}</h1>
 
-    <form class="pop-up__form add-item" action="">
+    <form class="pop-up__form add-item" action="" [formGroup]="addItem">
         <div class="add-item__section">
-            <label for="item-name">Назавние комнаты</label>
-            <input class="add-item__text" type="text" name="add item name" id="item-name" />
+            <label for="item-name">{{title}}</label>
+            <input class="add-item__text" type="text" name="name" id="item-name" formControlName="name"/>
+
         </div>
         <div class="add-item__section">
             <label for="item-name">Цена</label>
-            <input class="add-item__text" type="text" name="add item name" id="item-name" />
+            <input class="add-item__text" type="text" name="price" id="item-price" formControlName="price" />
+            <!-- <div *ngIf="price.invalid ">
+              Некорректное название
+          </div> -->
         </div>
 
-        <button class="add-item__btn btn" id="submit-item">Save</button>
+      <div class="add-item__section add-item__section_select">
+        <label class="add-item__half " for="item-name">Комната</label>
+        <select class="add-item__select add-item__half " formControlName="room">
+          <option *ngFor="let r of rooms" [ngValue]="r.name">{{r.name}}</option>
+        </select>
+    </div>
+
+    <div class="add-item__section add-item__section_select">
+      <label class="add-item__half " for="item-name">Группа</label>
+      <select class="add-item__select add-item__half " formControlName="group">
+        <option *ngFor="let g of groups" [ngValue]="g.name">{{g.name}}</option>
+      </select>
+  </div>
+
+
+
+
+        <button class="add-item__btn btn" id="submit-item" (click) ="onSubmit()" [disabled]="addItem.invalid">Save</button>
     </form>
 
