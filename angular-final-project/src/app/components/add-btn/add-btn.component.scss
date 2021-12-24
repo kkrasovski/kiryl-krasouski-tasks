@@ -1,17 +1,12 @@
 .button {
-  padding: 20px;
   text-align: center;
   background: linear-gradient(135deg, #09194f 0%, #152e80 100%);
   text-transform: uppercase;
   color: #fff;
-  box-sizing: border-box;
   cursor: pointer;
-  width: 100%;
-  display: block;
-  border-radius: 25px;
-  border: 0;
+
+  &:hover {
+    background: linear-gradient(135deg, #112b81 0%, #2444ac 100%);
+  }
 }
 
-.button:hover {
-  background: linear-gradient(135deg, #112b81 0%, #2444ac 100%);
-}

@@ -1,8 +1,9 @@
 <h1 class="title">{{ titleMain }}</h1>
 
 <form class="pop-up__form add-item" action="" [formGroup]="addItem">
+
   <div class="add-item__section">
-    <label for="item-name">Название товара</label>
+    <label class="add-item__label" for="item-name">Название товара</label>
     <input
       class="add-item__text"
       type="text"
@@ -11,11 +12,10 @@
       formControlName="name"
       autocomplete="off"
     />
-
   </div>
-  <div class="add-item__section">
 
-    <label for="item-price">Цена</label>
+  <div class="add-item__section">
+    <label class="add-item__label" for="item-price">Цена</label>
     <input
       class="add-item__text"
       type="text"
@@ -24,10 +24,14 @@
       formControlName="price"
       autocomplete="off"
     />
-      <div *ngIf="addItem.controls.price.invalid && (addItem.controls.price.dirty || addItem.controls.price.touched)">
-Только цифры, максимум 5 символов
+    <div
+      *ngIf="
+        addItem.controls.price.invalid &&
+        (addItem.controls.price.dirty || addItem.controls.price.touched)
+      "
+    >
+      Только цифры, максимум 5 символов
     </div>
-
   </div>
 
   <div class="add-item__section add-item__section_select">
@@ -61,8 +65,9 @@
       <option *ngFor="let g of groups" [value]="g.name">{{ g.name }}</option>
     </datalist>
   </div>
+
   <div class="add-item__section">
-    <label for="item-name">Комментарий</label>
+    <label class="add-item__label" for="item-name">Комментарий</label>
     <input
       class="add-item__text"
       type="text"
@@ -78,6 +83,6 @@
     (click)="onSubmit()"
     [disabled]="addItem.invalid"
   >
-   Сохранить
+    Сохранить
   </button>
 </form>

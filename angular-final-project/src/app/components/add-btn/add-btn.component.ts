@@ -7,10 +7,12 @@ import { Input } from '@angular/core';
   templateUrl: './add-btn.component.html',
   styleUrls: ['./add-btn.component.scss'],
 })
+
 export class AddBtnComponent implements OnInit {
+
   @Input() title: string = '';
   @Input() parentName: string = '';
-  @Input() zik: string = '';
+
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {}
@@ -26,6 +28,7 @@ export class AddBtnComponent implements OnInit {
         },
       });
     }
+
     if (this.route.snapshot.url[0].path === 'rooms') {
       this.router.navigate(['/add-category'], {
         state: {
@@ -35,10 +38,12 @@ export class AddBtnComponent implements OnInit {
         },
       });
     }
+
     if (this.route.snapshot.url[0].path === 'products') {
       this.router.navigate(['/add-item'], {
         state: { titleMain: 'Добавить товар', title: this.title },
       });
     }
+
   }
 }

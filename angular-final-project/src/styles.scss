@@ -40,6 +40,7 @@
   overflow-y: scroll;
   height: 570px;
 }
+
 .container {
   &__button {
     display: block;
@@ -52,21 +53,33 @@
 
   &__summary {
     padding: 10px;
-
   }
 
+  &__add-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 0;
+  }
 
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list-single, &__list-item {
+    width: 100%;
+    margin: 6px 0;
+    border: 1px solid #09194f36;
+  }
 }
 
 .title {
   padding: 10px 15px;
   text-align: center;
   color: #152e80;
-}
-
-.container__list {
-  display: flex;
-  flex-direction: column;
 }
 
 .btn {

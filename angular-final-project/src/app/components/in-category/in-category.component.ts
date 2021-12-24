@@ -1,6 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-//import { rooms, groups, products } from '../product';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
 import { Groups, Product } from './../../components/products.model';
@@ -11,18 +10,23 @@ import { Groups, Product } from './../../components/products.model';
 })
 export class InCategoryComponent implements OnInit {
   product: any | undefined;
-  composition: any | undefined;
-  sum: any | undefined;
+  composition: Product[];
+  sum: number | undefined;
   rooms: Groups[] = [];
   groups: Groups[] = [];
   products: Product[] = [];
 
-  constructor(private route: ActivatedRoute,  private categoryService: CategoryService, private productService: ProductService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private categoryService: CategoryService,
+    private productService: ProductService
+  ) {
+    this.composition = [];
+  }
 
- calcucalte() {
-   // let currentI = this.rooms[this.route.snapshot.params['productId'] - 1];
-    //console.log(currentI)
+  calcucalte() {
     let summary: number = 0;
+
     for (let i: number = 0; i < this.composition.length; i++) {
       summary += +this.composition[i].price;
     }
@@ -30,47 +34,30 @@ export class InCategoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const productIdFromRoute = routeParams.get('productId');
-    const currentPath = this.route.snapshot.url[0].path;
 
-
-
+    const productIdFromRoute:string | null = this.route.snapshot.paramMap.get('productId');
+    const currentPath:string = this.route.snapshot.url[0].path;
     this.categoryService.getCategory(currentPath).subscribe((res: Groups[]) => {
-      let group = res;
-console.log(group)
-
-
-  this.product = group.find(
-       (item: any) => item.id === productIdFromRoute
-    );
-    console.log(this.product)
-    })
-
+      let group: Groups[] = res;
+      this.product = group.find((item: any) => item.id === productIdFromRoute);
+    });
 
     this.productService.getProduct('products').subscribe((res: Product[]) => {
-let products = res;
-console.log(products)
+      let products: Product[] = res;
 
+      if (currentPath === 'rooms') {
+        this.composition = products.filter(
+          (item: Product) => item.room === this.product.name
+        );
+      }
 
-if (currentPath == 'rooms') {
-  this.composition = products.filter(
-    (item: any) => item.room === this.product.name
-  );
-}
-if (currentPath == 'groups') {
-  this.composition = products.filter(
-    (item: any) => item.category === this.product.name
-  );
-}
+      if (currentPath === 'groups') {
+        this.composition = products.filter(
+          (item: Product) => item.category === this.product.name
+        );
+      }
+    });
 
-    })
-
-
-
-
-
-
-     this.calcucalte();
+    this.calcucalte();
   }
 }

@@ -1,8 +1,4 @@
-
-
-
 .container {
-
 
   &__button {
     display: block;
@@ -20,7 +16,6 @@
   &::-webkit-scrollbar {
     width: 0;
   }
-
 }
 
 .footer {
@@ -44,6 +39,7 @@
     background: linear-gradient(
       135deg, #09194f 0%, #152e80 100%);
   }
+
   &__button:hover::after {
     content: attr(data-title);
     position: absolute;
@@ -61,6 +57,12 @@
     box-sizing: border-box;
    }
 
+   &__icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
 
   &__active {
     background: linear-gradient(
@@ -85,13 +87,9 @@
   display: block;
   border-radius: 25px;
 }
+
 .button:hover {
   background: #010c30;
 }
 
-.nav-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-}
+

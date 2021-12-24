@@ -6,7 +6,6 @@ import {
   Firestore, addDoc, collection, collectionData,
   doc, docData, deleteDoc, updateDoc, DocumentReference, setDoc
 } from '@angular/fire/firestore';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +19,7 @@ export class CategoryService {
     const groupsRef = collection(this.firestore, location);
     return addDoc(groupsRef, prod);
   }
+
   getCategory( location: string): Observable<Groups[]> {
     const groupsRef = collection(this.firestore, location);
     return collectionData(groupsRef, { idField: 'id' }) as Observable<Groups[]>;

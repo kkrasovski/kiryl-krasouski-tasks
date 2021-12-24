@@ -8,17 +8,14 @@ import { CategoryService } from '../../services/category.service';
 })
 export class GroupComponent implements OnInit {
   groups: Groups[] = [];
-  title = 'название группы';
-  name = 'groups';
-  constructor(
-    private categoryService: CategoryService,
-  ) {}
+  title:string = 'название группы';
+  name:string = 'groups';
 
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
     this.categoryService.getCategory(this.name).subscribe((res: Groups[]) => {
       this.groups = res;
-  })
-}
-
+    });
+  }
 }

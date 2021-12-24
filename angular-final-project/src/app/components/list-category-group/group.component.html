@@ -1,7 +1,7 @@
 <h1 class="title">Группы</h1>
-<div class="list">
-  <app-item *ngFor="let item of groups.reverse()" [item] = "item" ></app-item>
+<div class="container__list">
+  <app-item *ngFor="let item of groups.reverse()" [item]="item"></app-item>
 </div>
 <div class="container__button">
-  <app-add-btn [title] = "title" [parentName] = "name"></app-add-btn>
+  <app-add-btn [title]="title" [parentName]="name"></app-add-btn>
 </div>

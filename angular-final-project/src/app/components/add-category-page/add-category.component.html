@@ -1,11 +1,26 @@
-<h1 class="title">{{titleMain}}</h1>
+<h1 class="title">{{ titleMain }}</h1>
 
-    <form class="pop-up__form add-item" action="" [formGroup]="addCategory">
-        <div class="add-item__section">
-            <label for="item-name">{{title}}</label>
-            <input class="add-item__text" type="text" name="add item name" id="item-name" formControlName="name"/>
-        </div>
+<form class="pop-up__form add-item" action="" [formGroup]="addCategory">
+  <div class="add-item__section">
 
+    <label class="add-item__label" for="item-name">{{ title }}</label>
 
-        <button class="add-item__btn btn" id="submit-item" (click) ="onSubmit()" [disabled]="addCategory.invalid">Добавить</button>
-    </form>
+    <input
+      class="add-item__text"
+      type="text"
+      name="add item name"
+      id="item-name"
+      formControlName="name"
+    />
+
+  </div>
+
+  <button
+    class="add-item__btn btn"
+    id="submit-item"
+    (click)="onSubmit()"
+    [disabled]="addCategory.invalid"
+  >
+    Добавить
+  </button>
+</form>

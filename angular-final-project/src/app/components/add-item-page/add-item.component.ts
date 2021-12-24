@@ -3,12 +3,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Product } from '../products.model';
 import { Groups } from './../../components/products.model';
-///import { rooms, groups, products } from '../product';
 import { Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
-
 @Component({
   selector: 'app-add-item',
   templateUrl: './add-item.component.html',
@@ -16,14 +14,12 @@ import { ProductService } from '../../services/product.service';
 })
 export class AddItemComponent implements OnInit {
   titleMain: string = 'Default';
-
   rooms: Groups[] = [];
   groups: Groups[] = [];
   products: Product[] = [];
   selectedValue = null;
-  room = '';
-  category = '';
-
+  room:string = '';
+  category:string = '';
   @Input() title: any;
   public addItem: any = FormGroup;
 
@@ -44,18 +40,17 @@ export class AddItemComponent implements OnInit {
     } else {
       this.titleMain = 'Заголовок страницы';
     }
+
     this.title = state.title;
   }
 
   ngOnInit() {
     this.categoryService.getCategory('rooms').subscribe((res: Groups[]) => {
       this.rooms = res;
-      console.log(this.rooms);
     });
 
     this.categoryService.getCategory('groups').subscribe((res: Groups[]) => {
       this.groups = res;
-      console.log(this.groups);
     });
 
     this.addItem = new FormGroup({
@@ -69,21 +64,18 @@ export class AddItemComponent implements OnInit {
       room: new FormControl(''),
       comment: new FormControl(''),
     });
-
-    //console.log(category);
-
   }
 
   public onSubmit() {
-    let name = this.addItem.value.name;
-    let price = this.addItem.value.price;
-    let category = this.addItem.value.group;
-    let room = this.addItem.value.room;
-    let date;
+    let name:string = this.addItem.value.name;
+    let price:number = this.addItem.value.price;
+    let category:string = this.addItem.value.group;
+    let room:string = this.addItem.value.room;
+    let date: Date;
     date = new Date();
-    let comment = this.addItem.value.comment;
+    let comment:string = this.addItem.value.comment;
 
-    let savedParam = {
+    let savedParam: Product = {
       name: name,
       price: price,
       category: category,
@@ -99,13 +91,17 @@ export class AddItemComponent implements OnInit {
     this.location.back();
   }
 
-  checkGroups(db: Groups[], categoryNameFromInput: string, categoryName: string, ) {
+  checkGroups(
+    db: Groups[],
+    categoryNameFromInput: string,
+    categoryName: string
+  ) {
+    const found: number = db.findIndex((entry:any) => entry.name === categoryNameFromInput);
 
- const found = db.findIndex(entry => entry.name === categoryNameFromInput);
-
- if (found === -1) {
-     this.categoryService.addCategory({  name: categoryNameFromInput }, categoryName).
-    then(() => this.addItem.reset());
- }
+    if (found === -1) {
+      this.categoryService
+        .addCategory({ name: categoryNameFromInput }, categoryName)
+        .then(() => this.addItem.reset());
+    }
   }
 }

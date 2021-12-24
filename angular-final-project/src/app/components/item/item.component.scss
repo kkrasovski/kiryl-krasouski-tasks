@@ -1,14 +1,9 @@
 .list-item {
-display: flex;
-width: 100%;
-align-items: center;
-border: 1px solid #09194f36;
-
-margin: 10px 0;
-
+  display: flex;
+  align-items: center;
 
   &__single {
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: stretch;
     align-items: center;
@@ -27,17 +22,17 @@ margin: 10px 0;
   }
 
   &__title {
+    flex-grow: 2;
+    flex-basis: 130px;
     font-weight: 700;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    flex-grow: 2;
-    flex-basis: 130px;
   }
 
   &__delete-icon {
-    transition: transform 0.8s ease-in-out;
     height: 24px;
+    transition: transform 0.8s ease-in-out;
     cursor: pointer;
   }
 
@@ -47,6 +42,4 @@ margin: 10px 0;
     animation-duration: 0.5s;
     animation-timing-function: ease-out;
   }
-
-
 }
