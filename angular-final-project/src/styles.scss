@@ -89,3 +89,19 @@
   background: #09194f;
   cursor: pointer;
 }
+
+@media screen and (max-device-width:480px){
+  .screen {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    position: relative;
+}
+.content__container {
+  padding: 15px;
+  overflow-y: scroll;
+  height: calc(100vh - 50px);
+}
+}
