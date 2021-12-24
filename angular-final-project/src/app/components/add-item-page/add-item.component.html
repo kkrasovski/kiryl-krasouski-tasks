@@ -1,0 +1,83 @@
+<h1 class="title">{{ titleMain }}</h1>
+
+<form class="pop-up__form add-item" action="" [formGroup]="addItem">
+  <div class="add-item__section">
+    <label for="item-name">Название товара</label>
+    <input
+      class="add-item__text"
+      type="text"
+      name="name"
+      id="item-name"
+      formControlName="name"
+      autocomplete="off"
+    />
+
+  </div>
+  <div class="add-item__section">
+
+    <label for="item-price">Цена</label>
+    <input
+      class="add-item__text"
+      type="text"
+      name="price"
+      id="item-price"
+      formControlName="price"
+      autocomplete="off"
+    />
+      <div *ngIf="addItem.controls.price.invalid && (addItem.controls.price.dirty || addItem.controls.price.touched)">
+Только цифры, максимум 5 символов
+    </div>
+
+  </div>
+
+  <div class="add-item__section add-item__section_select">
+    <label class="add-item__half" for="item-room">Комната</label>
+    <input
+      class="add-item__text"
+      type="text"
+      [attr.list]="'datalist1'"
+      id="input-room"
+      name="room"
+      formControlName="room"
+      autocomplete="off"
+    />
+    <datalist id="datalist1">
+      <option *ngFor="let r of rooms" [value]="r.name">{{ r.name }}</option>
+    </datalist>
+  </div>
+
+  <div class="add-item__section add-item__section_select">
+    <label class="add-item__half" for="item-group">Группа</label>
+    <input
+      class="add-item__text"
+      type="text"
+      [attr.list]="'datalist2'"
+      id="input-group"
+      name="group"
+      formControlName="group"
+      autocomplete="off"
+    />
+    <datalist id="datalist2">
+      <option *ngFor="let g of groups" [value]="g.name">{{ g.name }}</option>
+    </datalist>
+  </div>
+  <div class="add-item__section">
+    <label for="item-name">Комментарий</label>
+    <input
+      class="add-item__text"
+      type="text"
+      name="comment"
+      id="item-comment"
+      formControlName="comment"
+    />
+  </div>
+
+  <button
+    class="add-item__btn btn"
+    id="submit-item"
+    (click)="onSubmit()"
+    [disabled]="addItem.invalid"
+  >
+   Сохранить
+  </button>
+</form>

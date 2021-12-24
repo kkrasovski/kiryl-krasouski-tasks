@@ -20,6 +20,7 @@ export class FilterProductsComponent implements OnInit {
 
   filter(e: KeyboardEvent) {
     this.inputValue.emit((e.target as HTMLInputElement).value.toLowerCase());
+    console.log(e)
 }
 
 

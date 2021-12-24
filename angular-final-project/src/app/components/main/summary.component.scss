@@ -32,11 +32,33 @@ margin: 10px 0;
     white-space: nowrap;
   }
 
-
-
   &__title {
     flex-grow: 2;
     flex-basis: 130px;
     text-align: center;
+  }
+}
+
+.summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  &__icon{
+    padding: 10px;
+
+  }
+
+  &__img{
+    width: 32px;
+  }
+
+  &__info {
+    padding: 10px;
+  }
+
+  &__total {
+    font-weight: bold;
   }
 }

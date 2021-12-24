@@ -4,14 +4,19 @@ export class Product {
     public price: number,
     public category: string,
     public room: string,
-    public id: number,
+    public comment: string,
+    public date: Date,
+    public id?: string,
+
   ) {
 
   }
 }
 
 export class Groups {
-  constructor( public name: string, public id: number
+  constructor(
+     public name: string,
+     public id?: string
     ) {
 
   }

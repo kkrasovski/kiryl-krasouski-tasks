@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { rooms } from '../product';
+import { Groups } from './../../components/products.model';
+import { CategoryService } from '../../services/category.service';
 @Component({
   selector: 'app-rooms-list',
   templateUrl: './rooms-list.component.html',
   styleUrls: ['./rooms-list.component.scss']
 })
 export class RoomsListComponent implements OnInit {
-  rooms = rooms;
+  rooms: Groups[] = [];
   title = 'название комнаты';
   name = 'rooms';
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private categoryService: CategoryService,) { }
 
   ngOnInit(): void {
-
+    this.categoryService.getCategory(this.name).subscribe((res: Groups[]) => {
+      this.rooms = res;
+    })
   }
 
-}
+  }

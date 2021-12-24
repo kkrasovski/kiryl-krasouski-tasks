@@ -47,3 +47,13 @@
     opacity: 0.5;
   }
 
+  .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+
+  .ng-invalid:not(form)  {
+    border-bottom: 2px solid 	#CC0000; /* red */
+  }
+  .ng-invalid:hover:not(form)  {
+    border-bottom: 2px solid 	#09194f;; /* red */
+  }

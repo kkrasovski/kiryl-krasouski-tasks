@@ -10,7 +10,7 @@ import { Input } from '@angular/core';
 export class AddBtnComponent implements OnInit {
   @Input() title: string = '';
   @Input() parentName: string = '';
-
+  @Input() zik: string = '';
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {}

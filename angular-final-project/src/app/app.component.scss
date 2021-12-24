@@ -1,11 +1,36 @@
+
+
+
+.container {
+
+
+  &__button {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    bottom: 90px;
+    width: calc(100% - 30px);
+  }
+
+  &__add-button {
+    width: 90%;
+    margin: 0 auto;
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+}
+
 .footer {
   display: flex;
   justify-content: space-around;
   width: 100%;
 
   &__button {
-    padding: 4px;
-    padding-top: 9px;
+    position: relative;
+    padding: 8px;
     min-width: 32px;
     text-align: center;
     box-sizing: border-box;
@@ -16,33 +41,36 @@
   }
 
   &__button:hover {
-    padding: 4px;
-    padding-top: 9px;
-    min-width: 32px;
-    text-align: center;
-    box-sizing: border-box;
-    width: 25%;
-    border-left: 1px solid #eeeeee1c;
+    background: linear-gradient(
+      135deg, #09194f 0%, #152e80 100%);
   }
+  &__button:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    width: 72px;
+    left: -1px;
+    top: -23px;
+    z-index: 1;
+    color: #ffffff;
+    background: linear-gradient(
+      135deg, #09194f 0%, #152e80 100%);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    padding: 5px 5px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+   }
 
-  &__active {background:#09194f}
+
+  &__active {
+    background: linear-gradient(
+      135deg, #09194f 0%, #152e80 100%);
+  }
 
   &__link:hover {
-    background: #09194f;
+    background: linear-gradient(
+      135deg, #09194f 0%, #152e80 100%);
   }
-}
-
-.container__button {
-  display: block;
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  bottom: 90px;
-}
-
-.container__add-button {
-  width: 90%;
-  margin: 0 auto;
 }
 
 .button {
@@ -61,5 +89,9 @@
   background: #010c30;
 }
 
-
-
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}

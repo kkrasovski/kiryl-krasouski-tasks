@@ -1,0 +1,46 @@
+.single-item {
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+  &__param {
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  &__param::first-letter {
+    padding-left: 0.3em;
+  }
+
+  &__comment {
+    display: block;
+  }
+
+  &__line_coll {
+flex-direction: column;
+  }
+  &__param_simple {
+    margin: 10px 0;
+    padding: 0 0 0 10px;
+    border-left: 2px solid #09194f;
+    font-weight: normal;
+    text-align: justify;
+  }
+}
+
+.add-item {
+  &__btn {
+    display: block;
+    margin: 15px auto;
+    padding: 15px;
+    width: 200px;
+    border: 0;
+  }
+  }

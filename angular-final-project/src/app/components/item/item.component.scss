@@ -38,6 +38,7 @@ margin: 10px 0;
   &__delete-icon {
     transition: transform 0.8s ease-in-out;
     height: 24px;
+    cursor: pointer;
   }
 
   &__delete-icon:hover {

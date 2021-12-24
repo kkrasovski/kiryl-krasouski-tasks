@@ -3,7 +3,7 @@
 <app-filter-products (inputValue)="filter($event)" [listSize] = "listSize" [isFiltered] = "isFiltered"></app-filter-products>
 
 <div class="list">
-<app-item *ngFor="let item of products.reverse()" [item] = "item" ></app-item>
+<app-item *ngFor="let item of filtered.reverse();" [item] = "item"></app-item>
 </div>
 <div class="container__button">
  <app-add-btn [title] = "title" ></app-add-btn>

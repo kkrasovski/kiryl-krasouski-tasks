@@ -1,6 +1,6 @@
 <h1 class="title">Проект</h1>
 <div class="list">
-  <a class="list-item__single" routerLink="">
+  <a class="list-item__single" routerLink="about">
     <div class="list__single list-item" data-id="1">
       <div class="list-item__title list-item__elem">Проект</div>
     </div>
@@ -22,4 +22,18 @@
       <div class="list-item__title list-item__elem">Комнаты</div>
     </div>
   </a>
+</div>
+<div class="container__summary summary">
+  <div class="summary__icon">
+    <img class="summary__img" src="../../../assets/icon/money.png">
+  </div>
+  <div class="summary__info">
+  <div class="summary__total">
+    Всего потрачено
+  </div>
+
+  <div class="summary__total">
+    {{ calcucalte().summary }}<span class="single-item__currency"> BYN</span>
+  </div>
+</div>
 </div>

@@ -1,6 +1,10 @@
 <div class="screen">
-  <div class="content">
-    <div class="container">
+
+
+
+
+  <div class="screen__content content" >
+        <div class="content__container container">
       <router-outlet></router-outlet>
     </div>
 
@@ -9,6 +13,7 @@
   <div class="screen__footer footer">
     <a
       class="footer__button footer__link"
+      data-title="Главная"
       routerLink=""
       routerLinkActive="footer__active"
       [routerLinkActiveOptions]="{ exact: true }"
@@ -21,6 +26,7 @@
 
     <a
       class="footer__button footer__link"
+      data-title="Товары"
       routerLink="products"
       routerLinkActive="footer__active"
       title="products"
@@ -32,6 +38,7 @@
 
     <a
       class="footer__button footer__link"
+      data-title="Категории"
       routerLink="groups"
       routerLinkActive="footer__active"
       title="groups"
@@ -43,6 +50,7 @@
 
     <a
       class="footer__button footer__link"
+      data-title="Комнаты"
       routerLink="rooms"
       routerLinkActive="footer__active"
       title="rooms"
@@ -52,10 +60,10 @@
       </div>
     </a>
 
-    <!-- <div class="footer__button">
+    <div class="footer__button" data-title="Назад" *ngIf="isMainPage" (click)="back()">
       <div class="nav-btn">
-        <a href=""><img src="../assets/icon/group-service.svg" alt="" /></a>
+       <img src="../assets/icon/back.svg" alt="" />
       </div>
-    </div> -->
+    </div>
   </div>
 </div>

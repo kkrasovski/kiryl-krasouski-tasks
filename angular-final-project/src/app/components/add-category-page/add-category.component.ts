@@ -7,6 +7,7 @@ import { Groups } from '../products.model';
 import { rooms, groups } from '../product';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-add-category',
@@ -23,7 +24,8 @@ export class AddCategoryComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private categoryService: CategoryService
   ) {
     const navigation: any = this.router.getCurrentNavigation();
     const state = navigation.extras.state as {
@@ -46,51 +48,12 @@ export class AddCategoryComponent implements OnInit {
   public onSubmit() {
     let name = this.addCategory.value.name;
 
-    let id = 0;
-
-    if (this.parent === 'rooms') {
-      if (rooms.length != 0) {
-        id =
-          +rooms.sort((prevId, nextId) => {
-            if (prevId.id < nextId.id) {
-              return 1;
-            } else {
-              return -1;
-            }
-          })[0].id + 1;
-      } else {
-        id = 0;
-      }
-    }
-
-    if (this.parent === 'groups') {
-      if (groups.length != 0) {
-        id =
-          +groups.sort((prevId, nextId) => {
-            if (prevId.id < nextId.id) {
-              return 1;
-            } else {
-              return -1;
-            }
-          })[0].id + 1;
-      } else {
-        id = 0;
-      }
-    }
-
-    let savedParam = { name: name, id: id };
+    let savedParam = { name: name};
     const currentPath = this.route.snapshot.url[0].path;
 
-    switch (this.parent) {
-      case 'rooms':
-        rooms.push(savedParam);
 
-        break;
-      case 'groups':
-        groups.push(savedParam);
-
-        break;
-    }
+    this.categoryService.addCategory(savedParam, this.parent).
+    then(() => this.addCategory.reset());
     this.location.back();
   }
 }
