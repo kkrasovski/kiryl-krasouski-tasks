@@ -1,0 +1,39 @@
+<h1 class="title">Проект</h1>
+<div class="container__list">
+  <a class="container__list-single list-item" routerLink="about">
+    <div class="list-item__container">
+      <div class="list-item__title list-item__elem">Проект</div>
+    </div>
+  </a>
+
+  <a class="container__list-single list-item" routerLink="products">
+    <div class="list-item__container">
+      <div class="list-item__title list-item__elem">Мои покупки</div>
+    </div>
+  </a>
+
+  <a class="container__list-single list-item" routerLink="groups">
+    <div class="list-item__container">
+      <div class="list-item__title list-item__elem">Группы покупок</div>
+    </div>
+  </a>
+  <a class="container__list-single list-item" routerLink="rooms">
+    <div class="list-item__container">
+      <div class="list-item__title list-item__elem">Комнаты</div>
+    </div>
+  </a>
+</div>
+<div class="container__summary summary">
+  <div class="summary__icon">
+    <img class="summary__img" src="../../../assets/icon/money.png">
+  </div>
+  <div class="summary__info">
+  <div class="summary__total">
+    Всего потрачено
+  </div>
+
+  <div class="summary__total">
+    {{ calcucalte().summary }}<span class="single-item__currency"> BYN</span>
+  </div>
+</div>
+</div>

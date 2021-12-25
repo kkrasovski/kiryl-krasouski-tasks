@@ -1,0 +1,45 @@
+.list-item {
+  display: flex;
+  align-items: center;
+
+  &__single {
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #09194f;
+  }
+  &:hover {
+    -webkit-box-shadow: 2px 1px 9px 0px rgba(34, 60, 80, 0.13);
+    -moz-box-shadow: 2px 1px 9px 0px rgba(34, 60, 80, 0.13);
+    box-shadow: 2px 1px 9px 0px rgba(34, 60, 80, 0.13);
+  }
+
+  &__elem {
+    padding: 10px 8px;
+  }
+
+  &__title {
+    flex-grow: 2;
+    flex-basis: 130px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__delete-icon {
+    height: 24px;
+    transition: transform 0.8s ease-in-out;
+    cursor: pointer;
+  }
+
+  &__delete-icon:hover {
+    opacity: 0.4;
+    transform: rotate(310deg);
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+  }
+}

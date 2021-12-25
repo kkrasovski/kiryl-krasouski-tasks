@@ -1,0 +1,27 @@
+<h1 class="title">{{ product.name }}</h1>
+<div class="single-item">
+  <div class="single-item__line">
+    <div class="single-item__price">Цена</div>
+    <div class="single-item__param">
+      {{ product.price | currency: " RUB ":"code"
+      }}<span class="single-item__currency"></span>
+    </div>
+  </div>
+  <div class="single-item__line">
+    <div class="single-item__add-date">Добавлен</div>
+    <div class="single-item__param">
+      {{ date | date: "dd/MM/yyyy" }}
+    </div>
+  </div>
+
+  <div class="single-item__line single-item__line_coll">
+    <div class="single-item__comment">Комментарий:</div>
+    <div class="single-item__param single-item__param_simple">
+      {{ product.comment }}
+    </div>
+  </div>
+
+  <button class="add-item__btn btn" id="submit-item" (click)="delete()">
+    Удалить
+  </button>
+</div>

@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.screen {
+  width: 360px;
+  height: 640px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 72px;
+    width: 100%;
+    position: absolute;
+    bottom: 45px;
+    background: linear-gradient(
+      to top,
+      rgb(255, 255, 255) 5%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+  }
+
+  &__footer {
+    position: absolute;
+    z-index: 1;
+    background: #09194f;
+    bottom: 0;
+  }
+}
+
+.content__container {
+  padding: 15px;
+  overflow-y: scroll;
+  height: 570px;
+}
+
+.container {
+  &__button {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    bottom: 90px;
+    width: calc(100% - 30px);
+  }
+
+  &__summary {
+    padding: 10px;
+  }
+
+  &__add-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list-single, &__list-item {
+    width: 100%;
+    margin: 6px 0;
+    border: 1px solid #09194f36;
+  }
+}
+
+.title {
+  padding: 10px 15px;
+  text-align: center;
+  color: #152e80;
+}
+
+.btn {
+  border-radius: 25px;
+  color: #ffffff;
+  text-align: center;
+  background: #09194f;
+  cursor: pointer;
+}
+
+@media screen and (max-device-width:480px){
+  .screen {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    position: relative;
+}
+.content__container {
+  padding: 15px;
+  overflow-y: scroll;
+  height: calc(100vh - 50px);
+}
+}

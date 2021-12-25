@@ -1,0 +1,14 @@
+<h1 class="title">Мои покупки</h1>
+
+<app-filter-products
+  (inputValue)="filter($event)"
+  [listSize]="listSize"
+  [isFiltered]="isFiltered"
+></app-filter-products>
+
+<div class="container__list">
+  <app-item *ngFor="let item of filtered.reverse()" [item]="item"></app-item>
+</div>
+<div class="container__button">
+  <app-add-btn [title]="title"></app-add-btn>
+</div>

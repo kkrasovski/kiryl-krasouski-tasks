@@ -1,0 +1,7 @@
+<h1 class="title">Комнаты</h1>
+<div class="container__list">
+  <app-item *ngFor="let item of rooms.reverse()" [item]="item"></app-item>
+</div>
+<div class="container__button">
+  <app-add-btn [title]="title" [parentName]="name"></app-add-btn>
+</div>

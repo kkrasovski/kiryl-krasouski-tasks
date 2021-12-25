@@ -1,0 +1,12 @@
+.button {
+  text-align: center;
+  background: linear-gradient(135deg, #09194f 0%, #152e80 100%);
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(135deg, #112b81 0%, #2444ac 100%);
+  }
+}
+

@@ -1,0 +1,69 @@
+<div class="screen">
+  <div class="screen__content content">
+    <div class="content__container container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="screen__footer footer">
+
+    <a
+      class="footer__button footer__link"
+      data-title="Главная"
+      routerLink=""
+      routerLinkActive="footer__active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      title="home"
+    >
+      <div class="footer__icon-container">
+        <img class="footer__icon" src="../assets/icon/service.svg" alt="" />
+      </div>
+    </a>
+
+    <a
+      class="footer__button footer__link"
+      data-title="Товары"
+      routerLink="products"
+      routerLinkActive="footer__active"
+      title="products"
+    >
+      <div class="footer__icon-container">
+        <img class="footer__icon" src="../assets/icon/basket.svg" alt="" />
+      </div>
+    </a>
+
+    <a
+      class="footer__button footer__link"
+      data-title="Категории"
+      routerLink="groups"
+      routerLinkActive="footer__active"
+      title="groups"
+    >
+      <div class="footer__icon-container">
+        <img class="footer__icon" src="../assets/icon/group-basket.svg" alt="" />
+      </div>
+    </a>
+
+    <a
+      class="footer__button footer__link"
+      data-title="Комнаты"
+      routerLink="rooms"
+      routerLinkActive="footer__active"
+      title="rooms"
+    >
+      <div class="footer__icon-container">
+        <img class="footer__icon" src="../assets/icon/home.svg" alt="" />
+      </div>
+    </a>
+
+    <div
+      class="footer__button"
+      data-title="Назад"
+      *ngIf="isMainPage"
+      (click)="back()"
+    >
+      <div class="footer__icon-container">
+        <img class="footer__icon" src="../assets/icon/back.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</div>

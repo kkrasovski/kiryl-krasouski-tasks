@@ -1,0 +1,5 @@
+<div class="container__filter filter">
+  <input class="filter__form" type="text" (keyup)="filter($event)" placeholder="быстрый поиск" >
+ <p class="filter__message" *ngIf="listSize === 0 && isFiltered">Нет подходящих товаров</p>
+ <p class="filter__message" *ngIf="listSize === 0 && !isFiltered">Ещё не добавлены</p>
+</div>

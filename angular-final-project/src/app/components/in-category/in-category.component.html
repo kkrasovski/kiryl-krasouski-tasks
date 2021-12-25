@@ -1,0 +1,13 @@
+<h1 class="title">{{ product.name }}</h1>
+<div class="single-item">
+  <div class="single-item__line">
+    <div class="single-item__price">Всего</div>
+    <div class="single-item__cost">
+      {{ calcucalte().summary }}<span class="single-item__currency"> BYN</span>
+    </div>
+  </div>
+</div>
+
+<div class="list">
+  <app-item *ngFor="let item of composition.reverse()" [item]="item"></app-item>
+</div>
